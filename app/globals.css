@@ -117,3 +117,10 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .detail-modal .confidence p{line-height:1.5}
 @media(max-width:800px){.detail-modal .score-row{grid-template-columns:1fr 45px}.detail-modal .confidence{grid-template-columns:76px 88px minmax(0,1fr);gap:12px}.detail-modal .confidence>strong{width:78px;height:78px;font-size:13px}}
 @media(max-width:480px){.detail-modal .confidence{grid-template-columns:1fr 1fr}.detail-modal .confidence p{grid-column:1/-1}.detail-modal .confidence>strong{justify-self:end}}
+
+/* Enlarged identity and confidence guide */
+.brand{gap:15px;font-size:16px}
+.brand-mark{width:52px;height:52px;font-size:22px}
+.confidence-grid i{width:110px;height:110px}
+.confidence-grid p{font-size:22px;line-height:1.5}
+@media(max-width:800px){.brand{font-size:14px}.brand-mark{width:48px;height:48px;font-size:20px}.confidence-grid i{width:88px;height:88px}}
