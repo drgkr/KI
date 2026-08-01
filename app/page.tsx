@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type Scores = { writing: number; emotion: number; pacing: number; performances: number; rewatch: number; critics: number; audience: number };
 type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
-type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft" };
+type WatchProvider = { id: number; name: string; logo?: string | null };
+type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft" };
 
 const weights: { key: keyof Scores; label: string; weight: number; short: string }[] = [
   { key: "writing", label: "Writing Quality", weight: 20, short: "WR" },
@@ -144,6 +145,11 @@ export default function Home() {
         <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2 id="film-detail-title">{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className={`final-score ${film.scores ? "" : "unrated"}`}><strong>{total(film.scores) ?? "NR"}</strong><span>{film.scores ? "OUT OF 100" : "ASSESSMENT PENDING"}</span></div></div>
         <p className="overview">{film.overview}</p>
         <div className="cast"><span>CAST</span><p>{film.cast.join(" · ")}</p></div>
+        <section className="streaming" aria-label="UK streaming availability">
+          <div className="streaming-heading"><div><span className="kicker">WATCH IN THE UK</span><h3>Currently streaming</h3></div>{film.watchLink && <a href={film.watchLink} target="_blank" rel="noreferrer">Check availability ↗</a>}</div>
+          {film.watchProviders?.length ? <div className="provider-list">{film.watchProviders.map(provider => <div className="provider" key={provider.id}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></div>)}</div> : <p className="streaming-empty">No UK subscription-streaming listing is currently available.</p>}
+          <small>Streaming data supplied by JustWatch via TMDB. Availability can change.</small>
+        </section>
         <div className="score-head"><div><span className="kicker">SCORE BREAKDOWN</span><p>{film.scores ? "Seven measures combine to create the published result." : "A score appears only after all seven measures have supporting evidence."}</p></div>{editing ? <button className="edit" disabled={!draftComplete} onClick={saveDraft}>Keep private draft</button> : <button className="edit" onClick={beginEditing}>{film.scores ? "Test different scores" : "Try a private score"}</button>}</div>
         <div className="score-list">
           {weights.map(item => <div className="score-row" key={item.key}>
@@ -179,7 +185,7 @@ export default function Home() {
 
     <footer id="about">
       <div className="brand footer-brand"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></div>
-      <div className="disclaimer"><strong>Technology, data and attribution</strong><p>Film titles, release information, cast details, genres, posters and imagery are supplied through the TMDB API. This product uses the TMDB API but is not endorsed or certified by TMDB.</p><p>Kollywood Index is an independent, non-commercial project for cinema discovery, criticism and cultural commentary. It is not affiliated with TMDB, any film studio, distributor, critic, Reddit or Letterboxd. Film artwork, names and trademarks remain the property of their respective owners.</p></div>
+      <div className="disclaimer"><strong>Technology, data and attribution</strong><p>Film titles, release information, cast details, genres, posters and imagery are supplied through the TMDB API. UK streaming availability is supplied by <a href="https://www.justwatch.com/uk" target="_blank" rel="noreferrer">JustWatch</a> through TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.</p><p>Kollywood Index is an independent, non-commercial project for cinema discovery, criticism and cultural commentary. It is not affiliated with TMDB, JustWatch, any streaming service, film studio, distributor, critic, Reddit or Letterboxd. Film artwork, service logos, names and trademarks remain the property of their respective owners.</p></div>
       <div className="technology"><strong>Built with</strong><ul><li>Next.js 16 and React 19</li><li>TypeScript, HTML and responsive CSS</li><li>TMDB API and structured JSON data</li><li>GitHub source control</li><li>GitHub Actions automation</li><li>GitHub Pages hosting</li><li>Browser local storage for private drafts</li><li>ChatGPT and Codex-assisted development</li></ul></div>
       <p className="copyright">© {new Date().getFullYear()} Kollywood Index<br/>A clearer way to explore Tamil cinema.</p>
     </footer>
