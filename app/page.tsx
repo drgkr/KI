@@ -120,6 +120,17 @@ export default function Home() {
       <span className={`source ${source}`}>{source === "tmdb" ? "Live cinema catalogue" : "Catalogue preview"}</span>
     </header>
 
+    <section className="featured-strip" id="films">
+      <div className="section-heading"><div><span className="kicker">RECENTLY REVIEWED</span><h2>Twenty new rated films</h2><p>Explore the most recently released films with a completed Kollywood Index assessment.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
+      <div className="poster-rail" ref={rail} tabIndex={0} aria-label="20 most recent rated films ordered newest first">
+        {latest.map((item, index) => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
+          <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span></div>
+          <ScoreMeter film={item}/>
+          <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
+        </button>)}
+      </div>
+    </section>
+
     <section className="hero" id="top">
       <div className="eyebrow">Tamil cinema, considered carefully</div>
       <h1>Your next great<br/><em>film starts here.</em></h1>
@@ -135,15 +146,7 @@ export default function Home() {
       </div>
     </section>
 
-    <section className="film-section" id="films">
-      <div className="section-heading"><div><span className="kicker">RECENTLY REVIEWED</span><h2>Twenty new rated films</h2><p>Explore the most recently released films with a completed Kollywood Index assessment.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
-      <div className="poster-rail" ref={rail} tabIndex={0} aria-label="20 most recent rated films ordered newest first">
-        {latest.map((item, index) => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-          <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span></div>
-          <ScoreMeter film={item}/>
-          <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
-        </button>)}
-      </div>
+    <section className="film-section">
       <section className="library" id="library">
         <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search and filter by rating, streaming service, year or title.</p></div><span className="result-count">{query.trim() || catalogueFilter !== "all" || yearFilter !== "all" ? `${library.length} matches` : `${films.length} films available`}</span></div>
         <div className="library-controls">

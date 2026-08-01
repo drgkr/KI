@@ -87,6 +87,26 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .film-section>.section-heading{padding-bottom:18px}
 @media(max-width:800px){.hero{min-height:500px;padding:48px 24px 42px;grid-template-columns:1fr 150px;grid-template-areas:"eyebrow eyebrow" "title reel" "intro reel" "link link";column-gap:18px;row-gap:16px}.hero h1{font-size:32px;align-self:center}.hero>p{font-size:15px;align-self:start}.film-reel{width:145px;right:auto;top:auto}.hero .text-link{margin-top:4px}.film-section{padding-top:28px}}
 @media(max-width:480px){.hero{min-height:470px;grid-template-columns:1fr 115px}.hero h1{font-size:27px}.film-reel{width:112px}.hero>p{font-size:14px;line-height:1.5}}
+
+/* Reviewed ribbon leads the landing page */
+.featured-strip{background:var(--paper);color:var(--ink);padding:24px 0 20px;scroll-margin-top:86px}
+.featured-strip .section-heading{padding-bottom:18px;align-items:center}
+.featured-strip .section-heading h2{font-size:clamp(27px,3vw,43px);margin:7px 0}
+.featured-strip .section-heading p{margin-top:5px;font-size:13px}
+.featured-strip .poster-rail{gap:16px;padding-bottom:14px}
+.featured-strip .poster-card{flex-basis:clamp(110px,7.8vw,140px)}
+.featured-strip .poster-card .rank{top:7px;left:7px;padding:5px;font-size:8px}
+.featured-strip .score-capsule{height:28px}
+.featured-strip .score-bubble{width:26px;height:26px;font-size:10px}
+.featured-strip .poster-meta{padding-top:10px}
+.featured-strip .poster-meta strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-strip .poster-meta span{font-size:8px;margin-top:5px}
+.hero{min-height:300px;padding-top:34px;padding-bottom:32px;background-color:var(--ink)}
+.hero>p{font-size:15px;line-height:1.5}
+.film-reel{width:min(17vw,185px)}
+.film-section{padding-top:0}
+@media(max-width:800px){.featured-strip{padding-top:20px}.featured-strip .poster-card{flex-basis:120px}.hero{min-height:410px;padding-top:34px;padding-bottom:34px}.film-reel{width:125px}}
+@media(max-width:480px){.featured-strip .section-heading{align-items:flex-end}.featured-strip .section-heading p{display:none}.featured-strip .poster-card{flex-basis:108px}.hero{min-height:380px}.film-reel{width:100px}}
 .detail-modal .confidence{grid-template-columns:90px 96px minmax(0,1fr);gap:18px;padding:20px}
 .detail-modal .confidence>strong{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#329760;color:#fff;font:700 15px/1 Arial;letter-spacing:.05em;box-shadow:0 8px 24px rgba(50,151,96,.28)}
 .detail-modal .confidence.medium>strong{background:#d69b32;color:#17120a;box-shadow:0 8px 24px rgba(214,155,50,.25)}
