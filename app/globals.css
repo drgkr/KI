@@ -102,7 +102,8 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .featured-strip .poster-meta strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .featured-strip .poster-meta span{font-size:8px;margin-top:5px}
 .hero{min-height:300px;padding-top:34px;padding-bottom:32px;background-color:var(--ink)}
-.hero>p{font-size:clamp(18px,2.25vw,33px);line-height:1.25}
+.hero{grid-template-columns:minmax(280px,1fr) minmax(360px,1.15fr) minmax(175px,.42fr);column-gap:4vw}
+.hero>p{max-width:560px;font-size:clamp(15px,1.5vw,22px);line-height:1.35}
 .film-reel{width:min(17vw,185px)}
 .film-section{padding-top:0}
 @media(max-width:800px){.featured-strip{padding-top:20px}.featured-strip .poster-card{flex-basis:120px}.hero{min-height:410px;padding-top:34px;padding-bottom:34px}.film-reel{width:125px}}
