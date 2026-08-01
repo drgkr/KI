@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tmdb_movie_id:
-        description: "TMDB movie ID shown with the prepared rating"
+        description: "One TMDB ID, comma-separated IDs, or all"
         required: true
         type: string
 
@@ -32,5 +32,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add public/data/scores.json public/data/pending-scores.json
-          git commit -m "Approve film rating ${{ inputs.tmdb_movie_id }}"
+          git commit -m "Approve film ratings ${{ inputs.tmdb_movie_id }}"
           git push

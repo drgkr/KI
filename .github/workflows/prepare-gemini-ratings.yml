@@ -1,0 +1,61 @@
+name: Prepare Gemini film ratings
+
+on:
+  workflow_dispatch:
+    inputs:
+      batch_size:
+        description: "Films to research in this run (start with 10; maximum 25)"
+        required: true
+        default: "10"
+        type: string
+      start_index:
+        description: "Skip this many currently unscored films"
+        required: true
+        default: "0"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gemini-rating-preparation
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Refresh the TMDB catalogue used for selection
+        run: npm run pages:data
+        env:
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
+          TMDB_MAX_FILMS: 1000
+      - name: Research and prepare evidence-backed ratings
+        run: npm run ratings:prepare
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          RATING_BATCH_SIZE: ${{ inputs.batch_size }}
+          RATING_START_INDEX: ${{ inputs.start_index }}
+      - name: Add run summary
+        run: |
+          echo '## Gemini rating preparation' >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          jq -r '"Prepared: **\(.prepared | length)**  \nKept as NR: **\(.notRated | length)**"' public/data/scoring-report.json >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          jq -r '.prepared[] | "- ✅ \(.title) — \(.confidence), \(.sources) sources"' public/data/scoring-report.json >> "$GITHUB_STEP_SUMMARY"
+          jq -r '.notRated[] | "- ⚪ \(.title) — NR: \(.reason)"' public/data/scoring-report.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Save prepared ratings for review
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/pending-scores.json public/data/scoring-report.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Prepare Gemini film rating batch"
+          git push
