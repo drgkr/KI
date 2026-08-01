@@ -61,7 +61,7 @@ export default function Home() {
   }, []);
 
   const newest = useMemo(() => [...films].sort((a,b) => b.releaseDate.localeCompare(a.releaseDate)), [films]);
-  const latest = newest.slice(0, 20);
+  const latest = useMemo(() => newest.filter(item => item.scores !== null).slice(0, 20), [newest]);
   const availableYears = useMemo(() => [...new Set(films.map(item => item.year).filter(Boolean))].sort((a,b) => b.localeCompare(a)), [films]);
   const library = useMemo(() => {
     const term = query.trim().toLocaleLowerCase();
@@ -125,8 +125,8 @@ export default function Home() {
     </section>
 
     <section className="film-section" id="films">
-      <div className="section-heading"><div><span className="kicker">NEW TO THE SCREEN</span><h2>Twenty recent releases</h2><p>Move through the newest Tamil films, beginning with the latest release.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
-      <div className="poster-rail" ref={rail} tabIndex={0} aria-label="Latest 20 films ordered newest first">
+      <div className="section-heading"><div><span className="kicker">RECENTLY REVIEWED</span><h2>Twenty new rated films</h2><p>Explore the most recently released films with a completed Kollywood Index assessment.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
+      <div className="poster-rail" ref={rail} tabIndex={0} aria-label="20 most recent rated films ordered newest first">
         {latest.map((item, index) => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
           <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span></div>
           <ScoreMeter film={item}/>
