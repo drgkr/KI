@@ -944,6 +944,102 @@
         { "name": "Audience response roundup", "url": "https://www.filmibeat.com/tamil/news/2025/oho-enthan-baby-x-review-what-audiences-are-saying-about-rudra-mithila-palkar-film-469035.html", "kind": "Audience", "weight": 20 }
       ]
     },
+    "japan-2023": {
+      "title":"Japan","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":41,"emotion":43,"pacing":42,"performances":58,"rewatch":40,"critics":41,"audience":44},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/Nov/10/japan-movie-review-a-testing-rudderless-concoction-of-genres-49433.html","kind":"Lead critic","weight":20},{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/movie-review/japan-movie-review-raju-murugan-and-karthis-film-has-its-heart-in-the-right-place-but-everything-else-is-not-9022168/","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Japan_(2023_film)#Reception","kind":"Additional critic","weight":40}]
+    },
+    "leo-2023": {
+      "title":"Leo","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":65,"emotion":70,"pacing":76,"performances":84,"rewatch":77,"critics":70,"audience":78},
+      "sources":[{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/movie-review/leo-movie-review-rating-vijay-career-best-performance-lokesh-kanagaraj-almost-misfire-8990034/","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/leo/amp_movie_review/104545253.cms","kind":"Second lead critic","weight":20},{"name":"Audience review megathread","url":"https://www.reddit.com/r/kollywood/comments/17aykuc/leo_review_megathread_spoilerfree/","kind":"Audience","weight":20}]
+    },
+    "irugapatru-2023": {
+      "title":"Irugapatru","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":70,"emotion":79,"pacing":69,"performances":78,"rewatch":72,"critics":70,"audience":76},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/Oct/06/irugapatru-movie-review-a-beginners-guide-to-couples-therapy-48336.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/irugapatru/movie-review/104147715.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Irugapatru#Reception","kind":"Additional critic","weight":40}]
+    },
+    "iraivan-2023": {
+      "title":"Iraivan","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":44,"emotion":46,"pacing":50,"performances":65,"rewatch":45,"critics":45,"audience":49},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/Sep/28/iraivan-movie-reviewa-bloody-thriller-with-solid-performances-48115.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/iraivan/movie-review/104012422.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Iraivan#Critical_reception","kind":"Additional critic","weight":40}]
+    },
+    "chandramukhi-2-2023": {
+      "title":"Chandramukhi 2","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":31,"emotion":37,"pacing":39,"performances":51,"rewatch":39,"critics":35,"audience":44},
+      "sources":[{"name":"The New Indian Express","url":"https://www.newindianexpress.com/entertainment/review/2023/sep/30/chandramukhi-2-movie-review-less-of-a-sequel-more-of-a-remake-2619415.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/chandramukhi-2/movie-review/104011710.cms","kind":"Second lead critic","weight":20},{"name":"Audience review discussion","url":"https://www.reddit.com/r/kollywood/comments/16u5gag/","kind":"Audience","weight":20}]
+    },
+    "maamannan-2023": {
+      "title":"Maamannan","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":69,"emotion":73,"pacing":62,"performances":86,"rewatch":65,"critics":68,"audience":72},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/Jun/29/maamannan-movie-reviewfiery-premise-flaky-results-45097.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/maamannan/movie-review/101361256.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Maamannan#Critical_reception","kind":"Additional critic","weight":40}]
+    },
+    "takkar-2023": {
+      "title":"Takkar","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":36,"emotion":43,"pacing":47,"performances":61,"rewatch":44,"critics":40,"audience":48},
+      "sources":[{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/takkar/movie-review/100867548.cms","kind":"Lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Takkar_(2023_film)#Reception","kind":"Additional critic","weight":40},{"name":"Audience review discussion","url":"https://www.reddit.com/r/kollywood/comments/14uefzo/","kind":"Audience","weight":20}]
+    },
+    "theera-kaadhal-2023": {
+      "title":"Theera Kaadhal","assessedAt":"2026-08-01","confidence":"Medium","scores":{"writing":54,"emotion":60,"pacing":52,"performances":66,"rewatch":51,"critics":54,"audience":55},
+      "sources":[{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/theera-kaadhal/amp_movie_review/100529944.cms","kind":"Lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Theera_Kaadhal#Reception","kind":"Additional critic","weight":40},{"name":"Audience review discussion","url":"https://www.reddit.com/r/kollywood/comments/13svtul/","kind":"Audience","weight":20}]
+    },
+    "thiruvin-kural-2023": {
+      "title":"Thiruvin Kural","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":51,"emotion":57,"pacing":56,"performances":63,"rewatch":52,"critics":55,"audience":56},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/Apr/14/thiruvin-kural-movie-review-promising-premise-with-not-so-sound-results-42338.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/thiruvin-kural/movie-review/99480729.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Thiruvin_Kural#Reception","kind":"Additional critic","weight":40}]
+    },
+    "kannai-nambathe-2023": {
+      "title":"Kannai Nambathe","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":44,"emotion":45,"pacing":52,"performances":57,"rewatch":47,"critics":45,"audience":50},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/mar/17/kannai-nambathey-movie-review-unintentional-humourspoil-the-smarts-in-this-thriller-41202.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/kannai-nambathey/amp_movie_review/98723417.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Kannai_Nambathey#Reception","kind":"Additional critic","weight":40}]
+    },
+    "vaathi-2023": {
+      "title":"Vaathi","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":58,"emotion":65,"pacing":61,"performances":79,"rewatch":63,"critics":59,"audience":71},
+      "sources":[{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/movie-review/vaathi-movie-review-dhanush-starrer-about-right-to-education-fares-poorly-8451630/","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/vaathi/movie-review/97992637.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Vaathi#Reception","kind":"Additional critic","weight":40}]
+    },
+    "thalaikoothal-2023": {
+      "title":"Thalaikoothal","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":80,"emotion":88,"pacing":72,"performances":84,"rewatch":64,"critics":80,"audience":77},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/amp/story/tamil/review/2023/Jan/31/thalaikoothal-movie-review-a-well-crafted-film-that-only-gets-better-with-immersive-storytelling-39458.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/thalaikoothal/amp_movie_review/97483870.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Thalaikoothal_(film)#Reception","kind":"Additional critic","weight":40}]
+    },
+    "thunivu-2023": {
+      "title":"Thunivu","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":60,"emotion":56,"pacing":66,"performances":77,"rewatch":67,"critics":62,"audience":68},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2023/jan/11/thunivu-movie-reviewbullets-and-bombs-fail-but-the-dialogues-dont-38659.html","kind":"Lead critic","weight":20},{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/thunivu-movie-review-rating-ajith-h-vinoth-8373392/","kind":"Second lead critic","weight":20},{"name":"Audience review megathread","url":"https://www.reddit.com/r/kollywood/comments/108gf2h/thunivu_review_megathread_ajith_h_vinoth/","kind":"Audience","weight":20}]
+    },
+    "raangi-2022": {
+      "title":"Raangi","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":42,"emotion":46,"pacing":52,"performances":64,"rewatch":47,"critics":47,"audience":52},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2022/Dec/30/raangi-movie-review-problems-galore-in-this-tepid-trisha-thriller-38209.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/raangi/amp_movie_review/96614370.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Raangi#Reception","kind":"Additional critic","weight":40}]
+    },
+    "varalaru-mukkiyam-2022": {
+      "title":"Varalaru Mukkiyam","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":28,"emotion":31,"pacing":35,"performances":44,"rewatch":32,"critics":29,"audience":36},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/amp/story/tamil/review/2022/Dec/09/varalaru-mukkiyam-movie-review-a-stale-tasteless-comedy-37558.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/varalaru-mukkiyam/movie-review/96113503.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Varalaru_Mukkiyam#Reception","kind":"Additional critic","weight":40}]
+    },
+    "naai-sekar-returns-2022": {
+      "title":"Naai Sekar Returns","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":38,"emotion":40,"pacing":42,"performances":58,"rewatch":46,"critics":42,"audience":47},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/amp/story/tamil/review/2022/Dec/09/naai-sekar-returns-movie-review-very-few-laughs-in-this-rather-disappointing-vadivelu-comeback-37562.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/naai-sekar-returns/movie-review/96104786.cms","kind":"Second lead critic","weight":20},{"name":"Audience review discussion","url":"https://www.reddit.com/r/kollywood/comments/zgso72/","kind":"Audience","weight":20}]
+    },
+    "the-elephant-whisperers-2022": {
+      "title":"The Elephant Whisperers","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":87,"emotion":94,"pacing":87,"performances":90,"rewatch":84,"critics":94,"audience":90},
+      "sources":[{"name":"Rotten Tomatoes critic collection","url":"https://www.rottentomatoes.com/m/the_elephant_whisperers","kind":"Lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/The_Elephant_Whisperers#Reception","kind":"Additional critic","weight":40},{"name":"IMDb audience ratings","url":"https://www.imdb.com/title/tt23628262/ratings/","kind":"Audience","weight":20}]
+    },
+    "gatta-kusthi-2022": {
+      "title":"Gatta Kusthi","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":66,"emotion":68,"pacing":71,"performances":74,"rewatch":73,"critics":66,"audience":75},
+      "sources":[{"name":"Hindu Tamil Thisai","url":"https://www.hindutamil.in/news/cinema/tamil-cinema/909950-gatta-kusthi-movie-review.html","kind":"Lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Gatta_Kusthi#Reception","kind":"Additional critic","weight":40},{"name":"Audience review discussion","url":"https://www.reddit.com/r/kollywood/comments/zc5cku/","kind":"Audience","weight":20}]
+    },
+    "dsp-2022": {
+      "title":"DSP","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":36,"emotion":39,"pacing":44,"performances":57,"rewatch":42,"critics":40,"audience":47},
+      "sources":[{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/movie-review/dsp-movie-review-vijay-sethupathi-8302392/","kind":"Lead critic","weight":20},{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2022/Dec/03/dsp-movie-review-vijay-sethupathi-prabhakar-anchor-ponrams-middling-attempt-to-get-back-on-track-37305.html","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/DSP_(film)#Reception","kind":"Additional critic","weight":40}]
+    },
+    "pattathu-arasan-2022": {
+      "title":"Pattathu Arasan","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":40,"emotion":47,"pacing":45,"performances":58,"rewatch":43,"critics":43,"audience":47},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2022/Nov/25/pattathu-arasan-movie-review-a-run-of-the-mill-rural-sports-family-drama-37025.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/pattathu-arasan/movie-review/95766245.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Pattathu_Arasan#Reception","kind":"Additional critic","weight":40}]
+    },
+    "kalaga-thalaivan-2022": {
+      "title":"Kalaga Thalaivan","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":66,"emotion":57,"pacing":69,"performances":70,"rewatch":64,"critics":64,"audience":67},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/amp/story/tamil/review/2022/Nov/18/kalaga-thalaivan-movie-review-a-largely-effective-cat-and-mouse-game-36782.html","kind":"Lead critic","weight":20},{"name":"The Indian Express","url":"https://indianexpress.com/article/entertainment/tamil/kalaga-thalaivan-movie-review-magizh-thirumenis-few-good-ideas-get-spoiled-by-spoon-feeding-8276172/","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Kalaga_Thalaivan#Reception","kind":"Additional critic","weight":40}]
+    },
+    "love-today-2022": {
+      "title":"Love Today","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":72,"emotion":69,"pacing":78,"performances":73,"rewatch":80,"critics":72,"audience":82},
+      "sources":[{"name":"Cinema Express","url":"https://www.cinemaexpress.com/tamil/review/2022/Nov/04/love-today-movie-review-a-rollicking-new-age-entertainer-36266.html","kind":"Lead critic","weight":20},{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/love-today/movie-review/95295803.cms","kind":"Second lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Love_Today_(2022_film)#Reception","kind":"Additional critic","weight":40}]
+    },
+    "nitham-oru-vaanam-2022": {
+      "title":"Nitham Oru Vaanam","assessedAt":"2026-08-01","confidence":"High","scores":{"writing":69,"emotion":79,"pacing":68,"performances":76,"rewatch":74,"critics":70,"audience":77},
+      "sources":[{"name":"The Times of India","url":"https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/nitham-oru-vaanam/movie-review/95283079.cms","kind":"Lead critic","weight":20},{"name":"Critical reception roundup","url":"https://en.wikipedia.org/wiki/Nitham_Oru_Vaanam#Reception","kind":"Additional critic","weight":40},{"name":"Audience discussion","url":"https://www.reddit.com/r/kollywood/comments/zbmy9d/","kind":"Audience","weight":20}]
+    },
+    "super-senior-heroes-2022": {
+      "title":"Super Senior Heroes","assessedAt":"2026-08-01","confidence":"Low","scores":{"writing":60,"emotion":67,"pacing":58,"performances":65,"rewatch":62,"critics":58,"audience":67},
+      "sources":[{"name":"IMDb audience ratings","url":"https://www.imdb.com/title/tt23854230/ratings/","kind":"Audience","weight":20},{"name":"Letterboxd audience reviews","url":"https://letterboxd.com/film/super-senior-heroes/","kind":"Audience","weight":20},{"name":"Film information and reception context","url":"https://en.wikipedia.org/wiki/Super_Senior_Heroes","kind":"Additional critic","weight":40}]
+    },
     "retro-2025": {
       "title": "Retro", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 70, "emotion": 68, "pacing": 61, "performances": 82, "rewatch": 68, "critics": 66, "audience": 69 },
