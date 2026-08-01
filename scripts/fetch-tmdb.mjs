@@ -66,7 +66,8 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
     const ukWatch = detail["watch/providers"]?.results?.GB;
     const alternatePoster = detail.images?.posters?.find(image => image.file_path)?.file_path;
-    const posterPath = movie.poster_path || detail.poster_path || alternatePoster || null;
+    const alternateBackdrop = detail.images?.backdrops?.find(image => image.file_path)?.file_path;
+    const posterPath = movie.poster_path || detail.poster_path || alternatePoster || movie.backdrop_path || detail.backdrop_path || alternateBackdrop || null;
     const watchProviders = (ukWatch?.flatrate || []).map(provider => ({
       id: provider.provider_id,
       name: provider.provider_name,
