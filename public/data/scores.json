@@ -623,6 +623,106 @@
           "weight": 6
         }
       ]
+    },
+    "jana-nayagan-2026": {
+      "title": "Jana Nayagan", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 35, "emotion": 45, "pacing": 38, "performances": 60, "rewatch": 42, "critics": 38, "audience": 42 },
+      "sources": [
+        { "name": "M Suganth — The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/jana-nayagan/movie-review/132575776.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Yashaswini Sri — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/jana-nayagan-movie-review-vijays-last-film-unravels-under-pressure-of-being-vijays-last-film-10799729/", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Nandini Ramnath — Scroll", "url": "https://scroll.in/reel/1094416/jana-nayagan-review-vijays-new-film-is-extremely-lazy-and-incredibly-tacky", "kind": "Additional critic", "weight": 40 },
+        { "name": "r/kollywood review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1v3ivmy/jana_nayagan_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "arulvaan-2026": {
+      "title": "Arulvaan", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 52, "emotion": 68, "pacing": 48, "performances": 64, "rewatch": 50, "critics": 55, "audience": 58 },
+      "sources": [
+        { "name": "Prashanth Vallavan — Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jul/17/arulvaan-movie-review-stubbornly-one-dimensional", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/arulvaan/amp_movie_review/132454329.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "DT Next", "url": "https://www.dtnext.in/entertainment/cinema/arulvaan-film-review-this-arulnithi-starrer-is-a-sincere-tale-about-hope-courage-and-the-pursuit-of-education", "kind": "Additional critic", "weight": 40 },
+        { "name": "Filmibeat reader and review response", "url": "https://tamil.filmibeat.com/reviews/arulvaan-review-in-tamil-arulnidhi-again-choses-a-different-story-181091.html", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "anbe-diana-2026": {
+      "title": "Anbe Diana", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 60, "emotion": 62, "pacing": 58, "performances": 61, "rewatch": 62, "critics": 60, "audience": 65 },
+      "sources": [
+        { "name": "Akshay Kumar — Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jul/17/anbe-diana-movie-review-familiar-romance-with-fairytale-like-optimism", "kind": "Lead critic", "weight": 20 },
+        { "name": "Sruthi Ganapathy Raman — The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/anbe-diana-movie-review-a-flippant-romance-with-its-breezy-moments", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/anbe-diana/amp_movie_review/132454278.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/chennaicity/comments/1v0mjqt/anbe_diana_was_refreshing_and_for_not_the_reasons/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "lakshmikanthan-kolai-vazhakku-2026": {
+      "title": "Lakshmikanthan Kolai Vazhakku", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 48, "emotion": 54, "pacing": 38, "performances": 62, "rewatch": 35, "critics": 45, "audience": 48 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/lakshmikanthan-kolai-vazhakku/movie-review/132306467.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Ashwin S — Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jul/11/lakshmikanthan-kolai-vazhakku-movie-review-a-lecture-filled-drama-which-is-let-down-by-its-narrow-emotional-focus", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Daily Thanthi", "url": "https://www.dailythanthi.com/cinema/movie-review/lakshmikanthan-kolai-vazhakku-film-review", "kind": "Additional critic", "weight": 40 },
+        { "name": "Times of India users rating", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/lakshmikanthan-kolai-vazhakku/movie-review/132306467.cms", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "con-city-2026": {
+      "title": "Con City", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 57, "emotion": 52, "pacing": 55, "performances": 68, "rewatch": 60, "critics": 55, "audience": 62 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/con-city/movie-review/132008969.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Prashanth Vallavan — The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/Jun/27/tamilreview2026jun26con-city-movie-review-interesting-story-populated-by-uninteresting-characters", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/con-city-movie-review-arjun-das-anna-ben-film-has-amusing-stretches-in-an-otherwise-listless-con-com", "kind": "Additional critic", "weight": 40 },
+        { "name": "Letterboxd and r/kollywood audience response", "url": "https://letterboxd.com/film/con-city/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "angikaaram-2026": {
+      "title": "Angikaaram", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 52, "emotion": 60, "pacing": 45, "performances": 56, "rewatch": 42, "critics": 50, "audience": 48 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/angikaaram/movie-review/132008923.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jul/02/angikaaram-movie-review-a-compassionate-sports-drama-drowned-down-by-generic-execution", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Filmibeat", "url": "https://tamil.filmibeat.com/reviews/angikaaram-review-in-tamil-kjr-sports-drama-stands-top-for-its-real-and-soulful-story-179831.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Letterboxd audience response", "url": "https://letterboxd.com/film/angikaaram/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "heartin-2026": {
+      "title": "Heartin", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 50, "emotion": 48, "pacing": 55, "performances": 62, "rewatch": 55, "critics": 52, "audience": 55 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jun/26/heartin-movie-review-this-amnesiac-romance-forgets-its-heart", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/heartin/movie-review/132036124.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Janani K — India Today", "url": "https://www.indiatoday.in/movies/reviews/story/heartin-review-sananth-shines-kishore-kumar-visually-rich-modern-romance-2934814-2026-06-26", "kind": "Additional critic", "weight": 40 },
+        { "name": "Letterboxd audience response", "url": "https://letterboxd.com/film/heartin/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "andharan-2026": {
+      "title": "Andharan", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 48, "emotion": 44, "pacing": 42, "performances": 58, "rewatch": 45, "critics": 50, "audience": 42 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/andharan-the-hunter/amp_movie_review/132036036.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Hindu Tamil", "url": "https://www.hindutamil.in/news/supplements/hindu-talkies/andharan-movie-review", "kind": "Second lead critic", "weight": 20 },
+        { "name": "CinemaSpeak", "url": "https://www.cinemaspeak.in/2026/06/movie-review-andharan.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Tenvow audience and box-office response", "url": "https://tenvow.com/box-office/andharan-tamil-movie-collection-n-verdict/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "dark-giant-2026": {
+      "title": "Dark Giant", "assessedAt": "2026-08-01", "confidence": "Low",
+      "scores": { "writing": 58, "emotion": 55, "pacing": 64, "performances": 62, "rewatch": 60, "critics": 62, "audience": 60 },
+      "sources": [
+        { "name": "Daily Thanthi", "url": "https://www.dailythanthi.com/cinema/movie-review/dark-giant-movie-review", "kind": "Lead critic", "weight": 20 },
+        { "name": "Chennai Vision", "url": "https://chennaivision.com/dark-giant-movie-review/", "kind": "Second lead critic", "weight": 20 },
+        { "name": "MyKollywood", "url": "https://mykollywood.com/movie/movie-review/dark-giant-movie-review-by-naveen/", "kind": "Additional critic", "weight": 40 },
+        { "name": "ThirdEyeReports viewer-oriented review", "url": "https://www.3rdeyereports.com/2026/06/dark-giant-movie-review.html", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "nooru-sami-2026": {
+      "title": "Nooru Sami", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 64, "emotion": 72, "pacing": 50, "performances": 76, "rewatch": 58, "critics": 62, "audience": 68 },
+      "sources": [
+        { "name": "Sudhir Srinivasan", "url": "https://sudhir-srinivasan.com/2026/06/19/nooru-sami-movie-review-the-woman-in-the-mirror/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Janani K — India Today", "url": "https://www.indiatoday.in/movies/reviews/story/nooru-sami-review-swasika-vijay-antony-sasi-widow-remarriage-drama-2930067-2026-06-19", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Hindu via Rotten Tomatoes", "url": "https://www.rottentomatoes.com/m/nooru_sami", "kind": "Additional critic", "weight": 40 },
+        { "name": "Letterboxd audience response", "url": "https://letterboxd.com/film/nooru-sami/", "kind": "Audience", "weight": 20 }
+      ]
     }
   }
 }
