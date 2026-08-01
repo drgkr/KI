@@ -2,6 +2,408 @@
   "schemaVersion": 1,
   "description": "Approved evidence-backed ratings keyed by TMDB movie ID. Films without a record remain Not Yet Rated.",
   "ratings": {
+    "786345": {
+      "title": "Viduthalai Part 1",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 92,
+        "emotion": 91,
+        "pacing": 88,
+        "performances": 94,
+        "rewatch": 82,
+        "critics": 90,
+        "audience": 86
+      },
+      "sources": [
+        {
+          "name": "Sudhir Srinivasan — Cinema Express",
+          "url": "https://www.cinemaexpress.com/tamil/review/2023/Mar/31/viduthalai-part-1-movie-reviewlot-to-like-about-vetrimaarans-latest-attack-on-oppressors-41779.html",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Rotten Tomatoes critic collection",
+          "url": "https://www.rottentomatoes.com/m/viduthalai_part_1",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Viduthalai_Part_1#Critical_response",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt11396310/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/viduthalai-part-i/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "927342": {
+      "title": "Amaran",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 82,
+        "emotion": 91,
+        "pacing": 84,
+        "performances": 92,
+        "rewatch": 85,
+        "critics": 82,
+        "audience": 88
+      },
+      "sources": [
+        {
+          "name": "Avinash Ramachandran — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/amaran-movie-review-sai-pallavi-sivakarthikeyan-stand-tall-in-this-tale-of-timeless-love-9647436/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/tamil/review/2024/Oct/31/amaran-movie-review-an-emotional-triumph-but-some-questions-linger",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Amaran_(2024_film)#Critical_response",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt27118357/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/amaran-2024/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1007074": {
+      "title": "Jigarthanda DoubleX",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 88,
+        "emotion": 87,
+        "pacing": 76,
+        "performances": 91,
+        "rewatch": 86,
+        "critics": 84,
+        "audience": 88
+      },
+      "sources": [
+        {
+          "name": "Kirubhakar Purushothaman — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/jigarthanda-doublex-movie-review-karthik-subbarajs-ode-to-cinema-raghava-lawrence-sj-suryah-9021705/lite/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Logesh Balachandran — Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/jigarthanda-doublex/movie-review/105124930.cms",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Jigarthanda_DoubleX#Critical_response",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt24226474/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/jigarthanda-doublex/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1051426": {
+      "title": "Vaazhai",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 91,
+        "emotion": 96,
+        "pacing": 84,
+        "performances": 92,
+        "rewatch": 78,
+        "critics": 92,
+        "audience": 87
+      },
+      "sources": [
+        {
+          "name": "Avinash Ramachandran — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/vaazhai-movie-review-an-uncompromising-unadulterated-and-powerful-journey-to-the-core-of-mari-selvarajs-mind-9528685/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Rotten Tomatoes critic collection",
+          "url": "https://www.rottentomatoes.com/m/vaazhai",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Vaazhai#Critical_reception",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt23782140/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/vaazhai/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1097000": {
+      "title": "Lubber Pandhu",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 90,
+        "emotion": 87,
+        "pacing": 91,
+        "performances": 89,
+        "rewatch": 91,
+        "critics": 88,
+        "audience": 86
+      },
+      "sources": [
+        {
+          "name": "Avinash Ramachandran — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/lubber-pandhu-movie-review-sports-spice-and-everything-nice-perfectly-come-together-in-this-riveting-family-drama-9576922/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Sudhir Srinivasan — Cinema Express",
+          "url": "https://www.youtube.com/watch?v=W7CVt6UPgOU",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Lubber_Pandhu#Critical_reception",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt27007466/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/lubber-pandhu/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1115239": {
+      "title": "Por Thozhil",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 86,
+        "emotion": 78,
+        "pacing": 92,
+        "performances": 87,
+        "rewatch": 85,
+        "critics": 86,
+        "audience": 84
+      },
+      "sources": [
+        {
+          "name": "Kirubhakar Purushothaman — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/por-thozhil-review-debutant-vignesh-raja-delivers-an-engaging-buddy-cop-film-8652356/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Por_Thozhil#Critical_reception",
+          "kind": "Additional critic",
+          "weight": 60
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt27542289/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/por-thozhil/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1115253": {
+      "title": "Chithha",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 93,
+        "emotion": 95,
+        "pacing": 88,
+        "performances": 94,
+        "rewatch": 78,
+        "critics": 94,
+        "audience": 88
+      },
+      "sources": [
+        {
+          "name": "Sudhir Srinivasan, Suganth and Kirubhakar Purushothaman — critical roundup",
+          "url": "https://en.wikipedia.org/wiki/Chithha#Critical_reception",
+          "kind": "Lead critic",
+          "weight": 80
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt27540185/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/chithha/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1118224": {
+      "title": "Maharaja",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 78,
+        "emotion": 88,
+        "pacing": 85,
+        "performances": 91,
+        "rewatch": 82,
+        "critics": 68,
+        "audience": 86
+      },
+      "sources": [
+        {
+          "name": "Kirubhakar Purushothaman — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/maharaja-movie-review-contrived-screenplay-overshadows-the-few-good-things-in-vijay-sethupathis-film-9389245/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Sudhir Srinivasan — Cinema Express",
+          "url": "https://www.cinemaexpress.com/tamil/review/2024/Jun/14/maharaja-movie-review-an-unforgettable-finish-makes-this-a-winning-thriller",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Roopa Radhakrishnan — Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/maharaja/amp_movie_review/110948075.cms",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Maharaja_(2024_film)#Critical_response",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt26548265/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/maharaja-2024/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
+    "1136418": {
+      "title": "Raayan",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 68,
+        "emotion": 75,
+        "pacing": 80,
+        "performances": 86,
+        "rewatch": 74,
+        "critics": 66,
+        "audience": 74
+      },
+      "sources": [
+        {
+          "name": "Avinash Ramachandran — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/raayan-movie-review-dhanush-crafts-an-almost-compelling-film-that-needed-a-lot-more-heft-9476996/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/tamil/review/2024/Jul/26/raayan-movie-review-dhanush-cooks-a-gangster-film-thats-tasty-in-its-restraint",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Critical reception roundup",
+          "url": "https://en.wikipedia.org/wiki/Raayan#Critical_response",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt26233598/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/raayan/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
     "1136423": {
       "title": "Meiyazhagan",
       "assessedAt": "2026-08-01",
@@ -54,112 +456,96 @@
         }
       ]
     },
-    "1118224": {
-      "title": "Maharaja", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 78, "emotion": 88, "pacing": 85, "performances": 91, "rewatch": 82, "critics": 68, "audience": 86 },
-      "sources": [
-        { "name": "Kirubhakar Purushothaman — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/maharaja-movie-review-contrived-screenplay-overshadows-the-few-good-things-in-vijay-sethupathis-film-9389245/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Sudhir Srinivasan — Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2024/Jun/14/maharaja-movie-review-an-unforgettable-finish-makes-this-a-winning-thriller", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Roopa Radhakrishnan — Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/maharaja/amp_movie_review/110948075.cms", "kind": "Additional critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Maharaja_(2024_film)#Critical_response", "kind": "Additional critic", "weight": 20 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt26548265/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/maharaja-2024/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "1097000": {
-      "title": "Lubber Pandhu", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 90, "emotion": 87, "pacing": 91, "performances": 89, "rewatch": 91, "critics": 88, "audience": 86 },
-      "sources": [
-        { "name": "Avinash Ramachandran — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/lubber-pandhu-movie-review-sports-spice-and-everything-nice-perfectly-come-together-in-this-riveting-family-drama-9576922/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Sudhir Srinivasan — Cinema Express", "url": "https://www.youtube.com/watch?v=W7CVt6UPgOU", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Lubber_Pandhu#Critical_reception", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27007466/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/lubber-pandhu/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "1051426": {
-      "title": "Vaazhai", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 91, "emotion": 96, "pacing": 84, "performances": 92, "rewatch": 78, "critics": 92, "audience": 87 },
-      "sources": [
-        { "name": "Avinash Ramachandran — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/vaazhai-movie-review-an-uncompromising-unadulterated-and-powerful-journey-to-the-core-of-mari-selvarajs-mind-9528685/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Rotten Tomatoes critic collection", "url": "https://www.rottentomatoes.com/m/vaazhai", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Vaazhai#Critical_reception", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt23782140/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/vaazhai/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "927342": {
-      "title": "Amaran", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 82, "emotion": 91, "pacing": 84, "performances": 92, "rewatch": 85, "critics": 82, "audience": 88 },
-      "sources": [
-        { "name": "Avinash Ramachandran — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/amaran-movie-review-sai-pallavi-sivakarthikeyan-stand-tall-in-this-tale-of-timeless-love-9647436/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2024/Oct/31/amaran-movie-review-an-emotional-triumph-but-some-questions-linger", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Amaran_(2024_film)#Critical_response", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27118357/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/amaran-2024/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "1136418": {
-      "title": "Raayan", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 68, "emotion": 75, "pacing": 80, "performances": 86, "rewatch": 74, "critics": 66, "audience": 74 },
-      "sources": [
-        { "name": "Avinash Ramachandran — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/raayan-movie-review-dhanush-crafts-an-almost-compelling-film-that-needed-a-lot-more-heft-9476996/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2024/Jul/26/raayan-movie-review-dhanush-cooks-a-gangster-film-thats-tasty-in-its-restraint", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Raayan#Critical_response", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt26233598/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/raayan/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
     "1186312": {
-      "title": "Garudan", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 76, "emotion": 82, "pacing": 83, "performances": 88, "rewatch": 78, "critics": 76, "audience": 80 },
+      "title": "Garudan",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 76,
+        "emotion": 82,
+        "pacing": 83,
+        "performances": 88,
+        "rewatch": 78,
+        "critics": 76,
+        "audience": 80
+      },
       "sources": [
-        { "name": "Baradwaj Rangan — Galatta Plus", "url": "https://www.youtube.com/watch?v=ROmIfVKC3jY", "kind": "Lead critic", "weight": 20 },
-        { "name": "Kirubhakar Purushothaman — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/garudan-movie-review-a-gripping-tale-of-mahabhartas-karnan-choosing-whats-right-over-loyalty-9363769/", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2024/May/31/garudan-movie-review-this-hyper-violent-rooted-action-drama-gets-better-as-it-goes", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27561663/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/garudan-2024/ratings/", "kind": "Audience", "weight": 10 }
+        {
+          "name": "Baradwaj Rangan — Galatta Plus",
+          "url": "https://www.youtube.com/watch?v=ROmIfVKC3jY",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Kirubhakar Purushothaman — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/garudan-movie-review-a-gripping-tale-of-mahabhartas-karnan-choosing-whats-right-over-loyalty-9363769/",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2024/May/31/garudan-movie-review-this-hyper-violent-rooted-action-drama-gets-better-as-it-goes",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt27561663/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/garudan-2024/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
       ]
     },
-    "1007074": {
-      "title": "Jigarthanda DoubleX", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 88, "emotion": 87, "pacing": 76, "performances": 91, "rewatch": 86, "critics": 84, "audience": 88 },
+    "1432631": {
+      "title": "Idhayam Murali",
+      "assessedAt": "2026-08-01",
+      "confidence": "Medium",
+      "scores": {
+        "writing": 60,
+        "emotion": 58,
+        "pacing": 54,
+        "performances": 70,
+        "rewatch": 62,
+        "critics": 58,
+        "audience": 64
+      },
       "sources": [
-        { "name": "Kirubhakar Purushothaman — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/jigarthanda-doublex-movie-review-karthik-subbarajs-ode-to-cinema-raghava-lawrence-sj-suryah-9021705/lite/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Logesh Balachandran — Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/jigarthanda-doublex/movie-review/105124930.cms", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Jigarthanda_DoubleX#Critical_response", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt24226474/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/jigarthanda-doublex/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "1115253": {
-      "title": "Chithha", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 93, "emotion": 95, "pacing": 88, "performances": 94, "rewatch": 78, "critics": 94, "audience": 88 },
-      "sources": [
-        { "name": "Sudhir Srinivasan, Suganth and Kirubhakar Purushothaman — critical roundup", "url": "https://en.wikipedia.org/wiki/Chithha#Critical_reception", "kind": "Lead critic", "weight": 80 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27540185/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/chithha/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "786345": {
-      "title": "Viduthalai Part 1", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 92, "emotion": 91, "pacing": 88, "performances": 94, "rewatch": 82, "critics": 90, "audience": 86 },
-      "sources": [
-        { "name": "Sudhir Srinivasan — Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2023/Mar/31/viduthalai-part-1-movie-reviewlot-to-like-about-vetrimaarans-latest-attack-on-oppressors-41779.html", "kind": "Lead critic", "weight": 20 },
-        { "name": "Rotten Tomatoes critic collection", "url": "https://www.rottentomatoes.com/m/viduthalai_part_1", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Viduthalai_Part_1#Critical_response", "kind": "Additional critic", "weight": 40 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt11396310/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/viduthalai-part-i/ratings/", "kind": "Audience", "weight": 10 }
-      ]
-    },
-    "1115239": {
-      "title": "Por Thozhil", "assessedAt": "2026-08-01", "confidence": "High",
-      "scores": { "writing": 86, "emotion": 78, "pacing": 92, "performances": 87, "rewatch": 85, "critics": 86, "audience": 84 },
-      "sources": [
-        { "name": "Kirubhakar Purushothaman — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/por-thozhil-review-debutant-vignesh-raja-delivers-an-engaging-buddy-cop-film-8652356/", "kind": "Lead critic", "weight": 20 },
-        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Por_Thozhil#Critical_reception", "kind": "Additional critic", "weight": 60 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27542289/ratings/", "kind": "Audience", "weight": 10 },
-        { "name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/por-thozhil/ratings/", "kind": "Audience", "weight": 10 }
+        {
+          "name": "M Suganth — The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/idhayam-murali/amp_movie_review/132307036.cms",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Janani K — India Today",
+          "url": "https://www.indiatoday.in/movies/reviews/story/idhayam-murali-review-atharvaas-love-story-fails-to-confess-its-own-feelings-2944867-2026-07-10",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Latha Srinivasan — NDTV",
+          "url": "https://www.ndtv.com/entertainment/idhayam-murali-review-a-breezy-rom-com-that-entertains-in-parts-3-stars-11753642",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "Rotten Tomatoes critic collection",
+          "url": "https://www.rottentomatoes.com/m/idhayam_murali",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "r/kollywood review megathread",
+          "url": "https://www.reddit.com/r/kollywood/comments/1uscy8y/idhayam_murali_review_megathread/",
+          "kind": "Audience",
+          "weight": 20
+        }
       ]
     },
     "with-love-2026": {
@@ -176,16 +562,66 @@
         "audience": 87
       },
       "sources": [
-        { "name": "Vishal Menon — The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/with-love-movie-review-an-orkut-era-rom-com-told-with-reels-era-freshness", "kind": "Lead critic", "weight": 20 },
-        { "name": "Yashaswini Sri — The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/with-love-movie-review-a-love-letter-to-every-love-you-never-confessed-10517124/", "kind": "Second lead critic", "weight": 20 },
-        { "name": "Roopa Radhakrishnan — The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/with-love/amp_movie_review/127984487.cms", "kind": "Additional critic", "weight": 10 },
-        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Feb/06/with-love-movie-review-a-no-frills-romance-with-just-enough-sugar-spice-and-everything-nice", "kind": "Additional critic", "weight": 10 },
-        { "name": "Ashwin Ram — MovieCrow", "url": "https://www.moviecrow.com/movie/5439/with-love-tamil-movie-review/review", "kind": "Additional critic", "weight": 8 },
-        { "name": "Lensmen Reviews", "url": "https://lensmenreviews.com/with-love-tamil-movie-review-2026/", "kind": "Additional critic", "weight": 6 },
-        { "name": "Venkatarangan — Mangoidiots", "url": "https://venkatarangan.com/blog/2026/02/with-love-2026-tamil-film-review/", "kind": "Additional critic", "weight": 6 },
-        { "name": "Rotten Tomatoes audience response", "url": "https://www.rottentomatoes.com/m/with_love_2026", "kind": "Audience", "weight": 7 },
-        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt38123566/ratings/", "kind": "Audience", "weight": 7 },
-        { "name": "r/kollywood review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1qweauj/with_love_review_megathread/", "kind": "Audience", "weight": 6 }
+        {
+          "name": "Vishal Menon — The Hollywood Reporter India",
+          "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/with-love-movie-review-an-orkut-era-rom-com-told-with-reels-era-freshness",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Yashaswini Sri — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/with-love-movie-review-a-love-letter-to-every-love-you-never-confessed-10517124/",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Roopa Radhakrishnan — The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/with-love/amp_movie_review/127984487.cms",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Feb/06/with-love-movie-review-a-no-frills-romance-with-just-enough-sugar-spice-and-everything-nice",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "Ashwin Ram — MovieCrow",
+          "url": "https://www.moviecrow.com/movie/5439/with-love-tamil-movie-review/review",
+          "kind": "Additional critic",
+          "weight": 8
+        },
+        {
+          "name": "Lensmen Reviews",
+          "url": "https://lensmenreviews.com/with-love-tamil-movie-review-2026/",
+          "kind": "Additional critic",
+          "weight": 6
+        },
+        {
+          "name": "Venkatarangan — Mangoidiots",
+          "url": "https://venkatarangan.com/blog/2026/02/with-love-2026-tamil-film-review/",
+          "kind": "Additional critic",
+          "weight": 6
+        },
+        {
+          "name": "Rotten Tomatoes audience response",
+          "url": "https://www.rottentomatoes.com/m/with_love_2026",
+          "kind": "Audience",
+          "weight": 7
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt38123566/ratings/",
+          "kind": "Audience",
+          "weight": 7
+        },
+        {
+          "name": "r/kollywood review megathread",
+          "url": "https://www.reddit.com/r/kollywood/comments/1qweauj/with_love_review_megathread/",
+          "kind": "Audience",
+          "weight": 6
+        }
       ]
     }
   }
