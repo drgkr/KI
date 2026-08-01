@@ -46,7 +46,7 @@ export default function Home() {
   const [source, setSource] = useState<"sample" | "tmdb">("sample");
   const [sortBy, setSortBy] = useState<"year" | "rating">("year");
   const [query, setQuery] = useState("");
-  const [visibleCount, setVisibleCount] = useState(100);
+  const [visibleCount, setVisibleCount] = useState(500);
   const [draftScores, setDraftScores] = useState<Partial<Scores>>({});
   const rail = useRef<HTMLDivElement>(null);
   const film = films[selected] || films[0];
@@ -72,7 +72,7 @@ export default function Home() {
     });
   }, [films, query, sortBy]);
   const visibleLibrary = library.slice(0, visibleCount);
-  useEffect(() => setVisibleCount(100), [query, sortBy]);
+  useEffect(() => setVisibleCount(500), [query, sortBy]);
   const activeIndex = newest.findIndex(f => f.id === film.id);
   const choose = (chosen: Film) => { setSelected(films.findIndex(f => f.id === chosen.id)); setEditing(false); setDraftScores({}); setDetailOpen(true); };
   const closeDetail = () => { setDetailOpen(false); setEditing(false); setDraftScores({}); };
