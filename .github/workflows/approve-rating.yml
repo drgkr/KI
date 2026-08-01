@@ -1,0 +1,36 @@
+name: Approve film rating
+
+on:
+  workflow_dispatch:
+    inputs:
+      tmdb_movie_id:
+        description: "TMDB movie ID shown with the prepared rating"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rating-approval
+  cancel-in-progress: false
+
+jobs:
+  approve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate and approve rating
+        run: npm run ratings:approve
+        env:
+          TMDB_MOVIE_ID: ${{ inputs.tmdb_movie_id }}
+      - name: Publish approved rating
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/scores.json public/data/pending-scores.json
+          git commit -m "Approve film rating ${{ inputs.tmdb_movie_id }}"
+          git push
