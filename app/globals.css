@@ -62,6 +62,19 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .detail-modal .score-row{grid-template-columns:minmax(150px,1fr) 60px 55px}
 .detail-modal .bar{height:6px;border-radius:999px;overflow:hidden}
 .detail-modal .bar i{border-radius:999px;background-image:none;transition:width .3s ease,background-color .3s ease}
+
+/* Compact hero title and vintage cinema ornament */
+.hero h1{font-size:clamp(29px,4.5vw,66px);line-height:.9;letter-spacing:-.045em;max-width:620px}
+.film-reel{position:absolute;right:9vw;top:190px;width:280px;height:245px;z-index:2;filter:drop-shadow(0 22px 28px rgba(0,0,0,.45))}
+.film-reel svg{display:block;width:100%;height:100%;overflow:visible}
+.reel-disc>circle:first-child{fill:url(#reel-metal);stroke:#efd69f;stroke-width:2}
+.reel-rim{fill:none;stroke:rgba(39,24,10,.72);stroke-width:4}
+.reel-hole{fill:var(--ink);stroke:#e1bd79;stroke-width:3}
+.reel-hub{fill:#2b2118;stroke:#f1d292;stroke-width:4}
+.film-tail{fill:none;stroke:#b58a4c;stroke-width:17;stroke-linecap:round}
+.film-edge{fill:none;stroke:#2d2114;stroke-width:2;stroke-dasharray:5 7;stroke-linecap:round}
+@media(max-width:800px){.hero h1{font-size:32px}.film-reel{width:170px;height:150px;right:10px;top:390px}}
+@media(max-width:480px){.hero h1{font-size:26px}.film-reel{width:145px;height:128px;top:405px}}
 .detail-modal .confidence{grid-template-columns:90px 96px minmax(0,1fr);gap:18px;padding:20px}
 .detail-modal .confidence>strong{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#329760;color:#fff;font:700 15px/1 Arial;letter-spacing:.05em;box-shadow:0 8px 24px rgba(50,151,96,.28)}
 .detail-modal .confidence.medium>strong{background:#d69b32;color:#17120a;box-shadow:0 8px 24px rgba(214,155,50,.25)}

@@ -22,6 +22,10 @@ const samples: Film[] = [
 ];
 
 const total = (scores: Scores | null) => scores ? Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0)) : null;
+const scoreColour = (score: number) => {
+  const hue = score <= 50 ? score * 0.96 : 48 + (score - 50) * 1.74;
+  return `hsl(${hue} 72% 42%)`;
+};
 
 function Poster({ film }: { film: Film }) {
   if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
@@ -34,7 +38,7 @@ function ScoreMeter({ film }: { film: Film }) {
     <div className="score-capsule">
       {score === null
         ? <span className="score-value">NR</span>
-        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: `hsl(${score * 1.2} 68% 38%)` }}>{score}</strong>}
+        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: scoreColour(score) }}>{score}</strong>}
     </div>
   </div>;
 }
@@ -121,7 +125,14 @@ export default function Home() {
       <h1>Your next great<br/><em>film starts here.</em></h1>
       <p>Explore a focused selection of Tamil films, search the complete archive, and understand every published score at a glance.</p>
       <a className="text-link" href="#library">Explore the collection <span>↘</span></a>
-      <div className="hero-score" aria-hidden="true"><span>LOOK BEYOND ONE NUMBER</span><strong>7</strong><small>creative lenses<br/>one considered view</small></div>
+      <div className="film-reel" aria-hidden="true">
+        <svg viewBox="0 0 280 245" role="presentation">
+          <defs><linearGradient id="reel-metal" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#d5b270"/><stop offset=".5" stopColor="#795931"/><stop offset="1" stopColor="#e1c58c"/></linearGradient></defs>
+          <g className="reel-disc"><circle cx="116" cy="105" r="82"/><circle className="reel-rim" cx="116" cy="105" r="72"/><circle className="reel-hole" cx="116" cy="53" r="21"/><circle className="reel-hole" cx="165" cy="89" r="21"/><circle className="reel-hole" cx="147" cy="148" r="21"/><circle className="reel-hole" cx="85" cy="148" r="21"/><circle className="reel-hole" cx="66" cy="89" r="21"/><circle className="reel-hub" cx="116" cy="105" r="12"/></g>
+          <path className="film-tail" d="M166 164 C217 170 246 191 238 221 C230 242 190 236 197 211 C202 194 226 198 263 207"/>
+          <path className="film-edge" d="M168 174 C210 178 228 193 224 211"/>
+        </svg>
+      </div>
     </section>
 
     <section className="film-section" id="films">
@@ -168,7 +179,7 @@ export default function Home() {
         <div className="score-head"><div><span className="kicker">SCORE BREAKDOWN</span><p>{film.scores ? "Seven measures combine to create the published result." : "A score appears only after all seven measures have supporting evidence."}</p></div>{editing ? <button className="edit" disabled={!draftComplete} onClick={saveDraft}>Keep private draft</button> : <button className="edit" onClick={beginEditing}>{film.scores ? "Test different scores" : "Try a private score"}</button>}</div>
         <div className="score-list">
           {weights.map(item => { const metricValue = editing ? draftScores[item.key] : film.scores?.[item.key]; return <div className="score-row" key={item.key}>
-            <div className="metric"><div><strong>{item.label}</strong><span>{item.weight}% weight</span></div><div className="bar"><i style={{width: `${metricValue ?? 0}%`, backgroundColor: metricValue === undefined ? "#52656a" : `hsl(${metricValue * 1.2} 68% 43%)`}}/></div></div>
+            <div className="metric"><div><strong>{item.label}</strong><span>{item.weight}% weight</span></div><div className="bar"><i style={{width: `${metricValue ?? 0}%`, backgroundColor: metricValue === undefined ? "#52656a" : scoreColour(metricValue)}}/></div></div>
             {editing ? <input aria-label={`${item.label} score`} type="number" min="0" max="100" value={draftScores[item.key] ?? ""} placeholder="—" onChange={e => setDraftScores(current => ({ ...current, [item.key]: Math.max(0, Math.min(100, Number(e.target.value))) }))}/> : <strong className="metric-score">{film.scores?.[item.key] ?? "—"}</strong>}
             <small>{(editing ? draftScores[item.key] : film.scores?.[item.key]) === undefined ? "—" : `+${(((editing ? draftScores[item.key] : film.scores?.[item.key]) || 0) * item.weight / 100).toFixed(1)}`}</small>
           </div>})}
