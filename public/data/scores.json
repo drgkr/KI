@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "description": "Approved evidence-backed ratings keyed by TMDB movie ID. Films without a record remain Not Yet Rated.",
+  "ratings": {}
+}
