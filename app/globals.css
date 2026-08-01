@@ -93,8 +93,8 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .featured-strip .section-heading{padding-bottom:18px;align-items:center}
 .featured-strip .section-heading h2{font-size:clamp(27px,3vw,43px);margin:7px 0}
 .featured-strip .section-heading p{margin-top:5px;font-size:13px}
-.featured-strip .poster-rail{gap:12px;padding-bottom:14px}
-.featured-strip .poster-card{flex-basis:clamp(92px,6.8vw,112px)}
+.featured-strip .poster-rail{gap:16px;padding-bottom:14px}
+.featured-strip .poster-card{flex-basis:clamp(110px,7.8vw,140px)}
 .featured-strip .poster-card .rank{top:7px;left:7px;padding:5px;font-size:8px}
 .featured-strip .score-capsule{height:28px}
 .featured-strip .score-bubble{width:26px;height:26px;font-size:10px}
