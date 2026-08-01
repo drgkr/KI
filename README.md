@@ -48,9 +48,19 @@ Import the repository, add `TMDB_API_KEY` under Environment Variables, and deplo
 
 The repository includes a GitHub Actions workflow that builds and publishes the site automatically. In **Settings → Secrets and variables → Actions**, create a repository secret named `TMDB_API_KEY`. Then open **Settings → Pages** and choose **GitHub Actions** as the source. Every push to `main` republishes the site, and a weekly scheduled build refreshes the Tamil catalogue. The key is used only during the private build and is never shipped to visitors.
 
-## Editing scores
+The catalogue refresh runs every Monday. It retrieves up to 1,000 Tamil films from TMDB, with the newest first, and automatically updates metadata, posters and cast information in that deployment. Films without an approved editorial assessment remain clearly marked **NR**.
 
-Select a film, choose **Edit scores**, and enter values from 0–100. Changes persist in that browser using local storage. For a shared production database, connect the same schema to D1, Supabase, or another datastore and add administrator authentication.
+## Preparing and approving scores
+
+Public scores use a two-stage process so an unfinished or unverified assessment cannot appear accidentally:
+
+1. Add the proposed record to `public/data/pending-scores.json`, keyed by its numeric TMDB movie ID.
+2. Open **Actions → Approve film rating → Run workflow** in GitHub.
+3. Enter that TMDB movie ID and run the workflow.
+4. The workflow validates all seven scores, the confidence level, source links and a source-weight total of exactly 100.
+5. A valid record is moved into `public/data/scores.json`, committed, and published through the normal Pages deployment.
+
+You can still use **Edit scores** on the film detail screen for private experimentation. Browser edits remain only on that device and never overwrite an approved public assessment.
 
 ## Data and attribution
 
