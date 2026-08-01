@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const key = process.env.TMDB_API_KEY;
 const output = new URL("../public/data/movies.json", import.meta.url);
@@ -11,15 +11,14 @@ if (!key) {
   process.exit(0);
 }
 
-const defaultScores = {
-  writing: 75,
-  emotion: 75,
-  pacing: 75,
-  performances: 75,
-  rewatch: 75,
-  critics: 75,
-  audience: 75,
-};
+const ratingsFile = new URL("../public/data/scores.json", import.meta.url);
+let approvedRatings = {};
+try {
+  const scoreData = JSON.parse(await readFile(ratingsFile, "utf8"));
+  approvedRatings = scoreData.ratings || {};
+} catch {
+  console.log("No approved ratings file found; films will be published as not yet rated.");
+}
 
 const query = {
   api_key: key,
@@ -55,6 +54,7 @@ const selected = discovered.slice(0, maxFilms);
 for (let start = 0; start < selected.length; start += detailBatchSize) {
   const batch = await Promise.all(selected.slice(start, start + detailBatchSize).map(async (movie) => {
     const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits`);
+    const rating = approvedRatings[String(movie.id)];
     return {
     id: movie.id,
     title: movie.title,
@@ -67,9 +67,11 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     genres: detail.genres?.map((genre) => genre.name) || [],
     cast: detail.credits?.cast?.slice(0, 5).map((person) => person.name) || [],
     overview: movie.overview || "Synopsis unavailable.",
-    confidence: "Low",
-    sourceCount: 0,
-    scores: defaultScores,
+    confidence: rating?.confidence || null,
+    sourceCount: rating?.sources?.length || 0,
+    sources: rating?.sources || [],
+    scores: rating?.scores || null,
+    ratingStatus: rating ? "rated" : "unrated",
     };
   }));
   movies.push(...batch);
