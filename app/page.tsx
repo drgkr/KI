@@ -31,8 +31,9 @@ function ScoreMeter({ film }: { film: Film }) {
   const score = total(film.scores);
   return <div className={`score-meter ${score === null ? "unrated" : ""}`} aria-label={score === null ? "Not rated" : `Score ${score} out of 100`}>
     <div className="score-capsule">
-      <span className="score-value">{score ?? "NR"}</span>
-      {score !== null && <i className="score-marker" style={{ left: `${score}%` }}/>} 
+      {score === null
+        ? <span className="score-value">NR</span>
+        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: `hsl(${score * 1.2} 68% 38%)` }}>{score}</strong>}
     </div>
   </div>;
 }
