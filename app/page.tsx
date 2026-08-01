@@ -23,11 +23,11 @@ const samples: Film[] = [
 
 const total = (scores: Scores | null) => scores ? Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0)) : null;
 const scoreColour = (score: number) => {
-  if (score >= 81) return "#238b57";
-  if (score >= 61) return "#9bcf83";
-  if (score >= 41) return "#f2c94c";
-  if (score >= 21) return "#ed8b35";
-  return "#cf3f35";
+  if (score >= 81) return "#3f7657";
+  if (score >= 61) return "#8fad7c";
+  if (score >= 41) return "#c8aa55";
+  if (score >= 21) return "#c47a45";
+  return "#a94f49";
 };
 const scoreTextColour = (score: number) => score >= 41 && score <= 80 ? "#142019" : "#ffffff";
 
