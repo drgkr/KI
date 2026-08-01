@@ -62,6 +62,39 @@ Public scores use a two-stage process so an unfinished or unverified assessment 
 
 You can still use **Edit scores** on the film detail screen for private experimentation. Browser edits remain only on that device and never overwrite an approved public assessment.
 
+## Automated Gemini research batches
+
+The repository includes an optional evidence-first Gemini workflow. It uses Google Search grounding to discover current review coverage, then makes a separate structured-output request to produce the seven dimension scores. Source URLs must come from the grounded allow-list; the validator rejects invented URLs, duplicate sources, invalid scores, source weights that do not total 100, fewer than three professional critics, or a missing audience signal. Films that fail these checks remain **NR**.
+
+### One-time setup
+
+1. Create a Gemini API key in Google AI Studio.
+2. In GitHub, open **Settings → Secrets and variables → Actions**.
+3. Add a repository secret named `GEMINI_API_KEY`.
+4. Keep the existing `TMDB_API_KEY` secret in the same location.
+5. Optionally add an Actions variable named `GEMINI_MODEL`; the default is `gemini-2.5-flash`.
+
+### Prepare a batch
+
+1. Open **Actions → Prepare Gemini film ratings → Run workflow**.
+2. Start with a batch size of `10` and start index `0`.
+3. Open the completed run summary. It lists prepared ratings and films kept as NR with reasons.
+4. Inspect `public/data/pending-scores.json` before approval.
+
+The workflow refreshes the 1,000-film TMDB catalogue privately during the run, skips films that already have approved or pending assessments, and processes at most 25 films per run. It commits only prepared drafts and the audit report—not the temporary catalogue refresh.
+
+### Approve a reviewed batch
+
+Open **Actions → Approve film rating → Run workflow** and enter one of:
+
+- one numeric TMDB movie ID;
+- several IDs separated by commas; or
+- `all` to approve every currently prepared rating.
+
+Approval performs a second deterministic validation before moving records into the public score database. Use `all` only after reviewing the entire pending batch.
+
+Google Search grounding and Gemini model usage may be billable. A single film can trigger multiple search queries, so use small batches and monitor Google AI Studio usage.
+
 ## Data and attribution
 
 This product uses the TMDB API but is not endorsed or certified by TMDB. Movie data, posters and images are provided by The Movie Database (TMDB). This independent, non-commercial project is for cultural discovery and commentary. It is not affiliated with any film studio, distributor, critic, Reddit or Letterboxd. All film artwork and trademarks remain the property of their respective owners.
