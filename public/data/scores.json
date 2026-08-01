@@ -723,6 +723,106 @@
         { "name": "The Hindu via Rotten Tomatoes", "url": "https://www.rottentomatoes.com/m/nooru_sami", "kind": "Additional critic", "weight": 40 },
         { "name": "Letterboxd audience response", "url": "https://letterboxd.com/film/nooru-sami/", "kind": "Audience", "weight": 20 }
       ]
+    },
+    "parimala-and-co-2026": {
+      "title": "Parimala and Co", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 42, "emotion": 45, "pacing": 48, "performances": 65, "rewatch": 43, "critics": 40, "audience": 48 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/parimala-and-co-movie-review-jayaram-urvashi-mysskin-pandiraaj-10724782/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Lensmen Reviews", "url": "https://lensmenreviews.com/parimala-and-co-tamil-movie-review-2026/", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Deccan Reviews", "url": "https://deccanreviews.com/parimala-and-co-tamil-movie-review-2026/", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/IndianCinema/comments/1ut9pzv/parimala_and_co_a_surprisingly_entertaining/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "blast-2026": {
+      "title": "Blast", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 58, "emotion": 64, "pacing": 65, "performances": 68, "rewatch": 65, "critics": 62, "audience": 68 },
+      "sources": [
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/May/30/tamilreview2026may29blast-movie-review-the-karate-kid-and-family-have-loads-of-fun-despite-a-few-missed-punches", "kind": "Lead critic", "weight": 20 },
+        { "name": "Dinamani", "url": "https://www.dinamani.com/cinema/cinema-news/2026/May/28/blast-movie-review", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Filmibeat Tamil", "url": "https://tamil.filmibeat.com/reviews/blast-movie-review-arjun-s-action-packed-thriller-delivers-mass-moments-but-does-the-story-impress-178115.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1tpwqo0/blast_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "sattendru-maarudhu-vaanilai-2026": {
+      "title": "Sattendru Maarudhu Vaanilai", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 20, "emotion": 24, "pacing": 25, "performances": 38, "rewatch": 20, "critics": 22, "audience": 25 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/May/15/sattendru-maarudhu-vaanilai-movie-review-irredeemable-even-if-youre-in-the-mood-for-brainrot", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/sattendru-maarudhu-vaanilai/movie-review/131132869.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Deccan Reviews", "url": "https://deccanreviews.com/sattendru-maarudhu-vaanilai-tamil-movie-review-2026/", "kind": "Additional critic", "weight": 40 },
+        { "name": "Filmibeat user response", "url": "https://www.filmibeat.com/tamil/movies/sattendru-maarudhu-vaanilai.html", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "kara-2026": {
+      "title": "Kara", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 70, "emotion": 72, "pacing": 65, "performances": 82, "rewatch": 68, "critics": 69, "audience": 70 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/kara-movie-review-dhanush-single-handedly-carries-this-slow-burn-heist-thriller-10664113/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/Apr/30/tamilreview2026apr30kara-movie-review-a-soaring-heist-drama-pegged-down-by-a-few-dramatic-blotches", "kind": "Second lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/kara-review-dhanushs-heist-film-knows-the-drill-but-misses-the-jackpot-2903700-2026-04-30", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1sz53zk/kara_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "29-2026": {
+      "title": "29", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 64, "emotion": 68, "pacing": 58, "performances": 67, "rewatch": 61, "critics": 60, "audience": 65 },
+      "sources": [
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/29-review-rathna-kumar-love-ambition-identity-crisis-2908703-2026-05-08", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/29/amp_movie_review/130959218.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Filmibeat Tamil", "url": "https://tamil.filmibeat.com/reviews/29-movie-review-in-tamil-rathnakumar-passed-with-his-love-and-goal-story-176867.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1txxvio/29_2026_now_streaming_on_netflix/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "mr-x-2026": {
+      "title": "Mr. X", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 48, "emotion": 45, "pacing": 58, "performances": 69, "rewatch": 55, "critics": 52, "audience": 58 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/mr-x/amp_movie_review/130329139.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/Apr/18/tamilreview2026apr17mr-x-movie-review-a-campy-confident-but-chaotic-espionage-thriller", "kind": "Second lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1snsbio/mr_x_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "love-insurance-kompany-2026": {
+      "title": "Love Insurance Kompany", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 65, "emotion": 69, "pacing": 68, "performances": 78, "rewatch": 69, "critics": 65, "audience": 66 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/love-insurance-kompany-review-pradeep-ranganathan-krithi-shetty-anchor-inventive-rom-com-10629448/", "kind": "Lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/love-insurance-kompany-review-pradeep-ranganathan-and-sj-suryah-rom-com-entertains-more-than-it-convinces-2894295-2026-04-10", "kind": "Second lead critic", "weight": 20 },
+        { "name": "NDTV", "url": "https://www.ndtv.com/entertainment/love-insurance-kompany-review-vignesh-shivans-film-is-a-let-down-2-5-stars-11337882", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1sgwqth/love_insurance_kompany_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "youth-2026": {
+      "title": "Youth", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 53, "emotion": 60, "pacing": 62, "performances": 69, "rewatch": 59, "critics": 58, "audience": 55 },
+      "sources": [
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/Mar/21/tamilreview2026mar20youth-movie-review-the-kids-are-alright", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Federal", "url": "https://thefederal.com/film-reviews/tamil-movie-youth-review-a-cliched-tamil-hero-triumphs-against-himself-235012", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Lensmen Reviews", "url": "https://lensmenreviews.com/youth-tamil-movie-review-2026/", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1rxfcwf/youth_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "happy-raj-2026": {
+      "title": "Happy Raj", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 57, "emotion": 68, "pacing": 54, "performances": 72, "rewatch": 59, "critics": 59, "audience": 66 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Mar/27/happy-raj-movie-review-a-dignified-george-maryan-stands-tall-in-this-imperfect-but-warm-ride", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/happy-raj/movie-review/129797129.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/amp/showbuzz/reviews/story/happy-raj-film-review-social-insecurity-humour-performance-2888116-2026-03-28", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/IndianCinema/comments/1sgidb7/just_watched_happy_raj_and_honestly_it_deserves/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "my-lord-2026": {
+      "title": "My Lord", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 68, "emotion": 72, "pacing": 62, "performances": 71, "rewatch": 61, "critics": 66, "audience": 72 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/my-lord/movie-review/128253273.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Feb/13/social-media-deems-my-lord-as-hard-hitting-and-award-worthy", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical review roundup", "url": "https://en.wikipedia.org/wiki/My_Lord_(film)", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience response roundup", "url": "https://www.cinemaexpress.com/tamil/review/2026/Feb/13/social-media-deems-my-lord-as-hard-hitting-and-award-worthy", "kind": "Audience", "weight": 20 }
+      ]
     }
   }
 }
