@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises";
 
 const apiKey = process.env.GEMINI_API_KEY;
-const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
 const batchSize = Math.min(25, Math.max(1, Number(process.env.RATING_BATCH_SIZE) || 10));
 const startIndex = Math.max(0, Number(process.env.RATING_START_INDEX) || 0);
 const moviesFile = new URL("../public/data/movies.json", import.meta.url);
@@ -119,7 +119,7 @@ async function prepareMovie(movie) {
   const analysisPrompt = `You are scoring ${identity}. Use ONLY the grounded research and numbered source allow-list below. Never add a source that is not in the allow-list. Select no more than 10 sources, including at least 3 professional critic sources and at least 1 audience source. Scores must be independently justified by the evidence; do not copy an aggregate rating into every dimension. Apply a conservative 0-100 scale where 50 is mixed/average, 70 is good, 80 is very good and 90+ is exceptional. Rewatchability is an evidence-based estimate, not a popularity synonym.\n\nGROUNDED RESEARCH:\n${responseText(research)}\n\nSOURCE ALLOW-LIST:\n${sources.map((source, index) => `${index}: ${source.title} — ${source.url}`).join("\n")}`;
   const analysis = await callGemini({
     contents: [{ role: "user", parts: [{ text: analysisPrompt }] }],
-    generationConfig: { responseMimeType: "application/json", responseJsonSchema: scoringSchema, temperature: 0.15 },
+    generationConfig: { responseMimeType: "application/json", responseJsonSchema: scoringSchema },
   });
   const parsed = JSON.parse(responseText(analysis));
   const selected = [];
