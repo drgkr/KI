@@ -29,9 +29,11 @@ function Poster({ film }: { film: Film }) {
 
 function ScoreMeter({ film }: { film: Film }) {
   const score = total(film.scores);
-  return <div className={`score-meter ${score === null ? "unrated" : ""}`} aria-label={score === null ? "Rating pending" : `Kollywood Index score ${score} out of 100`}>
-    <div className="score-meter-top"><span>{score === null ? "Awaiting assessment" : "Index score"}</span><strong>{score ?? "NR"}{score === null ? "" : <small>/100</small>}</strong></div>
-    <div className="score-meter-track"><i style={{ width: `${score ?? 0}%` }}/></div>
+  return <div className={`score-meter ${score === null ? "unrated" : ""}`} aria-label={score === null ? "Not rated" : `Score ${score} out of 100`}>
+    <div className="score-capsule">
+      <span className="score-value">{score ?? "NR"}</span>
+      {score !== null && <i className="score-marker" style={{ left: `${score}%` }}/>} 
+    </div>
   </div>;
 }
 
@@ -95,7 +97,7 @@ export default function Home() {
   return <main>
     <header className="topbar">
       <a className="brand" href="#top" aria-label="Kollywood Index home"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></a>
-      <nav><a href="#films">Just arrived</a><a href="#library">Browse 100</a><a href="#methodology">Our rating system</a></nav>
+      <nav><a href="#films">Just arrived</a><a href="#library">Browse films</a><a href="#methodology">Our rating system</a></nav>
       <span className={`source ${source}`}>{source === "tmdb" ? "Live cinema catalogue" : "Catalogue preview"}</span>
     </header>
 
@@ -104,7 +106,7 @@ export default function Home() {
       <h1>Your next great<br/><em>film starts here.</em></h1>
       <p>Explore a focused selection of Tamil films, search the complete archive, and understand every published score at a glance.</p>
       <a className="text-link" href="#library">Explore the collection <span>↘</span></a>
-      <div className="hero-score" aria-hidden="true"><span>CONSISTENTLY RATED</span><strong>7</strong><small>evidence-led<br/>dimensions</small></div>
+      <div className="hero-score" aria-hidden="true"><span>LOOK BEYOND ONE NUMBER</span><strong>7</strong><small>creative lenses<br/>one considered view</small></div>
     </section>
 
     <section className="film-section" id="films">
@@ -117,7 +119,7 @@ export default function Home() {
         </button>)}
       </div>
       <section className="library" id="library">
-        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>One hundred films to browse</h2><p>See 100 films here, or search across the complete archive of up to 1,000 titles.</p></div><span className="result-count">{query.trim() ? `${library.length} matches across the archive` : `${Math.min(100, library.length)} shown · ${films.length} searchable`}</span></div>
+        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search by film, performer, year or genre across the complete archive.</p></div><span className="result-count">{query.trim() ? `${library.length} matches` : `${films.length} films available`}</span></div>
         <div className="library-controls">
           <label className="search-control"><span>Search the full archive</span><input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Film, performer, year or genre…"/></label>
           <label className="sort-control"><span>Arrange films</span><select value={sortBy} onChange={event => setSortBy(event.target.value as "year" | "rating")}><option value="year">Latest releases first</option><option value="rating">Best scores first</option></select></label>
