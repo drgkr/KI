@@ -823,6 +823,136 @@
         { "name": "Critical review roundup", "url": "https://en.wikipedia.org/wiki/My_Lord_(film)", "kind": "Additional critic", "weight": 40 },
         { "name": "Audience response roundup", "url": "https://www.cinemaexpress.com/tamil/review/2026/Feb/13/social-media-deems-my-lord-as-hard-hitting-and-award-worthy", "kind": "Audience", "weight": 20 }
       ]
+    },
+    "made-in-korea-2026": {
+      "title": "Made in Korea", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 56, "emotion": 67, "pacing": 60, "performances": 62, "rewatch": 61, "critics": 58, "audience": 54 },
+      "sources": [
+        { "name": "India Today", "url": "https://www.indiatoday.in/entertainment/ott/story/made-in-korea-review-priyanka-mohans-k-drama-fantasy-is-served-warm-and-sugary-2880847-2026-03-12", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/web-series/reviews/tamil/made-in-korea/ottmoviereview/129540644.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "OTTplay", "url": "https://www.ottplay.com/review/made-in-korea-tamil-movie-review-priyanka-arul-mohans-film-is-breezy-and-k-drama-coded-both-simple-and-heartwarming/a7346019fc309", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1rse9r5/made_in_korea_tamil_netflix/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "thalaivar-thambi-thalaimaiyil-2026": {
+      "title": "Thalaivar Thambi Thalaimaiyil", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 69, "emotion": 72, "pacing": 66, "performances": 76, "rewatch": 70, "critics": 70, "audience": 68 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Jan/15/thalaivar-thambi-thalaimaiyil-movie-review-a-wedding-and-a-funeral-with-crackpot-energy", "kind": "Lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/regional-cinema/story/thalaivar-thambi-thalaimayil-review-jiiva-heartfelt-satire-wins-with-warmth-2852299-2026-01-15", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/thalaivar-thambi-thalaimaiyil/movie-review/126539179.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1qd3odm/thalaivar_thambi_thalaimaiyil_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "stephen-2025": {
+      "title": "Stephen", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 74, "emotion": 68, "pacing": 62, "performances": 78, "rewatch": 69, "critics": 72, "audience": 76 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2025/Dec/05/stephen-movie-review-a-layered-and-rewarding-exploration-of-the-killers-psyche", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/stephen/ottmoviereview/125980043.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Stephen_(film)", "kind": "Additional critic", "weight": 40 },
+        { "name": "Netflix audience recommendation", "url": "https://www.reddit.com/r/IndianOTTbestof/comments/1pyl3td/weekly_thread_what_amazing_movies_or_series_did/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "revolver-rita-2025": {
+      "title": "Revolver Rita", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 38, "emotion": 40, "pacing": 45, "performances": 61, "rewatch": 43, "critics": 40, "audience": 46 },
+      "sources": [
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2025/Nov/29/tamilreview2025nov28revolver-rita-movie-review-a-chaotic-comic-caper-that-shoots-blanks", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/revolver-rita/movie-review/125638371.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/revolver-rita-movie-review", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1p8kq6b/revolver_rita_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "kaantha-2025": {
+      "title": "Kaantha", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 78, "emotion": 79, "pacing": 68, "performances": 92, "rewatch": 76, "critics": 80, "audience": 83 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/kaantha-movie-review-dulquer-salmaans-period-drama-thriller-is-visually-rich-narratively-lean-10364675/lite/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2025/Nov/14/kaantha-movie-review-glitters-for-a-while-even-if-it-isnt-gold", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/kaantha/movie-review/125291584.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1ov4xdy/kaantha_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "aaryan-2025": {
+      "title": "Aaryan", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 58, "emotion": 50, "pacing": 57, "performances": 69, "rewatch": 56, "critics": 55, "audience": 59 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/aaryan/amp_movie_review/124905154.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/aaryan-movie-review-vishnu-vishal-film-is-long-flabby-but-engaging", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Aaryan_(film)", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1ok6zyo/aaryan_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "dude-2025": {
+      "title": "Dude", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 60, "emotion": 66, "pacing": 72, "performances": 73, "rewatch": 68, "critics": 60, "audience": 70 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/dude/movie-review/124623356.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Hollywood Reporter India", "url": "https://www.youtube.com/watch?v=BkG1Ym694Gs", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Dude_(2025_film)", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1o84nvy/dude_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "bison-kaalamaadan-2025": {
+      "title": "Bison Kaalamaadan", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 82, "emotion": 88, "pacing": 76, "performances": 89, "rewatch": 77, "critics": 84, "audience": 86 },
+      "sources": [
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2025/Oct/22/tamilreview2025oct17bison-kaalamaadan-movie-review-a-defiant-tale-of-rebellion-elevates-this-familiar-sports-drama", "kind": "Lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/bison-movie-review-caste-politics-kabaddi-dreams-mari-selvaraj-dhruv-vikram-2804361-2025-10-17", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/bison-kaalamaadan/amp_movie_review/124619067.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1o84poj/bison_kaalamaadaan_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "idli-kadai-2025": {
+      "title": "Idli Kadai", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 67, "emotion": 78, "pacing": 61, "performances": 79, "rewatch": 70, "critics": 68, "audience": 66 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/tamil/idli-kadai-movie-review-an-earnest-and-hopeful-dhanush-steers-this-conventional-melodrama-in-the-right-direction-10282024/lite/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2025/Oct/04/tamilreview2025oct01idli-kadai-movie-review-dhanush-cooks-a-comfort-meal-that-is-warm-familiar-but-slightly-overcooked", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Week", "url": "https://www.theweek.in/review/movies/2025/10/01/idly-kadai-review-dhanush-nithya-menen-light-up-this-winsome-old-school-family-drama.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1nuixmn/idli_kadai_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "maareesan-2025": {
+      "title": "Maareesan", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 74, "emotion": 77, "pacing": 66, "performances": 88, "rewatch": 72, "critics": 72, "audience": 78 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/maareesan-review-fahadh-faasil-vadivelu-anchor-this-flawed-comedy-thriller-10148105/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/maareesan/amp_movie_review/122864049.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Onmanorama", "url": "https://www.onmanorama.com/entertainment/movie-reviews/2025/07/25/movie-review-fahadh-faasil-vadivelu-maareesan-movie.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Rotten Tomatoes audience response", "url": "https://www.rottentomatoes.com/m/maareesan", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "gevi-2025": {
+      "title": "Gevi", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 72, "emotion": 79, "pacing": 63, "performances": 74, "rewatch": 65, "critics": 70, "audience": 72 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/gevi/movie-review/122809319.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2025/Jul/18/gevi-movie-review-a-flawed-yet-appropriately-blunt-exploration-of-systemic-oppression", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Gevi", "kind": "Additional critic", "weight": 40 },
+        { "name": "Times of India user response", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/gevi/movie-review/122809319.cms", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "oho-enthan-baby-2025": {
+      "title": "Oho Enthan Baby", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 56, "emotion": 64, "pacing": 61, "performances": 68, "rewatch": 63, "critics": 58, "audience": 66 },
+      "sources": [
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/oho-enthan-baby-movie-review-rudra-mithila-palkar-vishnu-vishal-feel-good-drama-clishes-2753846-2025-07-10", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2025/Jul/11/oho-enthan-baby-movie-review-interesting-ideas-marred-by-unearned-resolutions", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/oho-enthan-baby/movie-review/122380320.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience response roundup", "url": "https://www.filmibeat.com/tamil/news/2025/oho-enthan-baby-x-review-what-audiences-are-saying-about-rudra-mithila-palkar-film-469035.html", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "thug-life-2025": {
+      "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2025/Jun/05/thug-life-movie-review-a-promising-gangster-drama-bogged-down-by-a-generic-revenge-saga", "kind": "Lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/thug-life-review-kamal-haasan-silambarasan-mani-ratnam-haphazard-screenplay-hollow-2736118-2025-06-05", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/thug-life/amp_movie_review/121642012.cms", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1l2wdu4/thug_life_review_megathread/", "kind": "Audience", "weight": 20 }
+      ]
     }
   }
 }
