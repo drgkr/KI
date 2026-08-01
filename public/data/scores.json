@@ -1,5 +1,58 @@
 {
   "schemaVersion": 1,
   "description": "Approved evidence-backed ratings keyed by TMDB movie ID. Films without a record remain Not Yet Rated.",
-  "ratings": {}
+  "ratings": {
+    "1136423": {
+      "title": "Meiyazhagan",
+      "assessedAt": "2026-08-01",
+      "confidence": "High",
+      "scores": {
+        "writing": 88,
+        "emotion": 94,
+        "pacing": 72,
+        "performances": 93,
+        "rewatch": 88,
+        "critics": 78,
+        "audience": 85
+      },
+      "sources": [
+        {
+          "name": "Baradwaj Rangan — Galatta Plus",
+          "url": "https://www.youtube.com/watch?v=jTkQGKDEs14",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Avinash Ramachandran — The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/meiyazhagan-movie-review-karthi-arvind-swamy-power-a-beautiful-ode-to-love-loss-and-belonging-9590025/",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/preview/story/KD9JJ2M5gEN3ieqHSGZFTTRKmpwrfaQdixFoaxvfPYwceEtbO6a184tNR_aQgEJk",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "M Suganth — The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/meiyazhagan/amp_movie_review/113688305.cms",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt26758372/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "Letterboxd audience ratings",
+          "url": "https://letterboxd.com/film/meiyazhagan/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    }
+  }
 }
