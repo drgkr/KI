@@ -26,3 +26,8 @@
 
 /* More expressive seven-lens hero emblem */
 .hero-score{border:0;background:conic-gradient(from 210deg,rgba(255,91,67,.32),rgba(245,203,70,.3),rgba(47,159,103,.28),rgba(77,146,210,.28),rgba(170,99,196,.3),rgba(255,91,67,.32));box-shadow:0 0 0 1px rgba(255,255,255,.18),0 0 55px rgba(255,91,67,.2)}.hero-score:before{content:"";position:absolute;inset:13px;border-radius:50%;background:var(--ink);border:1px solid rgba(255,255,255,.12)}.hero-score span,.hero-score strong,.hero-score small{position:relative;z-index:1}.hero-score strong{background:linear-gradient(135deg,#ff6750,#f5cb46 45%,#4fc488 75%,#68aee8);background-clip:text;-webkit-background-clip:text;color:transparent}.hero-score small{color:#c4c3bd;line-height:1.5}
+
+/* Technology and attribution footer */
+footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin:0 0 10px}.technology{font-size:10px;line-height:1.65;color:#8f938f}.technology>strong{display:block;color:var(--paper);text-transform:uppercase;letter-spacing:.14em;margin-bottom:8px}.technology ul{list-style:none;margin:0;padding:0}.technology li{padding:3px 0;border-bottom:1px solid rgba(240,234,223,.08)}
+@media(max-width:1000px){footer{grid-template-columns:1fr 2fr}.technology,.copyright{margin-top:18px}.copyright{text-align:left}}
+@media(max-width:600px){footer{grid-template-columns:1fr}.technology,.copyright{margin-top:8px}}
