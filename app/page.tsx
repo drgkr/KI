@@ -128,7 +128,6 @@ export default function Home() {
         {library.length ? <div className="movie-grid" aria-label="All films">
           {visibleLibrary.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
             <div className="poster-wrap"><Poster film={item}/></div>
-            <ScoreMeter film={item}/>
             <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
           </button>)}
         </div> : <div className="empty-state"><strong>No matching film</strong><span>Try another title, performer, year or genre.</span></div>}
