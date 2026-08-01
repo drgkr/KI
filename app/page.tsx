@@ -3,7 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 type Scores = { writing: number; emotion: number; pacing: number; performances: number; rewatch: number; critics: number; audience: number };
-type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; confidence: "High" | "Medium" | "Low"; scores: Scores; sourceCount: number };
+type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
+type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft" };
 
 const weights: { key: keyof Scores; label: string; weight: number; short: string }[] = [
   { key: "writing", label: "Writing Quality", weight: 20, short: "WR" },
@@ -16,14 +17,10 @@ const weights: { key: keyof Scores; label: string; weight: number; short: string
 ];
 
 const samples: Film[] = [
-  { id: 1, title: "Meiyazhagan", originalTitle: "மெய்யழகன்", year: "2024", releaseDate: "2024-09-27", runtime: 158, genres: ["Drama", "Family"], cast: ["Karthi", "Arvind Swamy", "Sri Divya", "Rajkiran"], overview: "A man returns to his hometown and encounters a warm, insistent stranger who seems to know everything about his past.", confidence: "High", sourceCount: 12, scores: { writing: 92, emotion: 95, pacing: 78, performances: 94, rewatch: 88, critics: 91, audience: 90 } },
-  { id: 2, title: "Maharaja", originalTitle: "மகாராஜா", year: "2024", releaseDate: "2024-06-14", runtime: 141, genres: ["Thriller", "Drama"], cast: ["Vijay Sethupathi", "Anurag Kashyap", "Mamta Mohandas", "Natarajan Subramaniam"], overview: "A quiet barber walks into a police station to report a peculiar theft, setting off a tightly wound chain of revelations.", confidence: "High", sourceCount: 14, scores: { writing: 88, emotion: 90, pacing: 91, performances: 93, rewatch: 84, critics: 87, audience: 92 } },
-  { id: 3, title: "Raayan", originalTitle: "ராயன்", year: "2024", releaseDate: "2024-07-26", runtime: 145, genres: ["Action", "Drama"], cast: ["Dhanush", "S. J. Suryah", "Sundeep Kishan", "Kalidas Jayaram"], overview: "A protective brother is drawn into the violent underworld he tried to escape when his family is threatened.", confidence: "Medium", sourceCount: 8, scores: { writing: 74, emotion: 77, pacing: 80, performances: 86, rewatch: 76, critics: 72, audience: 79 } },
-  { id: 4, title: "Garudan", originalTitle: "கருடன்", year: "2024", releaseDate: "2024-05-31", runtime: 135, genres: ["Action", "Drama"], cast: ["Soori", "M. Sasikumar", "Unni Mukundan", "Roshini Haripriyan"], overview: "Loyalties are tested when two childhood friends and their trusted confidant are pulled into a conflict over land and legacy.", confidence: "Medium", sourceCount: 7, scores: { writing: 79, emotion: 82, pacing: 84, performances: 88, rewatch: 77, critics: 80, audience: 84 } },
-  { id: 5, title: "Jigarthanda DoubleX", originalTitle: "ஜிகர்தண்டா டபுள்எக்ஸ்", year: "2023", releaseDate: "2023-11-10", runtime: 172, genres: ["Drama", "Action", "Western"], cast: ["Raghava Lawrence", "S. J. Suryah", "Nimisha Sajayan", "Ilavarasu"], overview: "An aspiring filmmaker and a feared gangster find their ambitions entangled in a story about cinema, power and resistance.", confidence: "High", sourceCount: 15, scores: { writing: 91, emotion: 88, pacing: 83, performances: 92, rewatch: 89, critics: 94, audience: 91 } },
+  { id: 1, title: "Meiyazhagan", originalTitle: "மெய்யழகன்", year: "2024", releaseDate: "2024-09-27", runtime: 158, genres: ["Drama", "Family"], cast: ["Karthi", "Arvind Swamy", "Sri Divya", "Rajkiran"], overview: "A man returns to his hometown and encounters a warm, insistent stranger who seems to know everything about his past.", confidence: null, sourceCount: 0, scores: null, ratingStatus: "unrated" },
 ];
 
-const total = (scores: Scores) => Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0));
+const total = (scores: Scores | null) => scores ? Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0)) : null;
 
 function Poster({ film }: { film: Film }) {
   if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
@@ -38,12 +35,13 @@ export default function Home() {
   const [sortBy, setSortBy] = useState<"year" | "rating">("year");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(60);
+  const [draftScores, setDraftScores] = useState<Partial<Scores>>({});
   const rail = useRef<HTMLDivElement>(null);
   const film = films[selected] || films[0];
 
   useEffect(() => {
     const saved = localStorage.getItem("kollywood-index-scores");
-    if (saved) { try { const parsed = JSON.parse(saved); setFilms(current => current.map(item => parsed[item.id] ? { ...item, scores: parsed[item.id] } : item)); } catch {} }
+    if (saved) { try { const parsed = JSON.parse(saved); setFilms(current => current.map(item => parsed[item.id] ? { ...item, scores: parsed[item.id], ratingStatus: "draft" } : item)); } catch {} }
     fetch(`./data/movies.json?v=${Date.now()}`, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject()).then(data => { if (data.movies?.length) { setFilms(data.movies); setSelected(0); setSource("tmdb"); } }).catch(() => {});
   }, []);
 
@@ -52,16 +50,28 @@ export default function Home() {
   const library = useMemo(() => {
     const term = query.trim().toLocaleLowerCase();
     const matches = films.filter(item => !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast].some(value => value?.toLocaleLowerCase().includes(term)));
-    return matches.sort((a,b) => sortBy === "rating" ? total(b.scores) - total(a.scores) || b.releaseDate.localeCompare(a.releaseDate) : b.releaseDate.localeCompare(a.releaseDate));
+    return matches.sort((a,b) => {
+      if (sortBy === "year") return b.releaseDate.localeCompare(a.releaseDate);
+      const aScore = total(a.scores), bScore = total(b.scores);
+      if (aScore === null && bScore === null) return b.releaseDate.localeCompare(a.releaseDate);
+      if (aScore === null) return 1;
+      if (bScore === null) return -1;
+      return bScore - aScore || b.releaseDate.localeCompare(a.releaseDate);
+    });
   }, [films, query, sortBy]);
   const visibleLibrary = library.slice(0, visibleCount);
   useEffect(() => setVisibleCount(60), [query, sortBy]);
   const activeIndex = newest.findIndex(f => f.id === film.id);
-  const choose = (chosen: Film) => { setSelected(films.findIndex(f => f.id === chosen.id)); setEditing(false); document.getElementById("film-detail")?.scrollIntoView({ behavior: "smooth", block: "start" }); };
-  const updateScore = (key: keyof Scores, value: number) => {
-    const next = films.map((item) => item.id === film.id ? { ...item, scores: { ...item.scores, [key]: value } } : item);
+  const choose = (chosen: Film) => { setSelected(films.findIndex(f => f.id === chosen.id)); setEditing(false); setDraftScores({}); document.getElementById("film-detail")?.scrollIntoView({ behavior: "smooth", block: "start" }); };
+  const beginEditing = () => { setDraftScores(film.scores || {}); setEditing(true); };
+  const draftComplete = weights.every(item => typeof draftScores[item.key] === "number");
+  const saveDraft = () => {
+    if (!draftComplete) return;
+    const completed = draftScores as Scores;
+    const next = films.map((item) => item.id === film.id ? { ...item, scores: completed, ratingStatus: "draft" as const } : item);
     setFilms(next);
-    localStorage.setItem("kollywood-index-scores", JSON.stringify(Object.fromEntries(next.map(item => [item.id, item.scores]))));
+    localStorage.setItem("kollywood-index-scores", JSON.stringify(Object.fromEntries(next.filter(item => item.ratingStatus === "draft" && item.scores).map(item => [item.id, item.scores]))));
+    setEditing(false);
   };
   const scroll = (direction: number) => rail.current?.scrollBy({ left: direction * Math.min(720, window.innerWidth * .72), behavior: "smooth" });
 
@@ -84,7 +94,7 @@ export default function Home() {
       <div className="section-heading"><div><span className="kicker">RECENTLY RELEASED</span><h2>The latest 20 films</h2><p>Scroll through the newest additions, ordered by release date.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="Scroll posters left">←</button><button onClick={() => scroll(1)} aria-label="Scroll posters right">→</button></div></div>
       <div className="poster-rail" ref={rail} tabIndex={0} aria-label="Latest 20 films ordered newest first">
         {latest.map((item, index) => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-          <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span><span className="card-score">{total(item.scores)}</span></div>
+          <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span><span className={`card-score ${total(item.scores) === null ? "unrated" : ""}`}>{total(item.scores) ?? "NR"}</span></div>
           <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
         </button>)}
       </div>
@@ -96,7 +106,7 @@ export default function Home() {
         </div>
         {library.length ? <div className="movie-grid" aria-label="All films">
           {visibleLibrary.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-            <div className="poster-wrap"><Poster film={item}/><span className="card-score">{total(item.scores)}</span></div>
+            <div className="poster-wrap"><Poster film={item}/><span className={`card-score ${total(item.scores) === null ? "unrated" : ""}`}>{total(item.scores) ?? "NR"}</span></div>
             <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
           </button>)}
         </div> : <div className="empty-state"><strong>No films found</strong><span>Try a different title, actor or genre.</span></div>}
@@ -107,18 +117,19 @@ export default function Home() {
     <section className="detail" id="film-detail">
       <div className="detail-poster"><Poster film={film}/><span className="selection">INDEX {String(activeIndex + 1).padStart(2,"0")}</span></div>
       <div className="detail-copy">
-        <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2>{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className="final-score"><strong>{total(film.scores)}</strong><span>/100</span></div></div>
+        <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2>{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className={`final-score ${film.scores ? "" : "unrated"}`}><strong>{total(film.scores) ?? "NR"}</strong><span>{film.scores ? "/100" : "NOT YET RATED"}</span></div></div>
         <p className="overview">{film.overview}</p>
         <div className="cast"><span>FEATURING</span><p>{film.cast.join(" · ")}</p></div>
-        <div className="score-head"><div><span className="kicker">RATING PROFILE</span><p>Each measure contributes according to its published weight.</p></div><button className="edit" onClick={() => setEditing(!editing)}>{editing ? "Save ratings" : "Adjust ratings"}</button></div>
+        <div className="score-head"><div><span className="kicker">RATING PROFILE</span><p>{film.scores ? "Each measure contributes according to its published weight." : "No score is shown until all seven measures have been assessed."}</p></div>{editing ? <button className="edit" disabled={!draftComplete} onClick={saveDraft}>Save local draft</button> : <button className="edit" onClick={beginEditing}>{film.scores ? "Adjust local draft" : "Create local draft"}</button>}</div>
         <div className="score-list">
           {weights.map(item => <div className="score-row" key={item.key}>
-            <span className="abbr">{item.short}</span><div className="metric"><div><strong>{item.label}</strong><span>{item.weight}% weight</span></div><div className="bar"><i style={{width: `${film.scores[item.key]}%`}}/></div></div>
-            {editing ? <input aria-label={`${item.label} score`} type="number" min="0" max="100" value={film.scores[item.key]} onChange={e => updateScore(item.key, Math.max(0, Math.min(100, Number(e.target.value))))}/> : <strong className="metric-score">{film.scores[item.key]}</strong>}
-            <small>+{(film.scores[item.key] * item.weight / 100).toFixed(1)}</small>
+            <span className="abbr">{item.short}</span><div className="metric"><div><strong>{item.label}</strong><span>{item.weight}% weight</span></div><div className="bar"><i style={{width: `${editing ? (draftScores[item.key] ?? 0) : (film.scores?.[item.key] ?? 0)}%`}}/></div></div>
+            {editing ? <input aria-label={`${item.label} score`} type="number" min="0" max="100" value={draftScores[item.key] ?? ""} placeholder="—" onChange={e => setDraftScores(current => ({ ...current, [item.key]: Math.max(0, Math.min(100, Number(e.target.value))) }))}/> : <strong className="metric-score">{film.scores?.[item.key] ?? "—"}</strong>}
+            <small>{(editing ? draftScores[item.key] : film.scores?.[item.key]) === undefined ? "—" : `+${(((editing ? draftScores[item.key] : film.scores?.[item.key]) || 0) * item.weight / 100).toFixed(1)}`}</small>
           </div>)}
         </div>
-        <div className={`confidence ${film.confidence.toLowerCase()}`}><span>EVIDENCE</span><strong>{film.confidence}</strong><p>{film.sourceCount} sources considered · {film.confidence === "High" ? "Broad agreement across major reviews" : film.confidence === "Medium" ? "Useful coverage with a mixed verdict" : "A preliminary view based on limited coverage"}</p></div>
+        <div className={`confidence ${film.ratingStatus === "draft" ? "draft" : film.confidence?.toLowerCase() || "unrated"}`}><span>EVIDENCE</span><strong>{film.ratingStatus === "draft" ? "Local draft" : film.confidence || "Awaiting review"}</strong><p>{film.ratingStatus === "draft" ? "Saved only on this device; not an approved published rating" : film.confidence ? `${film.sourceCount} sources considered · ${film.confidence === "High" ? "Broad agreement across major reviews" : film.confidence === "Medium" ? "Useful coverage with a mixed verdict" : "A preliminary view based on limited coverage"}` : "No approved assessment or source record has been published yet"}</p></div>
+        {!!film.sources?.length && <div className="evidence-list"><span className="kicker">SOURCES USED</span>{film.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><strong>{source.name}</strong><span>{source.kind} · {source.weight}% of evidence panel ↗</span></a>)}</div>}
       </div>
     </section>
 
