@@ -23,9 +23,13 @@ const samples: Film[] = [
 
 const total = (scores: Scores | null) => scores ? Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0)) : null;
 const scoreColour = (score: number) => {
-  const hue = score <= 50 ? score * 0.96 : 48 + (score - 50) * 1.74;
-  return `hsl(${hue} 72% 42%)`;
+  if (score >= 81) return "#238b57";
+  if (score >= 61) return "#9bcf83";
+  if (score >= 41) return "#f2c94c";
+  if (score >= 21) return "#ed8b35";
+  return "#cf3f35";
 };
+const scoreTextColour = (score: number) => score >= 41 && score <= 80 ? "#142019" : "#ffffff";
 
 function Poster({ film }: { film: Film }) {
   if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
@@ -38,7 +42,7 @@ function ScoreMeter({ film }: { film: Film }) {
     <div className="score-capsule">
       {score === null
         ? <span className="score-value">NR</span>
-        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: scoreColour(score) }}>{score}</strong>}
+        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: scoreColour(score), color: scoreTextColour(score) }}>{score}</strong>}
     </div>
   </div>;
 }
