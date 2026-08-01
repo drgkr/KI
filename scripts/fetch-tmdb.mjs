@@ -24,14 +24,17 @@ const query = new URLSearchParams({
   sort_by: "primary_release_date.desc",
   "primary_release_date.lte": new Date().toISOString().slice(0, 10),
   include_adult: "false",
-  page: "1",
 });
 
-const discovery = await fetch(`https://api.themoviedb.org/3/discover/movie?${query}`);
-if (!discovery.ok) throw new Error(`TMDB discovery failed (${discovery.status})`);
-const data = await discovery.json();
+const pages = await Promise.all([1, 2, 3].map(async (page) => {
+  query.set("page", String(page));
+  const discovery = await fetch(`https://api.themoviedb.org/3/discover/movie?${query}`);
+  if (!discovery.ok) throw new Error(`TMDB discovery failed (${discovery.status})`);
+  return discovery.json();
+}));
+const discovered = pages.flatMap(page => page.results);
 
-const movies = await Promise.all(data.results.slice(0, 16).map(async (movie) => {
+const movies = await Promise.all(discovered.slice(0, 60).map(async (movie) => {
   const response = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits`);
   if (!response.ok) throw new Error(`TMDB details failed for ${movie.id}`);
   const detail = await response.json();
