@@ -944,6 +944,150 @@
         { "name": "Audience response roundup", "url": "https://www.filmibeat.com/tamil/news/2025/oho-enthan-baby-x-review-what-audiences-are-saying-about-rudra-mithila-palkar-film-469035.html", "kind": "Audience", "weight": 20 }
       ]
     },
+    "retro-2025": {
+      "title": "Retro", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 70, "emotion": 68, "pacing": 61, "performances": 82, "rewatch": 68, "critics": 66, "audience": 69 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/retro/amp_movie_review/120787416.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Retro_(film)#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review discussion", "url": "https://www.reddit.com/r/tollywood/comments/1kbnqk3/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "good-bad-ugly-2025": {
+      "title": "Good Bad Ugly", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 53, "emotion": 58, "pacing": 72, "performances": 78, "rewatch": 73, "critics": 62, "audience": 72 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/good-bad-ugly-movie-review-an-unhinged-ajith-kumar-powers-an-outlandish-and-fun-fanboy-sambavam-9936308/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Good_Bad_Ugly#Critical_response", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1jv2if6/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "test-2025": {
+      "title": "Test", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 58, "emotion": 51, "pacing": 44, "performances": 72, "rewatch": 48, "critics": 53, "audience": 50 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/web-series/reviews/tamil/test/ottmoviereview/119983343.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Test_(2025_film)#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review discussion", "url": "https://www.reddit.com/r/KollyClub/comments/1k42ie6/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "perusu-2025": {
+      "title": "Perusu", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 61, "emotion": 50, "pacing": 65, "performances": 67, "rewatch": 65, "critics": 60, "audience": 66 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/perusu/amp_movie_review/119033133.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Perusu#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review thread", "url": "https://www.reddit.com/r/kollywood/comments/1jbr2hn/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "dragon-2025": {
+      "title": "Dragon", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 78, "emotion": 82, "pacing": 84, "performances": 84, "rewatch": 86, "critics": 82, "audience": 88 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/dragon/amp_movie_review/118443297.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Indian Express and critic roundup", "url": "https://en.wikipedia.org/wiki/Dragon_(2025_film)#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "IMDb audience ratings", "url": "https://www.imdb.com/title/tt29601687/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "vidaamuyarchi-2025": {
+      "title": "Vidaamuyarchi", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 66, "emotion": 61, "pacing": 53, "performances": 76, "rewatch": 58, "critics": 64, "audience": 61 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/vidaamuyarchi-review-magizh-thirumeni-moulds-ajith-kumar-into-a-different-kind-of-star-9820277/lite/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Vidaamuyarchi#Critical_response", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review discussion", "url": "https://www.reddit.com/r/IndianCinema/comments/1innamf/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "kadhalikka-neramillai-2025": {
+      "title": "Kadhalikka Neramillai", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 73, "emotion": 76, "pacing": 70, "performances": 84, "rewatch": 74, "critics": 76, "audience": 69 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/kadhalikka-neramillai-review-nithya-menen-ravi-mohan-shine-bright-in-warm-and-chic-romcom-9778608/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/kadhalikka-neramillai/movie-review/117229445.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Rotten Tomatoes audience response", "url": "https://www.rottentomatoes.com/m/kadhalikka_neramillai_2025", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "sorgavaasal-2024": {
+      "title": "Sorgavaasal", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 72, "emotion": 70, "pacing": 73, "performances": 77, "rewatch": 68, "critics": 72, "audience": 73 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2024/Nov/29/sorgavaasal-movie-review-an-effective-prison-drama-where-filmmaking-overtakes-storytelling", "kind": "Lead critic", "weight": 20 },
+        { "name": "MovieCrow critic collection", "url": "https://www.moviecrow.com/movie/5051/sorgavaasal-tamil-movie-review/review", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/IndianCinema/comments/1hmmikn/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "c4-cinta-2024": {
+      "title": "C4 Cinta", "assessedAt": "2026-08-01", "confidence": "Low",
+      "scores": { "writing": 62, "emotion": 68, "pacing": 61, "performances": 66, "rewatch": 65, "critics": 59, "audience": 72 },
+      "sources": [
+        { "name": "Letterboxd audience reviews", "url": "https://letterboxd.com/film/c4-cinta/", "kind": "Audience", "weight": 20 },
+        { "name": "IMDb audience reviews", "url": "https://www.imdb.com/title/tt34498576/", "kind": "Audience", "weight": 20 },
+        { "name": "Reception and box-office context", "url": "https://en.wikipedia.org/wiki/C4_Cinta", "kind": "Additional critic", "weight": 40 }
+      ]
+    },
+    "the-greatest-of-all-time-2024": {
+      "title": "The Greatest of All Time", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 58, "emotion": 63, "pacing": 60, "performances": 76, "rewatch": 68, "critics": 61, "audience": 70 },
+      "sources": [
+        { "name": "Critic review collection", "url": "https://www.nowrunning.com/movie/28122/thalapathy-68/reviews/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/The_Greatest_of_All_Time#Critical_response", "kind": "Additional critic", "weight": 40 },
+        { "name": "IMDb audience ratings", "url": "https://www.imdb.com/title/tt27487934/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "thangalaan-2024": {
+      "title": "Thangalaan", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 80, "emotion": 78, "pacing": 72, "performances": 92, "rewatch": 70, "critics": 80, "audience": 75 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/thangalaan/amp_movie_review/112542778.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Thangalaan#Critical_response", "kind": "Additional critic", "weight": 40 },
+        { "name": "Audience review megathread", "url": "https://www.reddit.com/r/kollywood/comments/1es8np7/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "indian-2-zero-tolerance-2024": {
+      "title": "Indian 2: Zero Tolerance", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 31, "emotion": 34, "pacing": 27, "performances": 52, "rewatch": 30, "critics": 31, "audience": 35 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/indian-2-movie-review-kamal-haasan-starrer-is-waste-of-time-9448941/", "kind": "Lead critic", "weight": 20 },
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2024/Jul/12/indian-2-movie-review-go-back-indian", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Audience review discussion", "url": "https://www.reddit.com/r/kollywood/comments/1e2wjys/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "dear-2024": {
+      "title": "DeAr", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 43, "emotion": 49, "pacing": 47, "performances": 58, "rewatch": 46, "critics": 45, "audience": 51 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2024/Apr/12/dear-movie-review-a-messy-relationship-drama-that-lacks-depth-in-writing", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/DeAr#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "IMDb audience ratings", "url": "https://www.imdb.com/title/tt28501251/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "por-2024": {
+      "title": "Por", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 49, "emotion": 46, "pacing": 56, "performances": 64, "rewatch": 50, "critics": 50, "audience": 54 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2024/mar/01/por-movie-review-all-is-not-fair-in-this-war-of-alphas-52546.html", "kind": "Lead critic", "weight": 20 },
+        { "name": "Critical reception roundup", "url": "https://en.wikipedia.org/wiki/Por_(film)#Reception", "kind": "Additional critic", "weight": 40 },
+        { "name": "IMDb audience ratings", "url": "https://www.imdb.com/title/tt27754607/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "conjuring-kannappan-2023": {
+      "title": "Conjuring Kannappan", "assessedAt": "2026-08-01", "confidence": "High",
+      "scores": { "writing": 66, "emotion": 53, "pacing": 67, "performances": 68, "rewatch": 69, "critics": 65, "audience": 69 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2023/dec/08/conjuring-kannappan-movie-review-interesting-ideas-elevate-this-conventional-horror-comedy-50224.html", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/conjuring-kannappan/movie-review/105847335.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/18ea2gf/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "kuiko-2023": {
+      "title": "Kuiko", "assessedAt": "2026-08-01", "confidence": "Medium",
+      "scores": { "writing": 59, "emotion": 58, "pacing": 53, "performances": 66, "rewatch": 56, "critics": 57, "audience": 61 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2023/Nov/24/kuiko-movie-reviewthis-rural-drama-attempts-to-be-full-of-emotions-but-lacks-an-anchor-49859.html", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/kuiko/movie-review/105526023.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Critical response roundup", "url": "https://en.wikipedia.org/wiki/Kuiko#Reception", "kind": "Additional critic", "weight": 40 }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
