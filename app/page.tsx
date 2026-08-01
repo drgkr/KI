@@ -123,8 +123,8 @@ export default function Home() {
     <section className="featured-strip" id="films">
       <div className="section-heading"><div><span className="kicker">RECENTLY REVIEWED</span><h2>Twenty new rated films</h2><p>Explore the most recently released films with a completed Kollywood Index assessment.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
       <div className="poster-rail" ref={rail} tabIndex={0} aria-label="20 most recent rated films ordered newest first">
-        {latest.map((item, index) => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-          <div className="poster-wrap"><Poster film={item}/><span className="rank">{String(index + 1).padStart(2,"0")}</span></div>
+        {latest.map(item => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
+          <div className="poster-wrap"><Poster film={item}/></div>
           <ScoreMeter film={item}/>
           <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
         </button>)}
