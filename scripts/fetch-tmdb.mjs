@@ -57,9 +57,16 @@ const movies = [];
 const selected = discovered.slice(0, maxFilms);
 for (let start = 0; start < selected.length; start += detailBatchSize) {
   const batch = await Promise.all(selected.slice(start, start + detailBatchSize).map(async (movie) => {
-    const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits%2Cwatch%2Fproviders`);
+    const detailParams = new URLSearchParams({
+      api_key: key,
+      append_to_response: "credits,watch/providers,images",
+      include_image_language: "ta,en,null",
+    });
+    const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?${detailParams}`);
     const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
     const ukWatch = detail["watch/providers"]?.results?.GB;
+    const alternatePoster = detail.images?.posters?.find(image => image.file_path)?.file_path;
+    const posterPath = movie.poster_path || detail.poster_path || alternatePoster || null;
     const watchProviders = (ukWatch?.flatrate || []).map(provider => ({
       id: provider.provider_id,
       name: provider.provider_name,
@@ -72,7 +79,7 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     year: movie.release_date?.slice(0, 4) || "—",
     releaseDate: movie.release_date || "0000-00-00",
     runtime: detail.runtime,
-    poster: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : null,
+    poster: posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : null,
     backdrop: movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : null,
     genres: detail.genres?.map((genre) => genre.name) || [],
     cast: detail.credits?.cast?.slice(0, 5).map((person) => person.name) || [],
