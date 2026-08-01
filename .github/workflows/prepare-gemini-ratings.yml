@@ -40,7 +40,7 @@ jobs:
         run: npm run ratings:prepare
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.6-flash' }}
           RATING_BATCH_SIZE: ${{ inputs.batch_size }}
           RATING_START_INDEX: ${{ inputs.start_index }}
       - name: Add run summary
