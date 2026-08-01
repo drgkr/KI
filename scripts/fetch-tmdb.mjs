@@ -57,8 +57,14 @@ const movies = [];
 const selected = discovered.slice(0, maxFilms);
 for (let start = 0; start < selected.length; start += detailBatchSize) {
   const batch = await Promise.all(selected.slice(start, start + detailBatchSize).map(async (movie) => {
-    const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits`);
+    const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits%2Cwatch%2Fproviders`);
     const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
+    const ukWatch = detail["watch/providers"]?.results?.GB;
+    const watchProviders = (ukWatch?.flatrate || []).map(provider => ({
+      id: provider.provider_id,
+      name: provider.provider_name,
+      logo: provider.logo_path ? `https://image.tmdb.org/t/p/w92${provider.logo_path}` : null,
+    }));
     return {
     id: movie.id,
     title: movie.title,
@@ -71,6 +77,8 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     genres: detail.genres?.map((genre) => genre.name) || [],
     cast: detail.credits?.cast?.slice(0, 5).map((person) => person.name) || [],
     overview: movie.overview || "Synopsis unavailable.",
+    watchProviders,
+    watchLink: ukWatch?.link || null,
     confidence: rating?.confidence || null,
     sourceCount: rating?.sources?.length || 0,
     sources: rating?.sources || [],
