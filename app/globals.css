@@ -124,3 +124,7 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .confidence-grid i{width:110px;height:110px}
 .confidence-grid p{font-size:22px;line-height:1.5}
 @media(max-width:800px){.brand{font-size:14px}.brand-mark{width:48px;height:48px;font-size:20px}.confidence-grid i{width:88px;height:88px}}
+
+/* Brighter, larger score marker — capsule spectrum remains unchanged */
+.score-bubble{width:45px;height:45px;font-size:18px;border-width:3px;box-shadow:0 3px 9px rgba(0,0,0,.3)}
+.featured-strip .score-bubble{width:39px;height:39px;font-size:15px}

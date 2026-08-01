@@ -29,6 +29,13 @@ const scoreColour = (score: number) => {
   if (score >= 21) return "#c47a45";
   return "#a94f49";
 };
+const scoreBubbleColour = (score: number) => {
+  if (score >= 81) return "#16a34a";
+  if (score >= 61) return "#72c45a";
+  if (score >= 41) return "#f2c94c";
+  if (score >= 21) return "#f28c28";
+  return "#e5484d";
+};
 const scoreTextColour = (score: number) => score >= 41 && score <= 80 ? "#142019" : "#ffffff";
 
 function Poster({ film }: { film: Film }) {
@@ -42,7 +49,7 @@ function ScoreMeter({ film }: { film: Film }) {
     <div className="score-capsule">
       {score === null
         ? <span className="score-value">NR</span>
-        : <strong className="score-bubble" style={{ left: `clamp(17px, ${score}%, calc(100% - 17px))`, backgroundColor: scoreColour(score), color: scoreTextColour(score) }}>{score}</strong>}
+        : <strong className="score-bubble" style={{ left: `clamp(24px, ${score}%, calc(100% - 24px))`, backgroundColor: scoreBubbleColour(score), color: scoreTextColour(score) }}>{score}</strong>}
     </div>
   </div>;
 }
