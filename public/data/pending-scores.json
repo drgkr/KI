@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "description": "Prepared ratings awaiting owner approval. Entries are moved to scores.json by the Approve film rating workflow.",
+  "ratings": {}
+}
