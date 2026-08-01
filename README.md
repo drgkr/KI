@@ -72,7 +72,7 @@ The repository includes an optional evidence-first Gemini workflow. It uses Goog
 2. In GitHub, open **Settings → Secrets and variables → Actions**.
 3. Add a repository secret named `GEMINI_API_KEY`.
 4. Keep the existing `TMDB_API_KEY` secret in the same location.
-5. Optionally add an Actions variable named `GEMINI_MODEL`; the default is `gemini-2.5-flash`.
+5. Optionally add an Actions variable named `GEMINI_MODEL`; the default is the stable `gemini-3.6-flash`.
 
 ### Prepare a batch
 
