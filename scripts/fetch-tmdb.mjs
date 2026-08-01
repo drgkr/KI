@@ -29,6 +29,10 @@ const query = {
 };
 
 const wait = (milliseconds) => new Promise(resolve => setTimeout(resolve, milliseconds));
+const titleRatingKey = (movie) => `${movie.title}-${movie.release_date?.slice(0, 4) || ""}`
+  .toLowerCase()
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/(^-|-$)/g, "");
 const fetchJson = async (url, attempts = 5) => {
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     const response = await fetch(url);
@@ -54,7 +58,7 @@ const selected = discovered.slice(0, maxFilms);
 for (let start = 0; start < selected.length; start += detailBatchSize) {
   const batch = await Promise.all(selected.slice(start, start + detailBatchSize).map(async (movie) => {
     const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${key}&append_to_response=credits`);
-    const rating = approvedRatings[String(movie.id)];
+    const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
     return {
     id: movie.id,
     title: movie.title,
