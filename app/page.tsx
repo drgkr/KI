@@ -26,7 +26,7 @@ const samples: Film[] = [
 const total = (scores: Scores) => Math.round(weights.reduce((sum, item) => sum + scores[item.key] * item.weight / 100, 0));
 
 function Poster({ film }: { film: Film }) {
-  if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} />;
+  if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
   return <div className="poster-art" aria-label={`${film.title} poster placeholder`}><span>{film.originalTitle || "தமிழ்"}</span><strong>{film.title}</strong><i>{film.year}</i></div>;
 }
 
@@ -37,6 +37,7 @@ export default function Home() {
   const [source, setSource] = useState<"sample" | "tmdb">("sample");
   const [sortBy, setSortBy] = useState<"year" | "rating">("year");
   const [query, setQuery] = useState("");
+  const [visibleCount, setVisibleCount] = useState(60);
   const rail = useRef<HTMLDivElement>(null);
   const film = films[selected] || films[0];
 
@@ -53,6 +54,8 @@ export default function Home() {
     const matches = films.filter(item => !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast].some(value => value?.toLocaleLowerCase().includes(term)));
     return matches.sort((a,b) => sortBy === "rating" ? total(b.scores) - total(a.scores) || b.releaseDate.localeCompare(a.releaseDate) : b.releaseDate.localeCompare(a.releaseDate));
   }, [films, query, sortBy]);
+  const visibleLibrary = library.slice(0, visibleCount);
+  useEffect(() => setVisibleCount(60), [query, sortBy]);
   const activeIndex = newest.findIndex(f => f.id === film.id);
   const choose = (chosen: Film) => { setSelected(films.findIndex(f => f.id === chosen.id)); setEditing(false); document.getElementById("film-detail")?.scrollIntoView({ behavior: "smooth", block: "start" }); };
   const updateScore = (key: keyof Scores, value: number) => {
@@ -92,11 +95,12 @@ export default function Home() {
           <label className="sort-control"><span>Sort by</span><select value={sortBy} onChange={event => setSortBy(event.target.value as "year" | "rating")}><option value="year">Newest year</option><option value="rating">Highest rated</option></select></label>
         </div>
         {library.length ? <div className="movie-grid" aria-label="All films">
-          {library.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
+          {visibleLibrary.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
             <div className="poster-wrap"><Poster film={item}/><span className="card-score">{total(item.scores)}</span></div>
             <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
           </button>)}
         </div> : <div className="empty-state"><strong>No films found</strong><span>Try a different title, actor or genre.</span></div>}
+        {visibleLibrary.length < library.length && <button className="load-more" onClick={() => setVisibleCount(count => Math.min(count + 60, library.length))}>Show 60 more films <span>{visibleLibrary.length} of {library.length}</span></button>}
       </section>
     </section>
 
