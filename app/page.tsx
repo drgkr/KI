@@ -45,7 +45,9 @@ export default function Home() {
   const [detailOpen, setDetailOpen] = useState(false);
   const [editing, setEditing] = useState(false);
   const [source, setSource] = useState<"sample" | "tmdb">("sample");
-  const [sortBy, setSortBy] = useState<"year" | "rating">("year");
+  const [sortBy, setSortBy] = useState<"year" | "rating" | "title">("year");
+  const [catalogueFilter, setCatalogueFilter] = useState<"all" | "rated" | "netflix" | "prime">("all");
+  const [yearFilter, setYearFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(500);
   const [draftScores, setDraftScores] = useState<Partial<Scores>>({});
@@ -60,20 +62,31 @@ export default function Home() {
 
   const newest = useMemo(() => [...films].sort((a,b) => b.releaseDate.localeCompare(a.releaseDate)), [films]);
   const latest = newest.slice(0, 20);
+  const availableYears = useMemo(() => [...new Set(films.map(item => item.year).filter(Boolean))].sort((a,b) => b.localeCompare(a)), [films]);
   const library = useMemo(() => {
     const term = query.trim().toLocaleLowerCase();
-    const matches = films.filter(item => !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast].some(value => value?.toLocaleLowerCase().includes(term)));
+    const matches = films.filter(item => {
+      const providers = (item.watchProviders || []).map(provider => provider.name.toLocaleLowerCase());
+      const matchesText = !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast].some(value => value?.toLocaleLowerCase().includes(term));
+      const matchesYear = yearFilter === "all" || item.year === yearFilter;
+      const matchesCatalogue = catalogueFilter === "all"
+        || (catalogueFilter === "rated" && item.scores !== null)
+        || (catalogueFilter === "netflix" && providers.some(name => name.includes("netflix")))
+        || (catalogueFilter === "prime" && providers.some(name => name.includes("prime video") || name.includes("amazon prime")));
+      return matchesText && matchesYear && matchesCatalogue;
+    });
     return matches.sort((a,b) => {
       if (sortBy === "year") return b.releaseDate.localeCompare(a.releaseDate);
+      if (sortBy === "title") return a.title.localeCompare(b.title, "en", { sensitivity: "base" });
       const aScore = total(a.scores), bScore = total(b.scores);
       if (aScore === null && bScore === null) return b.releaseDate.localeCompare(a.releaseDate);
       if (aScore === null) return 1;
       if (bScore === null) return -1;
       return bScore - aScore || b.releaseDate.localeCompare(a.releaseDate);
     });
-  }, [films, query, sortBy]);
+  }, [films, query, sortBy, catalogueFilter, yearFilter]);
   const visibleLibrary = library.slice(0, visibleCount);
-  useEffect(() => setVisibleCount(500), [query, sortBy]);
+  useEffect(() => setVisibleCount(500), [query, sortBy, catalogueFilter, yearFilter]);
   const activeIndex = newest.findIndex(f => f.id === film.id);
   const choose = (chosen: Film) => { setSelected(films.findIndex(f => f.id === chosen.id)); setEditing(false); setDraftScores({}); setDetailOpen(true); };
   const closeDetail = () => { setDetailOpen(false); setEditing(false); setDraftScores({}); };
@@ -121,10 +134,12 @@ export default function Home() {
         </button>)}
       </div>
       <section className="library" id="library">
-        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search by film, performer, year or genre across the complete archive.</p></div><span className="result-count">{query.trim() ? `${library.length} matches` : `${films.length} films available`}</span></div>
+        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search and filter by rating, streaming service, year or title.</p></div><span className="result-count">{query.trim() || catalogueFilter !== "all" || yearFilter !== "all" ? `${library.length} matches` : `${films.length} films available`}</span></div>
         <div className="library-controls">
           <label className="search-control"><span>Search the full archive</span><input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Film, performer, year or genre…"/></label>
-          <label className="sort-control"><span>Arrange films</span><select value={sortBy} onChange={event => setSortBy(event.target.value as "year" | "rating")}><option value="year">Latest releases first</option><option value="rating">Best scores first</option></select></label>
+          <label><span>Show movies</span><select value={catalogueFilter} onChange={event => setCatalogueFilter(event.target.value as "all" | "rated" | "netflix" | "prime")}><option value="all">All movies</option><option value="rated">Rated movies</option><option value="netflix">Movies on Netflix</option><option value="prime">Movies on Prime Video</option></select></label>
+          <label><span>Movies by year</span><select value={yearFilter} onChange={event => setYearFilter(event.target.value)}><option value="all">All years</option>{availableYears.map(year => <option value={year} key={year}>{year}</option>)}</select></label>
+          <label className="sort-control"><span>Arrange films</span><select value={sortBy} onChange={event => setSortBy(event.target.value as "year" | "rating" | "title")}><option value="year">Latest releases first</option><option value="rating">Highest rated first</option><option value="title">Title A to Z</option></select></label>
         </div>
         {library.length ? <div className="movie-grid" aria-label="All films">
           {visibleLibrary.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
@@ -133,7 +148,7 @@ export default function Home() {
             <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
           </button>)}
         </div> : <div className="empty-state"><strong>No matching film</strong><span>Try another title, performer, year or genre.</span></div>}
-        {query.trim() && visibleLibrary.length < library.length && <button className="load-more" onClick={() => setVisibleCount(count => Math.min(count + 100, library.length))}>Show 100 more matches <span>{visibleLibrary.length} of {library.length}</span></button>}
+        {visibleLibrary.length < library.length && <button className="load-more" onClick={() => setVisibleCount(count => Math.min(count + 100, library.length))}>Show 100 more matches <span>{visibleLibrary.length} of {library.length}</span></button>}
       </section>
     </section>
 
