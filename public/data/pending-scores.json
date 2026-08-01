@@ -1,5 +1,52 @@
 {
   "schemaVersion": 1,
   "description": "Prepared ratings awaiting owner approval. Entries are moved to scores.json by the Approve film rating workflow.",
-  "ratings": {}
+  "ratings": {
+    "1432631": {
+      "title": "Idhayam Murali",
+      "assessedAt": "2026-08-01",
+      "confidence": "Medium",
+      "scores": {
+        "writing": 60,
+        "emotion": 58,
+        "pacing": 54,
+        "performances": 70,
+        "rewatch": 62,
+        "critics": 58,
+        "audience": 64
+      },
+      "sources": [
+        {
+          "name": "M Suganth — The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/idhayam-murali/amp_movie_review/132307036.cms",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Janani K — India Today",
+          "url": "https://www.indiatoday.in/movies/reviews/story/idhayam-murali-review-atharvaas-love-story-fails-to-confess-its-own-feelings-2944867-2026-07-10",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Latha Srinivasan — NDTV",
+          "url": "https://www.ndtv.com/entertainment/idhayam-murali-review-a-breezy-rom-com-that-entertains-in-parts-3-stars-11753642",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "Rotten Tomatoes critic collection",
+          "url": "https://www.rottentomatoes.com/m/idhayam_murali",
+          "kind": "Additional critic",
+          "weight": 20
+        },
+        {
+          "name": "r/kollywood review megathread",
+          "url": "https://www.reddit.com/r/kollywood/comments/1uscy8y/idhayam_murali_review_megathread/",
+          "kind": "Audience",
+          "weight": 20
+        }
+      ]
+    }
+  }
 }
