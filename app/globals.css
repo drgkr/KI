@@ -56,3 +56,17 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 
 @media(max-width:800px){.modal-backdrop{display:block;padding:0}.detail-modal{display:block;width:100%;max-height:none;min-height:100vh;border-radius:0;border:0}.detail-modal .modal-close{position:fixed;top:12px;right:12px}.detail-modal .detail-poster{min-height:0;height:auto;aspect-ratio:16/11;border-right:0;border-bottom:1px solid rgba(143,170,164,.24)}.detail-modal .detail-poster>img{position:static;height:100%}.detail-modal .detail-copy{padding:48px 24px}.detail-modal .detail-top{padding-right:0}.detail-modal .final-score{min-width:90px;padding-left:15px}.detail-modal .overview{font-size:17px}}
 @media(max-width:480px){.detail-modal .detail-top{display:grid}.detail-modal .final-score{text-align:left;border-left:0;border-top:1px solid var(--line);padding:18px 0 0;margin-top:20px}.detail-modal .score-head{align-items:flex-start;gap:18px}.detail-modal .edit{flex:0 0 auto}}
+
+/* Simplified score breakdown and evidence badge */
+.detail-modal .score-row{grid-template-columns:minmax(150px,1fr) 60px 55px}
+.detail-modal .bar{height:6px;border-radius:999px;overflow:hidden}
+.detail-modal .bar i{border-radius:999px;background-image:none;transition:width .3s ease,background-color .3s ease}
+.detail-modal .confidence{grid-template-columns:90px 96px minmax(0,1fr);gap:18px;padding:20px}
+.detail-modal .confidence>strong{width:88px;height:88px;border-radius:50%;display:grid;place-items:center;text-align:center;background:#329760;color:#fff;font:700 15px/1 Arial;letter-spacing:.05em;box-shadow:0 8px 24px rgba(50,151,96,.28)}
+.detail-modal .confidence.medium>strong{background:#d69b32;color:#17120a;box-shadow:0 8px 24px rgba(214,155,50,.25)}
+.detail-modal .confidence.low>strong{background:#c94f43;color:#fff;box-shadow:0 8px 24px rgba(201,79,67,.25)}
+.detail-modal .confidence.unrated>strong{background:#52656a;color:#fff;box-shadow:none;font-size:11px;padding:10px}
+.detail-modal .confidence.draft>strong{background:#3d7d91;color:#fff;box-shadow:0 8px 24px rgba(61,125,145,.25)}
+.detail-modal .confidence p{line-height:1.5}
+@media(max-width:800px){.detail-modal .score-row{grid-template-columns:1fr 45px}.detail-modal .confidence{grid-template-columns:76px 88px minmax(0,1fr);gap:12px}.detail-modal .confidence>strong{width:78px;height:78px;font-size:13px}}
+@media(max-width:480px){.detail-modal .confidence{grid-template-columns:1fr 1fr}.detail-modal .confidence p{grid-column:1/-1}.detail-modal .confidence>strong{justify-self:end}}
