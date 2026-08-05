@@ -5,7 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 type Scores = { writing: number; emotion: number; pacing: number; performances: number; rewatch: number; critics: number; audience: number };
 type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
 type WatchProvider = { id: number; name: string; logo?: string | null };
-type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft" };
+type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft"; isNew?: boolean };
 
 const weights: { key: keyof Scores; label: string; weight: number; short: string }[] = [
   { key: "writing", label: "Writing Quality", weight: 20, short: "WR" },
@@ -65,6 +65,8 @@ export default function Home() {
   const [yearFilter, setYearFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(500);
+  const [catalogueUpdatedAt, setCatalogueUpdatedAt] = useState<string | null>(null);
+  const [weeklyNewCount, setWeeklyNewCount] = useState(0);
   const [draftScores, setDraftScores] = useState<Partial<Scores>>({});
   const rail = useRef<HTMLDivElement>(null);
   const film = films[selected] || films[0];
@@ -72,7 +74,7 @@ export default function Home() {
   useEffect(() => {
     const saved = localStorage.getItem("kollywood-index-scores");
     if (saved) { try { const parsed = JSON.parse(saved); setFilms(current => current.map(item => parsed[item.id] ? { ...item, scores: parsed[item.id], ratingStatus: "draft" } : item)); } catch {} }
-    fetch(`./data/movies.json?v=${Date.now()}`, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject()).then(data => { if (data.movies?.length) { setFilms(data.movies); setSelected(0); setSource("tmdb"); } }).catch(() => {});
+    fetch(`./data/movies.json?v=${Date.now()}`, { cache: "no-store" }).then(r => r.ok ? r.json() : Promise.reject()).then(data => { if (data.movies?.length) { setFilms(data.movies); setCatalogueUpdatedAt(data.generatedAt || null); setWeeklyNewCount(Number(data.weeklyNewCount) || 0); setSelected(0); setSource("tmdb"); } }).catch(() => {});
   }, []);
 
   const newest = useMemo(() => [...films].sort((a,b) => b.releaseDate.localeCompare(a.releaseDate)), [films]);
@@ -135,7 +137,7 @@ export default function Home() {
       <div className="section-heading"><div><span className="kicker">RECENTLY REVIEWED</span><h2>Twenty new rated films</h2><p>Explore the most recently released films with a completed Kollywood Index assessment.</p></div><div className="rail-actions"><button onClick={() => scroll(-1)} aria-label="View earlier posters">←</button><button onClick={() => scroll(1)} aria-label="View more posters">→</button></div></div>
       <div className="poster-rail" ref={rail} tabIndex={0} aria-label="20 most recent rated films ordered newest first">
         {latest.map(item => <button className={`poster-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-          <div className="poster-wrap"><Poster film={item}/></div>
+          <div className="poster-wrap"><Poster film={item}/>{item.isNew && <span className="new-week-badge">New this week</span>}</div>
           <ScoreMeter film={item}/>
           <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
         </button>)}
@@ -159,7 +161,7 @@ export default function Home() {
 
     <section className="film-section">
       <section className="library" id="library">
-        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search and filter by rating, streaming service, year or title.</p></div><span className="result-count">{query.trim() || catalogueFilter !== "all" || yearFilter !== "all" ? `${library.length} matches` : `${films.length} films available`}</span></div>
+        <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search and filter by rating, streaming service, year or title.</p>{source === "tmdb" && <p className="catalogue-update">{weeklyNewCount ? `${weeklyNewCount} new ${weeklyNewCount === 1 ? "film" : "films"} this week` : "No new catalogue additions this week"}{catalogueUpdatedAt ? ` · Updated ${new Date(catalogueUpdatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` : ""}</p>}</div><span className="result-count">{query.trim() || catalogueFilter !== "all" || yearFilter !== "all" ? `${library.length} matches` : `${films.length} films available`}</span></div>
         <div className="library-controls">
           <label className="search-control"><span>Search the full archive</span><input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Film, performer, year or genre…"/></label>
           <label><span>Show movies</span><select value={catalogueFilter} onChange={event => setCatalogueFilter(event.target.value as "all" | "rated" | "netflix" | "prime")}><option value="all">All movies</option><option value="rated">Rated movies</option><option value="netflix">Movies on Netflix</option><option value="prime">Movies on Prime Video</option></select></label>
@@ -168,7 +170,7 @@ export default function Home() {
         </div>
         {library.length ? <div className="movie-grid" aria-label="All films">
           {visibleLibrary.map(item => <button className={`grid-card ${item.id === film.id ? "active" : ""}`} key={item.id} onClick={() => choose(item)}>
-            <div className="poster-wrap"><Poster film={item}/></div>
+            <div className="poster-wrap"><Poster film={item}/>{item.isNew && <span className="new-week-badge">New this week</span>}</div>
             <ScoreMeter film={item}/>
             <div className="poster-meta"><strong>{item.title}</strong><span>{item.year} · {item.genres[0]}</span></div>
           </button>)}
