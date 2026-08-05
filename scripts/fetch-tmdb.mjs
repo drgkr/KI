@@ -2,7 +2,9 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const key = process.env.TMDB_API_KEY;
 const output = new URL("../public/data/movies.json", import.meta.url);
+const historyFile = new URL("../public/data/catalogue-history.json", import.meta.url);
 const maxFilms = Math.min(1000, Math.max(1, Number(process.env.TMDB_MAX_FILMS) || 1000));
+const refreshMode = process.env.CATALOGUE_REFRESH_MODE || "reuse";
 const discoveryPages = Math.ceil(maxFilms / 20);
 const detailBatchSize = 20;
 
@@ -53,8 +55,25 @@ for (let start = 1; start <= discoveryPages; start += 10) {
 }
 const discovered = pages.flatMap(page => page.results);
 
-const movies = [];
 const selected = discovered.slice(0, maxFilms);
+let catalogueHistory = { movieIds: [], newMovieIds: [], refreshedAt: null };
+try {
+  catalogueHistory = { ...catalogueHistory, ...JSON.parse(await readFile(historyFile, "utf8")) };
+} catch {
+  console.log("No catalogue history found; this run will establish the comparison baseline.");
+}
+
+const selectedIds = selected.map(movie => movie.id);
+const selectedIdSet = new Set(selectedIds);
+let newMovieIds = new Set((catalogueHistory.newMovieIds || []).filter(id => selectedIdSet.has(id)));
+if (refreshMode === "weekly") {
+  const previousIds = new Set(catalogueHistory.movieIds || []);
+  newMovieIds = previousIds.size ? new Set(selectedIds.filter(id => !previousIds.has(id))) : new Set();
+} else if (refreshMode === "baseline") {
+  newMovieIds = new Set();
+}
+
+const movies = [];
 for (let start = 0; start < selected.length; start += detailBatchSize) {
   const batch = await Promise.all(selected.slice(start, start + detailBatchSize).map(async (movie) => {
     const detailParams = new URLSearchParams({
@@ -92,6 +111,7 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     sources: rating?.sources || [],
     scores: rating?.scores || null,
     ratingStatus: rating ? "rated" : "unrated",
+    isNew: newMovieIds.has(movie.id),
     };
   }));
   movies.push(...batch);
@@ -100,5 +120,9 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
 }
 
 await mkdir(new URL("../public/data/", import.meta.url), { recursive: true });
-await writeFile(output, JSON.stringify({ movies }, null, 2));
-console.log(`Prepared ${movies.length} Tamil films from TMDB.`);
+const generatedAt = new Date().toISOString();
+await writeFile(output, JSON.stringify({ generatedAt, weeklyNewCount: newMovieIds.size, movies }, null, 2));
+if (refreshMode === "weekly" || refreshMode === "baseline") {
+  await writeFile(historyFile, JSON.stringify({ movieIds: selectedIds, newMovieIds: [...newMovieIds], refreshedAt: generatedAt }, null, 2));
+}
+console.log(`Prepared ${movies.length} Tamil films from TMDB; ${newMovieIds.size} marked new this week (${refreshMode} mode).`);
