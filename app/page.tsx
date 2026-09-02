@@ -206,7 +206,7 @@ export default function Home() {
     </section></div>}
 
     <section className="method" id="methodology">
-      <div className="method-intro"><span className="kicker">BEHIND THE NUMBER</span><h2>Seven measures.<br/>One comparable score.</h2><p>Every assessed film follows the same weighted framework, bringing together filmmaking craft, critical response and audience evidence.</p></div>
+      <div className="method-intro"><span className="kicker">BEHIND THE NUMBER</span><h2>Seven measures.<br/>One comparable score.</h2><p>Every assessed film follows the same weighted framework, bringing together filmmaking craft, critical response and audience evidence.</p><p style={{ marginTop: 28, padding: "18px 20px", borderLeft: "3px solid var(--coral)", background: "rgba(255,255,255,.28)", fontSize: 15, fontStyle: "italic" }}>The idea for the Kollywood Index rating system and its classification framework came from Dr Gautham Viswanathan, USA, and his website, Masala Meter. We gratefully acknowledge and thank him for his ideas.</p></div>
       <div className="formula">
         {weights.map((item, i) => <div className="formula-row" key={item.key}><span>0{i+1}</span><strong>{item.label}</strong><b>{item.weight}%</b></div>)}
         <div className="equation"><span>OVERALL RATING</span><code>Σ (measure × weight) = rating out of 100</code></div>
