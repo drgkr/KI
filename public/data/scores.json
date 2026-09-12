@@ -3129,6 +3129,105 @@
         { "name": "Tamil audience review sample", "url": "https://www.youtube.com/watch?v=m5F9M-kJ1_A", "kind": "Audience", "weight": 20 }
       ]
     },
+    "1489543": {
+      "title": "G.D.N",
+      "assessedAt": "2026-09-12",
+      "confidence": "High",
+      "scores": { "writing": 53, "emotion": 51, "pacing": 52, "performances": 78, "rewatch": 53, "critics": 56, "audience": 56 },
+      "sources": [
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/gdn-review-madhavan-gd-naidu-biopic-glossy-highlight-reel-no-heart-2965092-2026-08-07", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/g-d-n/movie-review/132902412.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Rotten Tomatoes critic sample", "url": "https://www.rottentomatoes.com/m/gdn", "kind": "Additional critic", "weight": 40 },
+        { "name": "Rotten Tomatoes audience responses", "url": "https://www.rottentomatoes.com/m/gdn", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1509599": {
+      "title": "Gatta Kusthi 2",
+      "assessedAt": "2026-09-12",
+      "confidence": "High",
+      "scores": { "writing": 34, "emotion": 43, "pacing": 40, "performances": 62, "rewatch": 39, "critics": 38, "audience": 43 },
+      "sources": [
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/gatta-kusthi-2-review-regressive-sequel-undermines-keerthi-2939647-2026-07-03", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/gatta-kusthi-2/movie-review/132162571.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The New Indian Express", "url": "https://www.newindianexpress.com/amp/story/entertainment/review/2026/Jul/04/tamilreview2026jul03gatta-kusthi-2-movie-review-this-old-school-battle-of-the-sexes-is-funny-flawed-and-familiar", "kind": "Additional critic", "weight": 20 },
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/gatta-kusthi-2-review-vishnu-vishal-aishwarya-lekshmi-cant-save-poorly-crafted-sequel-10769918/lite/", "kind": "Additional critic", "weight": 20 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/gatta-kusthi-2/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1710563": {
+      "title": "Nizhal",
+      "assessedAt": "2026-09-12",
+      "confidence": "Medium",
+      "scores": { "writing": 37, "emotion": 39, "pacing": 38, "performances": 46, "rewatch": 36, "critics": 40, "audience": 44 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Jun/16/nizhal-movie-review-clunky-narrative-incomplete-arcs-holds-back-this-thriller", "kind": "Lead critic", "weight": 20 },
+        { "name": "Dinamalar", "url": "https://www.dinamalar.com/cinemareview/3779", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Tamil Filmibeat", "url": "https://tamil.filmibeat.com/reviews/nizhal-review-in-tamil-bigg-boss-janany-done-an-action-avatar-in-this-movie-179079.html", "kind": "Additional critic", "weight": 40 },
+        { "name": "Public review sample", "url": "https://www.youtube.com/watch?v=z1tviME3Yvk", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1660940": {
+      "title": "Nee Forever",
+      "assessedAt": "2026-09-12",
+      "confidence": "Medium",
+      "scores": { "writing": 39, "emotion": 41, "pacing": 37, "performances": 43, "rewatch": 38, "critics": 41, "audience": 36 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/nee-forever/movie-review/129845836.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Puthiya Thalaimurai", "url": "https://www.puthiyathalaimurai.com/cinema/movie-review/nee-forever-movie-review", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Kalki", "url": "https://kalkionline.com/entertainment/cinema/nee-forever-movie-review-in-tamil", "kind": "Additional critic", "weight": 20 },
+        { "name": "Maalai Malar", "url": "https://www.maalaimalar.com/cinema/cinemanews/nee-forever-movie-review", "kind": "Additional critic", "weight": 20 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/nee-forever/details/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1370554": {
+      "title": "Karuppu Petti",
+      "assessedAt": "2026-09-12",
+      "confidence": "Medium",
+      "scores": { "writing": 36, "emotion": 40, "pacing": 35, "performances": 46, "rewatch": 35, "critics": 39, "audience": 39 },
+      "sources": [
+        { "name": "Maalai Malar", "url": "https://www.maalaimalar.com/karuppu-petti-160546", "kind": "Lead critic", "weight": 20 },
+        { "name": "NetTV4U", "url": "https://nettv4u.com/movie-review/tamil/karuppu-petti", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Thanthi TV", "url": "https://www.thanthitv.com/news/cinema/karuppupettimovie-moviereview-thanthitv-295611", "kind": "Additional critic", "weight": 40 },
+        { "name": "Tamil Edition public review", "url": "https://www.youtube.com/watch?v=srI8YQexPME", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1217443": {
+      "title": "Miriam Maa",
+      "assessedAt": "2026-09-12",
+      "confidence": "Medium",
+      "scores": { "writing": 53, "emotion": 59, "pacing": 46, "performances": 61, "rewatch": 49, "critics": 51, "audience": 63 },
+      "sources": [
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/miriam-maa/amp_movie_review/106294999.cms", "kind": "Lead critic", "weight": 20 },
+        { "name": "Maalai Malar", "url": "https://www.maalaimalar.com/movie-review/miriam-ma-157353", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/miriam-maa/", "kind": "Additional critic", "weight": 40 },
+        { "name": "BookMyShow audience responses", "url": "https://in.bookmyshow.com/movies/chennai/miriam-maa/ET00379625", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1393301": {
+      "title": "Thirumbipaar",
+      "assessedAt": "2026-09-12",
+      "confidence": "Low",
+      "scores": { "writing": 49, "emotion": 48, "pacing": 50, "performances": 54, "rewatch": 47, "critics": 50, "audience": 53 },
+      "sources": [
+        { "name": "Tamil Filmibeat", "url": "https://www.filmibeat.com/tamil/movies/thirumbipaar.html", "kind": "Lead critic", "weight": 20 },
+        { "name": "Maalai Malar listing", "url": "https://www.maalaimalar.com/movie-review/thirumbipaar-160787", "kind": "Second lead critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt34789924/ratings/", "kind": "Additional critic", "weight": 40 },
+        { "name": "Sacnilk audience rating", "url": "https://www.sacnilk.com/movie/Thirumbipaar_2024", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1079221": {
+      "title": "Let's Get Married",
+      "assessedAt": "2026-09-12",
+      "confidence": "High",
+      "scores": { "writing": 22, "emotion": 25, "pacing": 20, "performances": 35, "rewatch": 22, "critics": 24, "audience": 23 },
+      "sources": [
+        { "name": "Lensmen Reviews", "url": "https://lensmenreviews.com/lets-get-married-lgm-tamil-movie-review-2023/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/lgm-lets-get-married/amp_movie_review/102186042.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "ABP Nadu", "url": "https://tamil.abplive.com/movie-review/entertainment/movie-review-lgm-movie-review-in-tamil-starring-harish-kalyan-ivana-nadhiya-yogibabu-ms-dhoni-produced-lets-get-married-abp-nadu-critics-review-rating-131562", "kind": "Additional critic", "weight": 20 },
+        { "name": "MovieCrow", "url": "https://www.moviecrow.com/News/32328/lgm-review-dhoni-harish-kalyan", "kind": "Additional critic", "weight": 20 },
+        { "name": "Public review sample", "url": "https://www.youtube.com/watch?v=q50yzKVUnFc", "kind": "Audience", "weight": 20 }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
