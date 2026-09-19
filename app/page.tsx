@@ -5,7 +5,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 type Scores = { writing: number; emotion: number; pacing: number; performances: number; rewatch: number; critics: number; audience: number };
 type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
 type WatchProvider = { id: number; name: string; logo?: string | null };
-type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: string[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft"; isNew?: boolean };
+type CastMember = string | { name: string; character?: string; profile?: string | null };
+type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: CastMember[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft"; isNew?: boolean };
 
 const weights: { key: keyof Scores; label: string; weight: number; short: string }[] = [
   { key: "writing", label: "Writing Quality", weight: 20, short: "WR" },
@@ -37,6 +38,8 @@ const scoreBubbleColour = (score: number) => {
   return "#e5484d";
 };
 const scoreTextColour = (score: number) => score >= 41 && score <= 80 ? "#142019" : "#ffffff";
+const castName = (member: CastMember) => typeof member === "string" ? member : member.name;
+const castInitials = (name: string) => name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join("").toUpperCase();
 
 function Poster({ film }: { film: Film }) {
   if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
@@ -84,7 +87,7 @@ export default function Home() {
     const term = query.trim().toLocaleLowerCase();
     const matches = films.filter(item => {
       const providers = (item.watchProviders || []).map(provider => provider.name.toLocaleLowerCase());
-      const matchesText = !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast].some(value => value?.toLocaleLowerCase().includes(term));
+      const matchesText = !term || [item.title, item.originalTitle, item.year, ...item.genres, ...item.cast.map(castName)].some(value => value?.toLocaleLowerCase().includes(term));
       const matchesYear = yearFilter === "all" || item.year === yearFilter;
       const matchesCatalogue = catalogueFilter === "all"
         || (catalogueFilter === "rated" && item.scores !== null)
@@ -186,7 +189,7 @@ export default function Home() {
       <div className="detail-copy">
         <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2 id="film-detail-title">{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className={`final-score ${film.scores ? "" : "unrated"}`}><strong>{total(film.scores) ?? "NR"}</strong><span>{film.scores ? "OUT OF 100" : "ASSESSMENT PENDING"}</span></div></div>
         <p className="overview">{film.overview}</p>
-        <div className="cast"><span>CAST</span><p>{film.cast.join(" · ")}</p></div>
+        <div className="cast" style={{ display: "block" }}><span>CAST</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{film.cast.map((member, index) => { const name = castName(member); const profile = typeof member === "string" ? null : member.profile; return <div key={`${name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{profile ? <img src={profile} alt={name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{name}</strong></div>})}</div></div>
         <section className="streaming" aria-label="UK streaming availability">
           <div className="streaming-heading"><div><span className="kicker">WATCH IN THE UK</span><h3>Currently streaming</h3></div>{film.watchLink && <a href={film.watchLink} target="_blank" rel="noreferrer">Check availability ↗</a>}</div>
           {film.watchProviders?.length ? <div className="provider-list">{film.watchProviders.map(provider => <div className="provider" key={provider.id}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></div>)}</div> : <p className="streaming-empty">No UK subscription-streaming listing is currently available.</p>}
