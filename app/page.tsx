@@ -216,7 +216,7 @@ export default function Home() {
           </div>})}
         </div>
         <div className={`confidence ${film.ratingStatus === "draft" ? "draft" : film.confidence?.toLowerCase() || "unrated"}`}><span>EVIDENCE</span><strong>{film.ratingStatus === "draft" ? "Local draft" : film.confidence || "Awaiting review"}</strong><p>{film.ratingStatus === "draft" ? "Saved only on this device; not an approved published rating" : film.confidence ? `${film.sourceCount} sources considered · ${film.confidence === "High" ? "Broad agreement across major reviews" : film.confidence === "Medium" ? "Useful coverage with a mixed verdict" : "A preliminary view based on limited coverage"}` : "No approved assessment or source record has been published yet"}</p></div>
-        {!!film.sources?.length && <div className="evidence-list"><span className="kicker">SOURCES USED</span>{film.sources.map((source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><strong>{source.name}</strong><span>{source.kind} · {source.weight}% of evidence panel ↗</span></a<)}</div>}
+        {!!film.sources?.length && <div className="evidence-list"><span className="kicker">SOURCES USED</span>{film.sources.map((source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><strong>{source.name}</strong><span>{source.kind} · {source.weight}% of evidence panel ↗</span></a>)}</div>}
       </div>
     </section></div>}
 
