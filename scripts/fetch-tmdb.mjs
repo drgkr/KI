@@ -1,5 +1,4 @@
-ipae => page.results
-  page => page.resultsmport { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const key = process.env.TMDB_API_KEY;
 const output = new URL("../public/data/movies.json", import.meta.url);
@@ -54,7 +53,7 @@ for (let start = 1; start <= discoveryPages; start += 10) {
   const batch = await Promise.all(pageNumbers.map(page => fetchJson(`https://api.themoviedb.org/3/discover/movie?${new URLSearchParams({ ...query, page: String(page) })}`)));
   pages.push(...batch);
 }
-const discovered = pages.flatMap(pae => page.results);
+const discovered = pages.flatMap(page => page.results);
 
 const selected = discovered.slice(0, maxFilms);
 let catalogueHistory = { movieIds: [], newMovieIds: [], refreshedAt: null };
@@ -72,8 +71,7 @@ if (refreshMode === "weekly") {
   newMovieIds = previousIds.size ? new Set(selectedIds.filter(id => !previousIds.has(id))) : new Set();
 } else if (refreshMode === "baseline") {
   newMovieIds = new Set();
-56
-const discovered = pages.flatMap(page => page.results);
+}
 
 const movies = [];
 for (let start = 0; start < selected.length; start += detailBatchSize) {
