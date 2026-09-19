@@ -53,7 +53,7 @@ for (let start = 1; start <= discoveryPages; start += 10) {
   const batch = await Promise.all(pageNumbers.map(page => fetchJson(`https://api.themoviedb.org/3/discover/movie?${new URLSearchParams({ ...query, page: String(page) })}`)));
   pages.push(...batch);
 }
-const discovered = pages.flatMap(page => page.results);
+const discovered = pages.flatMap(pae => page.results);
 
 const selected = discovered.slice(0, maxFilms);
 let catalogueHistory = { movieIds: [], newMovieIds: [], refreshedAt: null };
@@ -106,6 +106,21 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
       name: person.name,
       character: person.character || null,
       profile: person.profile_path ? `https://image.tmdb.org/t/p/w185${person.profile_path}` : null,
+    })) || [],
+    directors: detail.credits?.crew?.filter((person) => person.job === "Director").slice(0, 3).map((person) => ({
+      name: person.name,
+      job: person.job,
+      profile: person.profile_path ? `https://image.tmdb.org/t/p/w185${person.profile_path}` : null,
+    })) || [],
+    producers: detail.credits?.crew?.filter((person) => person.job === "Producer").slice(0, 5).map((person) => ({
+      name: person.name,
+      job: person.job,
+      profile: person.profile_path ? `https://image.tmdb.org/t/p/w185${person.profile_path}` : null,
+    })) || [],
+    productionCompanies: detail.production_companies?.slice(0, 5).map((company) => ({
+      id: company.id,
+      name: company.name,
+      logo: company.logo_path ? `https://image.tmdb.org/t/p/w185${company.logo_path}` : null,
     })) || [],
     overview: movie.overview || "Synopsis unavailable.",
     watchProviders,
