@@ -1,4 +1,5 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+ipae => page.results
+  page => page.resultsmport { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const key = process.env.TMDB_API_KEY;
 const output = new URL("../public/data/movies.json", import.meta.url);
@@ -71,7 +72,8 @@ if (refreshMode === "weekly") {
   newMovieIds = previousIds.size ? new Set(selectedIds.filter(id => !previousIds.has(id))) : new Set();
 } else if (refreshMode === "baseline") {
   newMovieIds = new Set();
-}
+56
+const discovered = pages.flatMap(page => page.results);
 
 const movies = [];
 for (let start = 0; start < selected.length; start += detailBatchSize) {
