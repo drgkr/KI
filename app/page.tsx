@@ -142,7 +142,7 @@ export default function Home() {
   return <main>
     <header className="topbar">
       <a className="brand" href="#top" aria-label="Kollywood Index home"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></a>
-      <nav><a href="#films">Just arrived</a><a href="#library" onClick={() => setCatalogueFilter("all")}>Browse films</a><a href="#library" onClick={() => setCatalogueFilter("rated")}>Browse films (Rated)</a><a href="#methodology">Our rating system</a></nav>
+      <nav><a href="#films">Just arrived</a><a href="#library" onClick={() => setCatalogueFilter("all")}>Browse films</a><a href="#library" onClick={() => setCatalogueFilter("rated")}>Browse films (Rated)</a><a href="#methodology">Our rating system</a><a href="https://drgkr.github.io/TI/">Tollywood</a><a href="https://drgkr.github.io/MI/">Mollywood</a></nav>
       <span className={`source ${source}`}>{source === "tmdb" ? "Live cinema catalogue" : "Catalogue preview"}</span>
     </header>
 
