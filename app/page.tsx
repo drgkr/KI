@@ -6,7 +6,9 @@ type Scores = { writing: number; emotion: number; pacing: number; performances: 
 type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
 type WatchProvider = { id: number; name: string; logo?: string | null };
 type CastMember = string | { name: string; character?: string; profile?: string | null };
-type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: CastMember[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft"; isNew?: boolean };
+type CreditPerson = { name: string; job?: string; profile?: string | null };
+type ProductionCompany = { id: number; name: string; logo?: string | null };
+type Film = { id: number; title: string; originalTitle?: string; year: string; releaseDate: string; runtime?: number; poster?: string; backdrop?: string; genres: string[]; cast: CastMember[]; directors?: CreditPerson[]; producers?: CreditPerson[]; productionCompanies?: ProductionCompany[]; overview: string; watchProviders?: WatchProvider[]; watchLink?: string | null; confidence: "High" | "Medium" | "Low" | null; scores: Scores | null; sourceCount: number; sources?: EvidenceSource[]; ratingStatus?: "rated" | "unrated" | "draft"; isNew?: boolean };
 
 const weights: { key: keyof Scores; label: string; weight: number; short: string }[] = [
   { key: "writing", label: "Writing Quality", weight: 20, short: "WR" },
@@ -40,6 +42,14 @@ const scoreBubbleColour = (score: number) => {
 const scoreTextColour = (score: number) => score >= 41 && score <= 80 ? "#142019" : "#ffffff";
 const castName = (member: CastMember) => typeof member === "string" ? member : member.name;
 const castInitials = (name: string) => name.split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join("").toUpperCase();
+
+function CreditRow({ label, people, companies }: { label: string; people?: CreditPerson[]; companies?: ProductionCompany[] }) {
+  const entries = people?.length
+    ? people.map(person => ({ name: person.name, image: person.profile }))
+    : (companies || []).map(company => ({ name: company.name, image: company.logo }));
+  if (!entries.length) return null;
+  return <div className="cast" style={{ display: "block" }}><span>{label}</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{entries.map((entry, index) => <div key={`${entry.name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{entry.image ? <img src={entry.image} alt={entry.name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(entry.name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{entry.name}</strong></div>)}</div></div>;
+}
 
 function Poster({ film }: { film: Film }) {
   if (film.poster) return <img src={film.poster} alt={`${film.title} poster`} loading="lazy" decoding="async" />;
@@ -190,6 +200,8 @@ export default function Home() {
         <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2 id="film-detail-title">{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className={`final-score ${film.scores ? "" : "unrated"}`}><strong>{total(film.scores) ?? "NR"}</strong><span>{film.scores ? "OUT OF 100" : "ASSESSMENT PENDING"}</span></div></div>
         <p className="overview">{film.overview}</p>
         <div className="cast" style={{ display: "block" }}><span>CAST</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{film.cast.map((member, index) => { const name = castName(member); const profile = typeof member === "string" ? null : member.profile; return <div key={`${name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{profile ? <img src={profile} alt={name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{name}</strong></div>})}</div></div>
+        <CreditRow label="DIRECTOR" people={film.directors}/>
+        <CreditRow label={film.producers?.length ? "PRODUCER" : "PRODUCTION"} people={film.producers} companies={film.productionCompanies}/>
         <section className="streaming" aria-label="UK streaming availability">
           <div className="streaming-heading"><div><span className="kicker">WATCH IN THE UK</span><h3>Currently streaming</h3></div>{film.watchLink && <a href={film.watchLink} target="_blank" rel="noreferrer">Check availability ↗</a>}</div>
           {film.watchProviders?.length ? <div className="provider-list">{film.watchProviders.map(provider => <div className="provider" key={provider.id}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></div>)}</div> : <p className="streaming-empty">No UK subscription-streaming listing is currently available.</p>}
@@ -204,7 +216,7 @@ export default function Home() {
           </div>})}
         </div>
         <div className={`confidence ${film.ratingStatus === "draft" ? "draft" : film.confidence?.toLowerCase() || "unrated"}`}><span>EVIDENCE</span><strong>{film.ratingStatus === "draft" ? "Local draft" : film.confidence || "Awaiting review"}</strong><p>{film.ratingStatus === "draft" ? "Saved only on this device; not an approved published rating" : film.confidence ? `${film.sourceCount} sources considered · ${film.confidence === "High" ? "Broad agreement across major reviews" : film.confidence === "Medium" ? "Useful coverage with a mixed verdict" : "A preliminary view based on limited coverage"}` : "No approved assessment or source record has been published yet"}</p></div>
-        {!!film.sources?.length && <div className="evidence-list"><span className="kicker">SOURCES USED</span>{film.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><strong>{source.name}</strong><span>{source.kind} · {source.weight}% of evidence panel ↗</span></a>)}</div>}
+        {!!film.sources?.length && <div className="evidence-list"><span className="kicker">SOURCES USED</span>{film.sources.map((source => <a key={source.url} href={source.url} target="_blank" rel="noreferrer"><strong>{source.name}</strong><span>{source.kind} · {source.weight}% of evidence panel ↗</span></a<)}</div>}
       </div>
     </section></div>}
 
@@ -222,11 +234,11 @@ export default function Home() {
         <div style={{"--size":"20%"} as React.CSSProperties}><span>Lead critic</span><b>~20%</b></div>
         <div style={{"--size":"20%"} as React.CSSProperties}><span>Second lead critic</span><b>~20%</b></div>
         <div style={{"--size":"40%"} as React.CSSProperties}><span>Additional reputable critics</span><b>~40%</b></div>
-        <div style={{"--size":"20%"} as React.CSSProperties}><span>Audience signal <small>Reddit · Letterboxd</small></span><b>~20%</b></div>
+        <div style={{"--size":"20%"} as React.CSSProperties}><span>Audience signal <small>Reddit ÷ Letterboxd</small></span><b>~20%</b></div>
       </div>
     </section>
 
-    <section className="confidence-explain"><div><span className="kicker">HOW CERTAIN IS IT?</span><h2>Every score carries<br/>an evidence signal.</h2><p>Confidence describes the depth and agreement of the available material—not whether a film is good or bad.</p></div><div className="confidence-grid"><article><i></i><strong>High</strong><p>Many credible sources point in a similar direction</p></article><article><i></i><strong>Medium</strong><p>Useful coverage exists, but the response is divided</p></article><article><i></i><strong>Low</strong><p>The early view rests on a small evidence base</p></article></div></section>
+    <section className="confidence-explain"><div><span className="kicker">HOW CERTAIN IS IT</span><h2>Every score carries<br/>an evidence signal.</h2><p>Confidence describes the depth and agreement of the available material—not whether a film is good or bad.</p></div><div className="confidence-grid"><article><i></i><strong>High</strong><p>Many credible sources point in a similar direction</p></article><article><i></i><strong>Medium</strong><p>Useful coverage exists, but the response is divided</p></article><article><i></i><strong>Low</strong><p>The early view rests on a small evidence base</p></article></div></section>
 
     <footer id="about">
       <div className="brand footer-brand"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></div>
