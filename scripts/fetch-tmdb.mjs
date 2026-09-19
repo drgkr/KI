@@ -102,7 +102,11 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     poster: posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : null,
     backdrop: movie.backdrop_path ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}` : null,
     genres: detail.genres?.map((genre) => genre.name) || [],
-    cast: detail.credits?.cast?.slice(0, 5).map((person) => person.name) || [],
+    cast: detail.credits?.cast?.slice(0, 5).map((person) => ({
+      name: person.name,
+      character: person.character || null,
+      profile: person.profile_path ? `https://image.tmdb.org/t/p/w185${person.profile_path}` : null,
+    })) || [],
     overview: movie.overview || "Synopsis unavailable.",
     watchProviders,
     watchLink: ukWatch?.link || null,
