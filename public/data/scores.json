@@ -3228,6 +3228,106 @@
         { "name": "Public review sample", "url": "https://www.youtube.com/watch?v=q50yzKVUnFc", "kind": "Audience", "weight": 20 }
       ]
     },
+    "1408162": {
+      "title": "Vishwanath & Sons",
+      "assessedAt": "2026-10-03",
+      "confidence": "High",
+      "scores": { "writing": 60, "emotion": 72, "pacing": 64, "performances": 78, "rewatch": 69, "critics": 64, "audience": 73 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/vishwanath-and-sons-movie-review-suriya-film-warm-with-weak-plot-10832603/", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/amp/story/reviews/theatrical/vishwanath-sons-movie-review-a-plasticky-family-drama-that-is-just-about-watchable-thanks-to-suriya", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/vishwanath-and-sons/amp_movie_review/133233248.cms", "kind": "Additional critic", "weight": 20 },
+        { "name": "Rotten Tomatoes critic collection", "url": "https://www.rottentomatoes.com/m/vishwanath_and_sons", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt35836025/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1506833": {
+      "title": "Magudam",
+      "assessedAt": "2026-10-03",
+      "confidence": "High",
+      "scores": { "writing": 34, "emotion": 36, "pacing": 30, "performances": 46, "rewatch": 28, "critics": 36, "audience": 31 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Aug/14/magudam-movie-review-a-crown-too-heavy-for-weak-storytelling", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/magudam-movie-review-vishals-directorial-debut-swings-big-lands-unevenly-10833084/", "kind": "Second lead critic", "weight": 20 },
+        { "name": "NDTV", "url": "https://www.ndtv.com/entertainment/magudam-review-vishals-directorial-debut-is-over-ambitious-and-underwhelming-2-stars-11910076", "kind": "Additional critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-details/magudam/movieshow/123535372.cms", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt37563829/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1740942": {
+      "title": "Photographer",
+      "assessedAt": "2026-10-03",
+      "confidence": "Medium",
+      "scores": { "writing": 54, "emotion": 58, "pacing": 48, "performances": 55, "rewatch": 47, "critics": 52, "audience": 58 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Aug/08/photographer-movie-review-a-promising-survival-thriller-that-gets-caught-between-genres", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/photographer/movie-review/132993659.cms", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Maalai Malar", "url": "https://www.maalaimalar.com/cinema/cinemanews/photographer-movie-review", "kind": "Additional critic", "weight": 20 },
+        { "name": "Letterboxd audience reviews", "url": "https://letterboxd.com/film/photographer-2026/reviews/", "kind": "Audience", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt43727339/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "499371": {
+      "title": "Titanic",
+      "assessedAt": "2026-10-03",
+      "confidence": "Low",
+      "scores": { "writing": 56, "emotion": 58, "pacing": 55, "performances": 61, "rewatch": 55, "critics": 54, "audience": 60 },
+      "sources": [
+        { "name": "NetTV4U rating", "url": "https://nettv4u.com/movie-review/tamil/titanic", "kind": "Additional critic", "weight": 20 },
+        { "name": "BookMyShow listing and audience interest", "url": "https://in.bookmyshow.com/movies/titanic/ET00069291", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt7852926/ratings/", "kind": "Audience", "weight": 40 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/titanic-2025/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1245864": {
+      "title": "Operation Laila",
+      "assessedAt": "2026-10-03",
+      "confidence": "Low",
+      "scores": { "writing": 46, "emotion": 49, "pacing": 50, "performances": 54, "rewatch": 45, "critics": 48, "audience": 53 },
+      "sources": [
+        { "name": "NetTV4U review listing", "url": "https://nettv4u.com/movie-review/tamil/operation-laila/all-cast-and-crew", "kind": "Lead critic", "weight": 20 },
+        { "name": "Lee Cinema public review", "url": "https://www.youtube.com/watch?v=nUSsU51TkZs", "kind": "Second lead critic", "weight": 20 },
+        { "name": "BookMyShow audience rating", "url": "https://in.bookmyshow.com/movies/operation-laila/ET00387717", "kind": "Audience", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt31322237/ratings/", "kind": "Audience", "weight": 40 }
+      ]
+    },
+    "1248919": {
+      "title": "Kaazh",
+      "assessedAt": "2026-10-03",
+      "confidence": "Medium",
+      "scores": { "writing": 72, "emotion": 69, "pacing": 62, "performances": 70, "rewatch": 63, "critics": 72, "audience": 68 },
+      "sources": [
+        { "name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2024/Jun/08/kaazh-movie-review-an-unfussy-and-realistic-look-at-immigrant-experiences", "kind": "Lead critic", "weight": 20 },
+        { "name": "Malini Mannath", "url": "https://malinimannath.wordpress.com/2024/06/09/review-kaazh/", "kind": "Second lead critic", "weight": 20 },
+        { "name": "Moviewingz", "url": "https://moviewingz.com/kaazh-movie-review/", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27909732/ratings/", "kind": "Audience", "weight": 20 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/kaazh/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "1198674": {
+      "title": "Jenni",
+      "assessedAt": "2026-10-03",
+      "confidence": "Low",
+      "scores": { "writing": 38, "emotion": 41, "pacing": 40, "performances": 42, "rewatch": 35, "critics": 39, "audience": 39 },
+      "sources": [
+        { "name": "Top Cinemas review", "url": "https://www.youtube.com/watch?v=Pyjd2nUxvAk", "kind": "Lead critic", "weight": 20 },
+        { "name": "Rotten Tomatoes listing", "url": "https://www.rottentomatoes.com/m/jenni", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt27198438/ratings/", "kind": "Audience", "weight": 40 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/jenni-2023/", "kind": "Audience", "weight": 20 }
+      ]
+    },
+    "608550": {
+      "title": "Kannitheevu",
+      "assessedAt": "2026-10-03",
+      "confidence": "Low",
+      "scores": { "writing": 31, "emotion": 34, "pacing": 32, "performances": 40, "rewatch": 28, "critics": 31, "audience": 27 },
+      "sources": [
+        { "name": "Top Cinemas review", "url": "https://www.youtube.com/watch?v=6Ih4ihvQaNw", "kind": "Lead critic", "weight": 20 },
+        { "name": "The Fencer Show review", "url": "https://www.youtube.com/watch?v=knzl9B7r7wg", "kind": "Second lead critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt15353588/ratings/", "kind": "Audience", "weight": 40 },
+        { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/kannitheevu/", "kind": "Audience", "weight": 20 }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
