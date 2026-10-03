@@ -3328,6 +3328,19 @@
         { "name": "Letterboxd audience responses", "url": "https://letterboxd.com/film/kannitheevu/", "kind": "Audience", "weight": 20 }
       ]
     },
+    "1317872": {
+      "title": "Sardar 2",
+      "assessedAt": "2026-10-03",
+      "confidence": "High",
+      "scores": { "writing": 51, "emotion": 48, "pacing": 46, "performances": 70, "rewatch": 50, "critics": 50, "audience": 58 },
+      "sources": [
+        { "name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/sardar-2-movie-review-karthis-sequel-that-could-not-match-what-the-original-built-10871319/", "kind": "Lead critic", "weight": 20 },
+        { "name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/sardar-2-review-karthi-spy-thriller-starts-strong-but-turns-generic-2991428-2026-09-10", "kind": "Second lead critic", "weight": 20 },
+        { "name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/sardar-2/amp_movie_review/134001619.cms", "kind": "Additional critic", "weight": 20 },
+        { "name": "Rotten Tomatoes critic collection", "url": "https://www.rottentomatoes.com/m/sardar_2", "kind": "Additional critic", "weight": 20 },
+        { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt28541577/ratings/", "kind": "Audience", "weight": 20 }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
