@@ -3341,6 +3341,70 @@
         { "name": "IMDb audience rating", "url": "https://www.imdb.com/title/tt28541577/ratings/", "kind": "Audience", "weight": 20 }
       ]
     },
+    "1465943": {
+      "title": "Mandaadi",
+      "assessedAt": "2026-10-08",
+      "confidence": "High",
+      "scores": {
+        "writing": 58,
+        "emotion": 65,
+        "pacing": 61,
+        "performances": 84,
+        "rewatch": 68,
+        "critics": 65,
+        "audience": 80
+      },
+      "sources": [
+        {
+          "name": "The Indian Express",
+          "url": "https://indianexpress.com/article/entertainment/movie-review/mandaadi-movie-review-soori-suhas-are-extraordinary-on-water-the-film-is-not-on-land-10871944/",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express",
+          "url": "https://www.cinemaexpress.com/tamil/review/2026/Sep/10/mandaadi-movie-review-scintillating-sail-despite-some-turbulence",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "The Hollywood Reporter India",
+          "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/mandaadi-movie-review-sooris-charisma-sails-through-a-painfully-predictable-plot",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/mandaadi/movie-review/134001460.cms",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "India Today",
+          "url": "https://www.indiatoday.in/movies/reviews/story/mandaadi-review-soori-leads-rooted-sailboat-racing-sports-drama-2991702-2026-09-10",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "NDTV",
+          "url": "https://www.ndtv.com/entertainment/mandaadi-review-soori-shines-in-mathimaran-pugazhendhis-engaging-coastal-sports-drama-3-5-stars-12028873",
+          "kind": "Additional critic",
+          "weight": 10
+        },
+        {
+          "name": "IMDb audience rating",
+          "url": "https://www.imdb.com/title/tt36596965/ratings/",
+          "kind": "Audience",
+          "weight": 10
+        },
+        {
+          "name": "r/kollywood audience discussion",
+          "url": "https://www.reddit.com/r/kollywood/comments/1wc8lf6/mandaadi_megathread_no_spoilers/",
+          "kind": "Audience",
+          "weight": 10
+        }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life", "assessedAt": "2026-08-01", "confidence": "High",
       "scores": { "writing": 45, "emotion": 48, "pacing": 46, "performances": 74, "rewatch": 50, "critics": 48, "audience": 44 },
