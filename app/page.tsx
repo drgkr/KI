@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 type Scores = { writing: number; emotion: number; pacing: number; performances: number; rewatch: number; critics: number; audience: number };
 type EvidenceSource = { name: string; url: string; kind: "Lead critic" | "Second lead critic" | "Additional critic" | "Audience"; weight: number };
-type WatchProvider = { id: number; name: string; logo?: string | null };
+type WatchProvider = { id: number; name: string; logo?: string | null; url?: string | null; scope?: "uk" | "global" };
+type CatalogueFilter = "all" | "rated" | "netflix" | "prime" | "sunnxt" | "zee5";
 type CastMember = string | { name: string; character?: string; profile?: string | null };
 type CreditPerson = { name: string; job?: string; profile?: string | null };
 type ProductionCompany = { id: number; name: string; logo?: string | null };
@@ -74,7 +75,7 @@ export default function Home() {
   const [editing, setEditing] = useState(false);
   const [source, setSource] = useState<"sample" | "tmdb">("sample");
   const [sortBy, setSortBy] = useState<"year" | "rating" | "title">("year");
-  const [catalogueFilter, setCatalogueFilter] = useState<"all" | "rated" | "netflix" | "prime">("all");
+  const [catalogueFilter, setCatalogueFilter] = useState<CatalogueFilter>("all");
   const [yearFilter, setYearFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(500);
@@ -102,7 +103,9 @@ export default function Home() {
       const matchesCatalogue = catalogueFilter === "all"
         || (catalogueFilter === "rated" && item.scores !== null)
         || (catalogueFilter === "netflix" && providers.some(name => name.includes("netflix")))
-        || (catalogueFilter === "prime" && providers.some(name => name.includes("prime video") || name.includes("amazon prime")));
+        || (catalogueFilter === "prime" && providers.some(name => name.includes("prime video") || name.includes("amazon prime")))
+        || (catalogueFilter === "sunnxt" && providers.some(name => name.includes("sun nxt") || name.includes("sunnxt")))
+        || (catalogueFilter === "zee5" && providers.some(name => name.includes("zee5") || name.includes("zee 5")));
       return matchesText && matchesYear && matchesCatalogue;
     });
     return matches.sort((a,b) => {
@@ -177,7 +180,7 @@ export default function Home() {
         <div className="library-heading"><div><span className="kicker">THE COLLECTION</span><h2>Browse Tamil cinema</h2><p>Search and filter by rating, streaming service, year or title.</p>{source === "tmdb" && <p className="catalogue-update">{weeklyNewCount ? `${weeklyNewCount} new ${weeklyNewCount === 1 ? "film" : "films"} this week` : "No new catalogue additions this week"}{catalogueUpdatedAt ? ` · Updated ${new Date(catalogueUpdatedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}` : ""}</p>}</div><span className="result-count">{query.trim() || catalogueFilter !== "all" || yearFilter !== "all" ? `${library.length} matches` : `${films.length} films available`}</span></div>
         <div className="library-controls">
           <label className="search-control"><span>Search the full archive</span><input type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Film, performer, year or genre…"/></label>
-          <label><span>Show movies</span><select value={catalogueFilter} onChange={event => setCatalogueFilter(event.target.value as "all" | "rated" | "netflix" | "prime")}><option value="all">All movies</option><option value="rated">Rated movies</option><option value="netflix">Movies on Netflix</option><option value="prime">Movies on Prime Video</option></select></label>
+          <label><span>Show movies</span><select value={catalogueFilter} onChange={event => setCatalogueFilter(event.target.value as CatalogueFilter)}><option value="all">All movies</option><option value="rated">Rated movies</option><option value="netflix">Movies on Netflix</option><option value="prime">Movies on Prime Video</option><option value="sunnxt">Movies on Sun NXT</option><option value="zee5">Movies on ZEE5 Global</option></select></label>
           <label><span>Movies by year</span><select value={yearFilter} onChange={event => setYearFilter(event.target.value)}><option value="all">All years</option>{availableYears.map(year => <option value={year} key={year}>{year}</option>)}</select></label>
           <label className="sort-control"><span>Arrange films</span><select value={sortBy} onChange={event => setSortBy(event.target.value as "year" | "rating" | "title")}><option value="year">Latest releases first</option><option value="rating">Highest rated first</option><option value="title">Title A to Z</option></select></label>
         </div>
@@ -202,10 +205,12 @@ export default function Home() {
         <div className="cast" style={{ display: "block" }}><span>CAST</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{film.cast.map((member, index) => { const name = castName(member); const profile = typeof member === "string" ? null : member.profile; return <div key={`${name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{profile ? <img src={profile} alt={name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{name}</strong></div>})}</div></div>
         <CreditRow label="DIRECTOR" people={film.directors}/>
         <CreditRow label={film.producers?.length ? "PRODUCER" : "PRODUCTION"} people={film.producers} companies={film.productionCompanies}/>
-        <section className="streaming" aria-label="UK streaming availability">
-          <div className="streaming-heading"><div><span className="kicker">WATCH IN THE UK</span><h3>Currently streaming</h3></div>{film.watchLink && <a href={film.watchLink} target="_blank" rel="noreferrer">Check availability ↗</a>}</div>
-          {film.watchProviders?.length ? <div className="provider-list">{film.watchProviders.map(provider => <div className="provider" key={provider.id}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></div>)}</div> : <p className="streaming-empty">No UK subscription-streaming listing is currently available.</p>}
-          <small>Streaming data supplied by JustWatch via TMDB. Availability can change.</small>
+        <section className="streaming" aria-label="Streaming availability">
+          <div className="streaming-heading"><div><span className="kicker">WHERE TO WATCH</span><h3>Streaming options</h3></div>{film.watchLink && <a href={film.watchLink} target="_blank" rel="noreferrer">Check UK availability ↗</a>}</div>
+          {film.watchProviders?.length ? <div className="provider-list">{film.watchProviders.map(provider => provider.url
+            ? <a className="provider" href={provider.url} target="_blank" rel="noreferrer" key={`${provider.id}-${provider.name}`}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></a>
+            : <div className="provider" key={`${provider.id}-${provider.name}`}>{provider.logo ? <img src={provider.logo} alt={`${provider.name} logo`} loading="lazy"/> : <span aria-hidden="true">▶</span>}<strong>{provider.name}</strong></div>)}</div> : <p className="streaming-empty">No subscription-streaming listing is currently available.</p>}
+          <small>UK availability is supplied by JustWatch through TMDB. ZEE5 Global catalogue indications link to ZEE5 for regional confirmation. Availability can change.</small>
         </section>
         <div className="score-head"><div><span className="kicker">SCORE BREAKDOWN</span><p>{film.scores ? "Seven measures combine to create the published result." : "A score appears only after all seven measures have supporting evidence."}</p></div>{editing ? <button className="edit" disabled={!draftComplete} onClick={saveDraft}>Keep private draft</button> : <button className="edit" onClick={beginEditing}>{film.scores ? "Test different scores" : "Try a private score"}</button>}</div>
         <div className="score-list">
@@ -242,7 +247,7 @@ export default function Home() {
 
     <footer id="about">
       <div className="brand footer-brand"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></div>
-      <div className="disclaimer"><strong>Technology, data and attribution</strong><p>Film titles, release information, cast details, genres, posters and imagery are supplied through the TMDB API. UK streaming availability is supplied by <a href="https://www.justwatch.com/uk" target="_blank" rel="noreferrer">JustWatch</a> through TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB.</p><p>Kollywood Index is an independent, non-commercial project for cinema discovery, criticism and cultural commentary. It is not affiliated with TMDB, JustWatch, any streaming service, film studio, distributor, critic, Reddit or Letterboxd. Film artwork, service logos, names and trademarks remain the property of their respective owners.</p></div>
+      <div className="disclaimer"><strong>Technology, data and attribution</strong><p>Film titles, release information, cast details, genres, posters and imagery are supplied through the TMDB API. UK streaming availability is supplied by <a href="https://www.justwatch.com/uk" target="_blank" rel="noreferrer">JustWatch</a> through TMDB. ZEE5 Global catalogue indications use TMDB provider records and link to <a href="https://www.zee5.com/global/movies/lang/tamil" target="_blank" rel="noreferrer">ZEE5 Global</a> for regional confirmation. This product uses the TMDB API but is not endorsed or certified by TMDB.</p><p>Kollywood Index is an independent, non-commercial project for cinema discovery, criticism and cultural commentary. It is not affiliated with TMDB, JustWatch, Sun NXT, ZEE5, any streaming service, film studio, distributor, critic, Reddit or Letterboxd. Film artwork, service logos, names and trademarks remain the property of their respective owners.</p></div>
       <div className="technology"><strong>Built with</strong><ul><li>Next.js 16 and React 19</li><li>TypeScript, HTML and responsive CSS</li><li>TMDB API and structured JSON data</li><li>GitHub source control</li><li>GitHub Actions automation</li><li>GitHub Pages hosting</li><li>Browser local storage for private drafts</li><li>ChatGPT and Codex-assisted development</li></ul></div>
       <p className="copyright">© {new Date().getFullYear()} Kollywood Index<br/>A clearer way to explore Tamil cinema.</p>
     </footer>

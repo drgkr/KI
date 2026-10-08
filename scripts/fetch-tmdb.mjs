@@ -7,6 +7,8 @@ const maxFilms = Math.min(1000, Math.max(1, Number(process.env.TMDB_MAX_FILMS) |
 const refreshMode = process.env.CATALOGUE_REFRESH_MODE || "reuse";
 const discoveryPages = Math.ceil(maxFilms / 20);
 const detailBatchSize = 20;
+const sunNxtUrl = "https://www.sunnxt.com/";
+const zee5GlobalUrl = "https://www.zee5.com/global/movies/lang/tamil";
 const ukWatchProviderOverrides = {
   1465943: {
     link: "https://www.netflix.com/gb/title/82787383",
@@ -94,6 +96,7 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?${detailParams}`);
     const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
     const tmdbUkWatch = detail["watch/providers"]?.results?.GB;
+    const tmdbIndiaWatch = detail["watch/providers"]?.results?.IN;
     const providerOverride = ukWatchProviderOverrides[movie.id];
     const ukWatch = providerOverride
       ? { ...tmdbUkWatch, ...providerOverride }
@@ -101,10 +104,30 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     const alternatePoster = detail.images?.posters?.find(image => image.file_path)?.file_path;
     const alternateBackdrop = detail.images?.backdrops?.find(image => image.file_path)?.file_path;
     const posterPath = movie.poster_path || detail.poster_path || alternatePoster || movie.backdrop_path || detail.backdrop_path || alternateBackdrop || null;
-    const watchProviders = (ukWatch?.flatrate || []).map(provider => ({
+    const ukProviders = (ukWatch?.flatrate || []).map(provider => ({
+      ...provider,
+      scope: "uk",
+      provider_url: /sun\s*nxt/i.test(provider.provider_name) ? sunNxtUrl : null,
+    }));
+    const zee5Providers = (tmdbIndiaWatch?.flatrate || [])
+      .filter(provider => /zee\s*5/i.test(provider.provider_name))
+      .map(provider => ({
+        ...provider,
+        provider_name: "ZEE5 Global",
+        provider_url: zee5GlobalUrl,
+        scope: "global",
+      }));
+    const providerMap = new Map();
+    for (const provider of [...ukProviders, ...zee5Providers]) {
+      const providerKey = /zee\s*5/i.test(provider.provider_name) ? "zee5-global" : String(provider.provider_id);
+      providerMap.set(providerKey, provider);
+    }
+    const watchProviders = [...providerMap.values()].map(provider => ({
       id: provider.provider_id,
       name: provider.provider_name,
       logo: provider.logo_path ? `https://image.tmdb.org/t/p/w92${provider.logo_path}` : null,
+      url: provider.provider_url,
+      scope: provider.scope,
     }));
     return {
     id: movie.id,
