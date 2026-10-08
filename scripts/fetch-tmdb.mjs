@@ -7,6 +7,16 @@ const maxFilms = Math.min(1000, Math.max(1, Number(process.env.TMDB_MAX_FILMS) |
 const refreshMode = process.env.CATALOGUE_REFRESH_MODE || "reuse";
 const discoveryPages = Math.ceil(maxFilms / 20);
 const detailBatchSize = 20;
+const ukWatchProviderOverrides = {
+  1465943: {
+    link: "https://www.netflix.com/gb/title/82787383",
+    flatrate: [{
+      provider_id: 8,
+      provider_name: "Netflix",
+      logo_path: "/rK1KljqmbvO9HQa1PBFLILWah72.png",
+    }],
+  },
+};
 
 if (!key) {
   console.log("TMDB_API_KEY is not set; publishing the curated sample catalogue.");
@@ -83,7 +93,11 @@ for (let start = 0; start < selected.length; start += detailBatchSize) {
     });
     const detail = await fetchJson(`https://api.themoviedb.org/3/movie/${movie.id}?${detailParams}`);
     const rating = approvedRatings[String(movie.id)] || approvedRatings[titleRatingKey(movie)];
-    const ukWatch = detail["watch/providers"]?.results?.GB;
+    const tmdbUkWatch = detail["watch/providers"]?.results?.GB;
+    const providerOverride = ukWatchProviderOverrides[movie.id];
+    const ukWatch = providerOverride
+      ? { ...tmdbUkWatch, ...providerOverride }
+      : tmdbUkWatch;
     const alternatePoster = detail.images?.posters?.find(image => image.file_path)?.file_path;
     const alternateBackdrop = detail.images?.backdrops?.find(image => image.file_path)?.file_path;
     const posterPath = movie.poster_path || detail.poster_path || alternatePoster || movie.backdrop_path || detail.backdrop_path || alternateBackdrop || null;
