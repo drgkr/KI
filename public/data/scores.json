@@ -13256,6 +13256,115 @@
         }
       ]
     },
+    "baththa-2026": {
+      "title": "Baththa",
+      "assessedAt": "2026-10-14",
+      "confidence": "High",
+      "scores": {
+        "writing": 88,
+        "emotion": 92,
+        "pacing": 82,
+        "performances": 94,
+        "rewatch": 86,
+        "critics": 90,
+        "audience": 88
+      },
+      "sources": [
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/baththa/movie-review/134616411.cms", "kind": "Lead critic", "weight": 20},
+        {"name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/baththa-movie-review-vijay-sethupathi-shines-in-a-film-that-earns-every-emotion-10902251/", "kind": "Second lead critic", "weight": 20},
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Oct/01/baththa-movie-review-a-wholesome-story-about-a-gangster-coming-of-age", "kind": "Additional critic", "weight": 20},
+        {"name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/baththa-review-vijay-sethupathi-balaji-tharaneetharan-1980s-drama-3007517-2026-10-01", "kind": "Additional critic", "weight": 20},
+        {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1wubdys/baththa_review_megathread/", "kind": "Audience", "weight": 20}
+      ]
+    },
+    "dorothy-2026": {
+      "title": "Dorothy",
+      "assessedAt": "2026-10-14",
+      "confidence": "High",
+      "scores": {
+        "writing": 88,
+        "emotion": 86,
+        "pacing": 78,
+        "performances": 91,
+        "rewatch": 78,
+        "critics": 87,
+        "audience": 82
+      },
+      "sources": [
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/dorothy/movie-review/134479982.cms", "kind": "Lead critic", "weight": 20},
+        {"name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/dorothy-movie-review-karthik-subbarajs-film-will-make-everyone-uncomfortable-10894208/", "kind": "Second lead critic", "weight": 20},
+        {"name": "Filmfare", "url": "https://www.filmfare.com/reviews/south-movies/dorothy-movie-review-karthik-subbaraj-finds-vulnerability-beneath-the-violence-86209.amp", "kind": "Additional critic", "weight": 20},
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Sep/25/dorothy-movie-review-a-tender-take-on-the-violence-of-conforming", "kind": "Additional critic", "weight": 20},
+        {"name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/dorothy-2026/", "kind": "Audience", "weight": 10},
+        {"name": "r/IndianCinema audience discussion", "url": "https://www.reddit.com/r/IndianCinema/comments/1x39ryi/dorothy_2026_left_me_speechless_its_that_good/", "kind": "Audience", "weight": 10}
+      ]
+    },
+    "meesaya-murukku-2-2026": {
+      "title": "Meesaya Murukku 2",
+      "assessedAt": "2026-10-14",
+      "confidence": "High",
+      "scores": {
+        "writing": 50,
+        "emotion": 58,
+        "pacing": 52,
+        "performances": 66,
+        "rewatch": 58,
+        "critics": 52,
+        "audience": 61
+      },
+      "sources": [
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/meesaya-murukku-2/amp_movie_review/134474150.cms", "kind": "Lead critic", "weight": 20},
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Sep/25/meesaya-murukku-2-movie-review-an-inconsistent-ode-to-gaana", "kind": "Second lead critic", "weight": 20},
+        {"name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/meesaya-murukku-2-review-hiphop-adhi-gaana-caste-class-3002883-2026-09-25", "kind": "Additional critic", "weight": 20},
+        {"name": "Sudhir Srinivasan", "url": "https://sudhir-srinivasan.com/2026/10/05/meesaya-murukku-2-review-irreverent-infectious-incomplete/", "kind": "Additional critic", "weight": 20},
+        {"name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/meesaya-murukku-2/", "kind": "Audience", "weight": 10},
+        {"name": "r/KollyGossips audience discussion", "url": "https://www.reddit.com/r/KollyGossips/comments/1wqpw5c/meesaya_murukku_2_spoilerfree_review/", "kind": "Audience", "weight": 10}
+      ]
+    },
+    "yezhu-kadal-yezhu-malai-2026": {
+      "title": "Yezhu Kadal Yezhu Malai",
+      "assessedAt": "2026-10-14",
+      "confidence": "High",
+      "scores": {
+        "writing": 46,
+        "emotion": 54,
+        "pacing": 35,
+        "performances": 64,
+        "rewatch": 42,
+        "critics": 43,
+        "audience": 45
+      },
+      "sources": [
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/yezhu-kadal-yezhu-malai/amp_movie_review/134624069.cms", "kind": "Lead critic", "weight": 20},
+        {"name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/yezhu-kadal-yezhu-malai-review-nivin-pauly-soori-film-messy-ai-overloaded-affair-10901557/", "kind": "Second lead critic", "weight": 20},
+        {"name": "India Today", "url": "https://www.indiatoday.in/movies/reviews/story/yezhu-kadal-yezhu-malai-review-ram-ai-heavy-philosophical-drama-tests-patience-nivin-pauly-soori-3007180-2026-10-01", "kind": "Additional critic", "weight": 20},
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/amp/story/tamil/review/2026/Oct/01/yezhu-kadal-yezhu-malai-movie-review-a-promising-fairy-tale-that-spectacularly-loses-its-way", "kind": "Additional critic", "weight": 20},
+        {"name": "Letterboxd audience ratings", "url": "https://letterboxd.com/film/yezhu-kadal-yezhu-malai/", "kind": "Audience", "weight": 10},
+        {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1wz1yks/yezhu_kadal_yezhu_malai_a_book_given_in_a_movie/", "kind": "Audience", "weight": 10}
+      ]
+    },
+    "anbil-avan-2026": {
+      "title": "Anbil Avan",
+      "assessedAt": "2026-10-14",
+      "confidence": "High",
+      "scores": {
+        "writing": 42,
+        "emotion": 52,
+        "pacing": 43,
+        "performances": 61,
+        "rewatch": 46,
+        "critics": 44,
+        "audience": 53
+      },
+      "sources": [
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/Tamil/movie-reviews/Anbil-Avan/movie-review/134631734.cms", "kind": "Lead critic", "weight": 20},
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Oct/02/anbil-avan-movie-review-a-love-story-that-gets-lost-in-its-own-action", "kind": "Second lead critic", "weight": 20},
+        {"name": "Maalai Malar", "url": "https://www.maalaimalar.com/cinema/movie-review/anbil-avan-movie-review", "kind": "Additional critic", "weight": 20},
+        {"name": "Malini Mannath", "url": "https://malinimannath.wordpress.com/2026/10/05/review-anbil-avan/", "kind": "Additional critic", "weight": 20},
+        {"name": "Rotten Tomatoes audience page", "url": "https://www.rottentomatoes.com/m/anbil_avan", "kind": "Audience", "weight": 10},
+        {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1wvplwq/anbil_avan_2026_movie_review/", "kind": "Audience", "weight": 10}
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life",
       "assessedAt": "2026-08-01",
