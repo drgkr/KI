@@ -13365,6 +13365,72 @@
         {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1wvplwq/anbil_avan_2026_movie_review/", "kind": "Audience", "weight": 10}
       ]
     },
+    "jailer-2-2026": {
+      "title": "Jailer 2",
+      "assessedAt": "2026-10-22",
+      "confidence": "High",
+      "scores": {
+        "writing": 61,
+        "emotion": 60,
+        "pacing": 65,
+        "performances": 84,
+        "rewatch": 72,
+        "critics": 67,
+        "audience": 72
+      },
+      "sources": [
+        {"name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/jailer-2-movie-review-rajinikanth-supreme-aura-carries-nelsons-uneven-action-thriller-10922256/lite/", "kind": "Lead critic", "weight": 20},
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/jailer-2/amp_movie_review/134961587.cms", "kind": "Second lead critic", "weight": 20},
+        {"name": "The Hollywood Reporter India", "url": "https://www.hollywoodreporterindia.com/reviews/theatrical/jailer-2-movie-review-a-hilariously-dark-nelson-film-that-eventually-settles-for-superstar-safety", "kind": "Additional critic", "weight": 20},
+        {"name": "The Week", "url": "https://www.theweek.in/review/movies/2026/10/15/jailer-2-movie-review.html", "kind": "Additional critic", "weight": 20},
+        {"name": "Letterboxd audience reviews", "url": "https://letterboxd.com/film/jailer-2-2026/", "kind": "Audience", "weight": 10},
+        {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1x6av6n/jailer_2_movie_discussion_spoilers_must_be/", "kind": "Audience", "weight": 10}
+      ]
+    },
+    "sigma-2026": {
+      "title": "Sigma",
+      "assessedAt": "2026-10-22",
+      "confidence": "High",
+      "scores": {
+        "writing": 42,
+        "emotion": 45,
+        "pacing": 44,
+        "performances": 57,
+        "rewatch": 43,
+        "critics": 43,
+        "audience": 39
+      },
+      "sources": [
+        {"name": "The Indian Express", "url": "https://indianexpress.com/article/entertainment/movie-review/sigma-movie-review-jason-sanjays-debut-has-the-vision-but-not-the-script-to-match-10904228/", "kind": "Lead critic", "weight": 20},
+        {"name": "The Times of India", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/sigma/amp_movie_review/134636540.cms", "kind": "Second lead critic", "weight": 20},
+        {"name": "The New Indian Express", "url": "https://www.newindianexpress.com/entertainment/review/2026/Oct/03/tamilreview2026oct02sigma-movie-review-pulpy-and-functional", "kind": "Additional critic", "weight": 20},
+        {"name": "The Federal", "url": "https://thefederal.com/film-reviews/film-review-tamil-cinema-vijay-son-jason-sanjay-directorial-debut-sigma-258361", "kind": "Additional critic", "weight": 20},
+        {"name": "Letterboxd audience reviews", "url": "https://letterboxd.com/film/sigma-2026/", "kind": "Audience", "weight": 10},
+        {"name": "r/kollywood audience discussion", "url": "https://www.reddit.com/r/kollywood/comments/1wvjc25/sigma_review_megathread/", "kind": "Audience", "weight": 10}
+      ]
+    },
+    "kitti-2026": {
+      "title": "Kitti",
+      "assessedAt": "2026-10-22",
+      "confidence": "Medium",
+      "scores": {
+        "writing": 56,
+        "emotion": 59,
+        "pacing": 54,
+        "performances": 70,
+        "rewatch": 55,
+        "critics": 56,
+        "audience": 50
+      },
+      "sources": [
+        {"name": "Cinema Express", "url": "https://www.cinemaexpress.com/tamil/review/2026/Oct/11/kitti-movie-review-a-suspenseful-beginning-that-leads-to-a-confusing-climax", "kind": "Lead critic", "weight": 20},
+        {"name": "Maalai Malar", "url": "https://www.maalaimalar.com/cinema/movie-review/kitty-movie-review", "kind": "Second lead critic", "weight": 20},
+        {"name": "Chennai Vision", "url": "https://chennaivision.com/kitti-movie-review/", "kind": "Additional critic", "weight": 20},
+        {"name": "Daily Thanthi", "url": "https://www.dailythanthi.com/cinema/movie-review/kitti-movie-review", "kind": "Additional critic", "weight": 20},
+        {"name": "TheReviewMonk critic consensus", "url": "https://thereviewmonk.com/movie/kitti/", "kind": "Additional critic", "weight": 10},
+        {"name": "eTimes user rating", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-details/kitti/amp_movieshow/133757262.cms", "kind": "Audience", "weight": 10}
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life",
       "assessedAt": "2026-08-01",
