@@ -93,6 +93,24 @@ export default function Home() {
 
   const newest = useMemo(() => [...films].sort((a,b) => b.releaseDate.localeCompare(a.releaseDate)), [films]);
   const latest = useMemo(() => newest.filter(item => item.scores !== null).slice(0, 20), [newest]);
+  const latestSignature = useMemo(() => latest.map(item => item.id).join(","), [latest]);
+  useEffect(() => {
+    const resetRail = () => {
+      if (rail.current) rail.current.scrollLeft = 0;
+    };
+    resetRail();
+    let secondFrame = 0;
+    const firstFrame = requestAnimationFrame(() => {
+      resetRail();
+      secondFrame = requestAnimationFrame(resetRail);
+    });
+    window.addEventListener("pageshow", resetRail);
+    return () => {
+      cancelAnimationFrame(firstFrame);
+      if (secondFrame) cancelAnimationFrame(secondFrame);
+      window.removeEventListener("pageshow", resetRail);
+    };
+  }, [latestSignature]);
   const availableYears = useMemo(() => [...new Set(films.map(item => item.year).filter(Boolean))].sort((a,b) => b.localeCompare(a)), [films]);
   const library = useMemo(() => {
     const term = query.trim().toLocaleLowerCase();
