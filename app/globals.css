@@ -11,9 +11,13 @@
 .topbar nav .nav-primary{color:#fff;text-shadow:0 0 14px rgba(255,255,255,.22)}
 .topbar nav .nav-tollywood{color:#ffb44d;text-shadow:0 0 16px rgba(255,180,77,.28)}
 .topbar nav .nav-mollywood{color:#69d7c3;text-shadow:0 0 16px rgba(105,215,195,.26)}
+.topbar nav .nav-industry{padding:9px 15px;border:1px solid transparent;border-radius:999px;line-height:1;box-shadow:inset 0 1px rgba(255,255,255,.05)}
+.topbar nav .nav-primary+.nav-industry{margin-left:16px}
+.topbar nav .nav-tollywood{background:rgba(255,180,77,.14);border-color:rgba(255,180,77,.4)}
+.topbar nav .nav-mollywood{background:rgba(105,215,195,.14);border-color:rgba(105,215,195,.38)}
 .topbar nav .nav-primary:hover{color:#ff7a66;text-shadow:0 0 18px rgba(255,91,67,.42)}
-.topbar nav .nav-tollywood:hover{color:#ffd08b;text-shadow:0 0 20px rgba(255,180,77,.5)}
-.topbar nav .nav-mollywood:hover{color:#a4f3e4;text-shadow:0 0 20px rgba(105,215,195,.48)}
+.topbar nav .nav-tollywood:hover{color:#ffd08b;background:rgba(255,180,77,.24);text-shadow:0 0 20px rgba(255,180,77,.5)}
+.topbar nav .nav-mollywood:hover{color:#a4f3e4;background:rgba(105,215,195,.24);text-shadow:0 0 20px rgba(105,215,195,.48)}
 @media(max-width:800px){.topbar{padding:0 20px}.topbar nav{display:none}.source{margin-left:auto;font-size:8px}.hero{padding:85px 24px;min-height:650px}.hero h1{font-size:64px}.hero>p,.text-link{margin-left:0}.hero-score{width:150px;height:150px;right:10px;top:430px;padding:25px}.hero-score strong{font-size:46px}.detail{grid-template-columns:1fr}.detail-poster{min-height:0;aspect-ratio:4/3}.detail-poster>.poster-art{min-height:100%}.detail-copy{padding:55px 24px}.detail-top{align-items:start}.final-score{padding-left:18px}.method,.critic-model,.confidence-explain{grid-template-columns:1fr;padding:75px 24px}.confidence-grid{margin-top:30px}.score-row{grid-template-columns:25px 1fr 45px}.score-row small{display:none}.confidence{grid-template-columns:80px 65px 1fr}footer{grid-template-columns:1fr;padding:55px 24px}.copyright{text-align:left}.footer-brand{margin-bottom:10px}}
 @media(max-width:480px){.hero h1{font-size:52px}.section-heading{padding-left:24px;padding-right:24px}.poster-rail{padding-left:24px}.poster-card{flex-basis:68vw}.detail h2{font-size:47px}.final-score strong{font-size:58px}.confidence-grid{grid-template-columns:1fr}.confidence-grid i{margin-bottom:20px}.equation{flex-direction:column}.source{max-width:90px}.score-row{gap:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -98,18 +102,18 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 @media(max-width:480px){.hero{min-height:470px;grid-template-columns:1fr 115px}.hero h1{font-size:27px}.film-reel{width:112px}.hero>p{font-size:14px;line-height:1.5}}
 
 /* Reviewed ribbon leads the landing page */
-.featured-strip{background:var(--paper);color:var(--ink);padding:24px 0 20px;scroll-margin-top:86px}
-.featured-strip .section-heading{padding-bottom:18px;align-items:center}
+.featured-strip{background:var(--paper);color:var(--ink);padding:18px 0 14px;scroll-margin-top:86px}
+.featured-strip .section-heading{padding-bottom:12px;align-items:center}
 .featured-strip .section-heading h2{font-size:clamp(27px,3vw,43px);margin:7px 0}
 .featured-strip .section-heading p{margin-top:5px;font-size:13px}
-.featured-strip .poster-rail{gap:16px;padding-bottom:14px}
+.featured-strip .poster-rail{gap:14px;padding-bottom:9px}
 .featured-strip .poster-rail{scroll-padding-inline:6vw;overscroll-behavior-inline:contain}
-.featured-strip .poster-card{flex:0 0 clamp(180px,17.1vw,220px);min-width:0}
+.featured-strip .poster-card{flex:0 0 clamp(145px,13.75vw,178px);min-width:0}
 .featured-strip .poster-card .rank{top:7px;left:7px;padding:5px;font-size:8px}
 .featured-strip .score-capsule{height:28px}
 .featured-strip .score-bubble{width:26px;height:26px;font-size:10px}
-.featured-strip .poster-meta{padding-top:10px}
-.featured-strip .poster-meta strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.featured-strip .poster-meta{padding-top:7px}
+.featured-strip .poster-meta strong{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .featured-strip .poster-meta span{font-size:8px;margin-top:5px}
 .hero{min-height:300px;padding-top:34px;padding-bottom:32px;background-color:var(--ink)}
 .hero{grid-template-columns:minmax(280px,1fr) minmax(360px,1.15fr) minmax(175px,.42fr);column-gap:4vw}
@@ -143,3 +147,6 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 .new-week-badge{position:absolute;top:10px;left:10px;z-index:4;padding:7px 9px;border-radius:999px;background:#ff5b43;color:#fff;box-shadow:0 4px 14px rgba(7,19,25,.28);font:700 8px/1 Arial;letter-spacing:.12em;text-transform:uppercase}
 .catalogue-update{color:#3f7657!important;font:700 11px/1.4 Arial!important;letter-spacing:.08em;text-transform:uppercase}
 .featured-strip .new-week-badge{top:7px;left:7px;padding:6px 8px;font-size:7px}
+
+/* Separate the regional index switches from the main navigation on wide screens */
+@media(max-width:1400px) and (min-width:801px){.topbar{padding-inline:4vw}.topbar nav{gap:12px;font-size:9px;letter-spacing:.1em}.topbar nav .nav-industry{padding:7px 10px}.topbar nav .nav-primary+.nav-industry{margin-left:8px}.source{display:none}}
