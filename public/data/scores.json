@@ -13431,6 +13431,126 @@
         {"name": "eTimes user rating", "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-details/kitti/amp_movieshow/133757262.cms", "kind": "Audience", "weight": 10}
       ]
     },
+    "1314278": {
+      "title": "Mask",
+      "assessedAt": "2026-11-10",
+      "confidence": "Medium",
+      "scores": {
+        "writing": 55,
+        "emotion": 48,
+        "pacing": 57,
+        "performances": 72,
+        "rewatch": 58,
+        "critics": 56,
+        "audience": 62
+      },
+      "sources": [
+        {
+          "name": "The Times of India review",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/mask/movie-review/125518027.cms",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express review",
+          "url": "https://www.newindianexpress.com/entertainment/review/2025/Nov/22/tamilreview2025nov21mask-movie-review-ungainly-detours-hide-a-delectable-dark-comedy",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "The Federal review",
+          "url": "https://thefederal.com/film-reviews/mask-review-kavin-andrea-shine-in-uneven-crime-caper-217226",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "TMDB audience rating",
+          "url": "https://www.themoviedb.org/movie/1314278",
+          "kind": "Audience",
+          "weight": 20
+        }
+      ]
+    },
+    "1435139": {
+      "title": "Aan Paavam Pollathathu",
+      "assessedAt": "2026-11-10",
+      "confidence": "Medium",
+      "scores": {
+        "writing": 60,
+        "emotion": 61,
+        "pacing": 65,
+        "performances": 68,
+        "rewatch": 63,
+        "critics": 62,
+        "audience": 58
+      },
+      "sources": [
+        {
+          "name": "The Times of India review",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/aan-paavam-pollathathu/amp_movie_review/124993912.cms",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Cinema Express review",
+          "url": "https://www.cinemaexpress.com/tamil/review/2025/Oct/31/aan-paavam-pollathathu-movie-review-laughs-and-lessons-galore-in-this-progress-vs-posturing-film",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "Sigaram review",
+          "url": "https://sigaram.net/2025/12/30/review-of-aan-paavam-pollathathu/",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "TMDB audience rating",
+          "url": "https://www.themoviedb.org/movie/1435139",
+          "kind": "Audience",
+          "weight": 20
+        }
+      ]
+    },
+    "1398359": {
+      "title": "Tourist Family",
+      "assessedAt": "2026-11-10",
+      "confidence": "High",
+      "scores": {
+        "writing": 82,
+        "emotion": 88,
+        "pacing": 82,
+        "performances": 86,
+        "rewatch": 85,
+        "critics": 86,
+        "audience": 90
+      },
+      "sources": [
+        {
+          "name": "Onmanorama review",
+          "url": "https://www.onmanorama.com/entertainment/movie-reviews/2025/05/01/tourist-family-movie-review.html",
+          "kind": "Lead critic",
+          "weight": 20
+        },
+        {
+          "name": "The Times of India review",
+          "url": "https://timesofindia.indiatimes.com/entertainment/tamil/movie-reviews/tourist-family/amp_movie_review/120738357.cms",
+          "kind": "Second lead critic",
+          "weight": 20
+        },
+        {
+          "name": "OTTplay review",
+          "url": "https://www.ottplay.com/features/tourist-family-a-wonderful-balancing-act-of-humour-melodrama/263dd843ac44",
+          "kind": "Additional critic",
+          "weight": 40
+        },
+        {
+          "name": "TMDB audience rating",
+          "url": "https://www.themoviedb.org/movie/1398359",
+          "kind": "Audience",
+          "weight": 20
+        }
+      ]
+    },
     "thug-life-2025": {
       "title": "Thug Life",
       "assessedAt": "2026-08-01",
