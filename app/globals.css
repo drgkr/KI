@@ -152,6 +152,7 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 @media(max-width:1400px) and (min-width:801px){.topbar{padding-inline:4vw}.topbar nav{gap:12px;font-size:9px;letter-spacing:.1em}.topbar nav .nav-industry{padding:7px 10px}.topbar nav .nav-primary+.nav-industry{margin-left:8px}.source{display:none}}
 
 /* Keep the larger portraits while retaining the original film-detail typography */
+.detail-modal{grid-template-columns:minmax(190px,23%) minmax(0,77%)}
 .detail-modal .people-row{display:block}
 .detail-modal .people-grid{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
 .detail-modal .person-card{width:102px;text-align:center}
