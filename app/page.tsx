@@ -49,7 +49,7 @@ function CreditRow({ label, people, companies }: { label: string; people?: Credi
     ? people.map(person => ({ name: person.name, image: person.profile }))
     : (companies || []).map(company => ({ name: company.name, image: company.logo }));
   if (!entries.length) return null;
-  return <div className="cast" style={{ display: "block" }}><span>{label}</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{entries.map((entry, index) => <div key={`${entry.name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{entry.image ? <img src={entry.image} alt={entry.name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(entry.name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{entry.name}</strong></div>)}</div></div>;
+  return <div className="cast people-row"><span>{label}</span><div className="people-grid">{entries.map((entry, index) => <div className="person-card" key={`${entry.name}-${index}`}><span className="person-photo">{entry.image ? <img src={entry.image} alt={entry.name} loading="lazy" decoding="async"/> : castInitials(entry.name)}</span><strong className="person-name">{entry.name}</strong></div>)}</div></div>;
 }
 
 function Poster({ film }: { film: Film }) {
@@ -75,7 +75,7 @@ export default function Home() {
   const [editing, setEditing] = useState(false);
   const [source, setSource] = useState<"sample" | "tmdb">("sample");
   const [sortBy, setSortBy] = useState<"year" | "rating" | "title">("year");
-  const [catalogueFilter, setCatalogueFilter] = useState<CatalogueFilter>("all");
+  const [catalogueFilter, setCatalogueFilter] = useState<CatalogueFilter>("rated");
   const [yearFilter, setYearFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [visibleCount, setVisibleCount] = useState(500);
@@ -227,7 +227,7 @@ export default function Home() {
       <div className="detail-copy">
         <div className="detail-top"><div><span className="kicker">{film.year} · {film.runtime ? `${film.runtime} MIN · ` : ""}{film.genres.join(" / ")}</span><h2 id="film-detail-title">{film.title}</h2><p className="tamil-title">{film.originalTitle}</p></div><div className={`final-score ${film.scores ? "" : "unrated"}`}><strong>{total(film.scores) ?? "NR"}</strong><span>{film.scores ? "OUT OF 100" : "ASSESSMENT PENDING"}</span></div></div>
         <p className="overview">{film.overview}</p>
-        <div className="cast" style={{ display: "block" }}><span>CAST</span><div style={{ display: "flex", flexWrap: "wrap", gap: "18px", marginTop: 16 }}>{film.cast.map((member, index) => { const name = castName(member); const profile = typeof member === "string" ? null : member.profile; return <div key={`${name}-${index}`} style={{ width: 68, textAlign: "center" }}><span style={{ width: 52, height: 52, borderRadius: "50%", overflow: "hidden", display: "grid", placeItems: "center", margin: "0 auto 8px", background: "#27404a", color: "#f0eadf", fontSize: 13, fontWeight: 700, letterSpacing: ".05em" }}>{profile ? <img src={profile} alt={name} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }}/> : castInitials(name)}</span><strong style={{ display: "block", color: "#c9c5bd", fontSize: 10, lineHeight: 1.25, fontWeight: 500 }}>{name}</strong></div>})}</div></div>
+        <div className="cast people-row"><span>CAST</span><div className="people-grid">{film.cast.map((member, index) => { const name = castName(member); const profile = typeof member === "string" ? null : member.profile; return <div className="person-card" key={`${name}-${index}`}><span className="person-photo">{profile ? <img src={profile} alt={name} loading="lazy" decoding="async"/> : castInitials(name)}</span><strong className="person-name">{name}</strong></div>})}</div></div>
         <CreditRow label="DIRECTOR" people={film.directors}/>
         <CreditRow label={film.producers?.length ? "PRODUCER" : "PRODUCTION"} people={film.producers} companies={film.productionCompanies}/>
         <section className="streaming" aria-label="Streaming availability">
@@ -272,8 +272,6 @@ export default function Home() {
 
     <footer id="about">
       <div className="brand footer-brand"><span className="brand-mark">KI</span><span>KOLLYWOOD<br/>INDEX</span></div>
-      <div className="disclaimer"><strong>Technology, data and attribution</strong><p>Film titles, release information, cast details, genres, posters and imagery are supplied through the TMDB API. UK streaming availability is supplied by <a href="https://www.justwatch.com/uk" target="_blank" rel="noreferrer">JustWatch</a> through TMDB. ZEE5 Global catalogue indications use TMDB provider records and link to <a href="https://www.zee5.com/global/movies/lang/tamil" target="_blank" rel="noreferrer">ZEE5 Global</a> for regional confirmation. This product uses the TMDB API but is not endorsed or certified by TMDB.</p><p>Kollywood Index is an independent, non-commercial project for cinema discovery, criticism and cultural commentary. It is not affiliated with TMDB, JustWatch, Sun NXT, ZEE5, any streaming service, film studio, distributor, critic, Reddit or Letterboxd. Film artwork, service logos, names and trademarks remain the property of their respective owners.</p></div>
-      <div className="technology"><strong>Built with</strong><ul><li>Next.js 16 and React 19</li><li>TypeScript, HTML and responsive CSS</li><li>TMDB API and structured JSON data</li><li>GitHub source control</li><li>GitHub Actions automation</li><li>GitHub Pages hosting</li><li>Browser local storage for private drafts</li><li>ChatGPT and Codex-assisted development</li></ul></div>
       <p className="copyright">© {new Date().getFullYear()} Kollywood Index<br/>A clearer way to explore Tamil cinema.</p>
     </footer>
   </main>;

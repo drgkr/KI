@@ -150,3 +150,47 @@ footer{grid-template-columns:.55fr 1.35fr 1fr .55fr;gap:5vw}.disclaimer p{margin
 
 /* Separate the regional index switches from the main navigation on wide screens */
 @media(max-width:1400px) and (min-width:801px){.topbar{padding-inline:4vw}.topbar nav{gap:12px;font-size:9px;letter-spacing:.1em}.topbar nav .nav-industry{padding:7px 10px}.topbar nav .nav-primary+.nav-industry{margin-left:8px}.source{display:none}}
+
+/* Larger, more legible film detail content; the film title keeps its existing size */
+.detail-modal{grid-template-columns:minmax(260px,30%) minmax(0,70%);width:min(1400px,100%)}
+.detail-modal .modal-close{font-size:13.5px}
+.detail-modal .modal-close span{width:36px;height:36px;font-size:30px}
+.detail-modal .selection{font-size:13.5px}
+.detail-modal .kicker{font-size:16.5px}
+.detail-modal .tamil-title{font-size:27px}
+.detail-modal .final-score{min-width:180px}
+.detail-modal .final-score strong{font-size:clamp(87px,10.5vw,138px)}
+.detail-modal .final-score span,.detail-modal .final-score.unrated span{font-size:18px}
+.detail-modal .overview{font-size:28.5px;line-height:1.55;max-width:900px}
+.detail-modal .people-row{display:block;padding:27px 20px}
+.detail-modal .people-row>span{font-size:13.5px}
+.detail-modal .people-grid{display:flex;flex-wrap:wrap;gap:27px;margin-top:24px}
+.detail-modal .person-card{width:102px;text-align:center}
+.detail-modal .person-photo{width:78px;height:78px;border-radius:50%;overflow:hidden;display:grid;place-items:center;margin:0 auto 12px;background:#27404a;color:#f0eadf;font-size:19.5px;font-weight:700;letter-spacing:.05em}
+.detail-modal .person-photo img{width:100%;height:100%;object-fit:cover}
+.detail-modal .person-name{display:block;color:#c9c5bd;font-size:15px;line-height:1.3;font-weight:500}
+.detail-modal .cast p{font-size:18px}
+.detail-modal .streaming-heading h3{font-size:40.5px}
+.detail-modal .streaming-heading>a{font-size:16.5px}
+.detail-modal .provider{min-width:218px;padding:14px 21px 14px 14px;gap:15px}
+.detail-modal .provider img,.detail-modal .provider>span{width:51px;height:51px}
+.detail-modal .provider strong{font-size:18px}
+.detail-modal .streaming-empty{font-size:22.5px}
+.detail-modal .streaming>small{font-size:13.5px;line-height:1.5}
+.detail-modal .score-head p{font-size:15px;line-height:1.5}
+.detail-modal .edit{font-size:15px;padding:15px 24px}
+.detail-modal .score-row{grid-template-columns:minmax(230px,1fr) 90px 82px;gap:21px;padding:22px 18px}
+.detail-modal .metric strong{font-size:21px}
+.detail-modal .metric span,.detail-modal .score-row small{font-size:13.5px}
+.detail-modal .metric-score{font-size:39px}
+.detail-modal .score-row input{width:90px;padding:12px;font-size:21px}
+.detail-modal .confidence{grid-template-columns:135px 144px minmax(0,1fr);gap:27px;padding:30px}
+.detail-modal .confidence>span{font-size:13.5px}
+.detail-modal .confidence>strong{width:132px;height:132px;font-size:22.5px}
+.detail-modal .confidence.unrated>strong{font-size:16.5px}
+.detail-modal .confidence p{font-size:16.5px;line-height:1.5}
+.detail-modal .evidence-list>a strong{font-size:21px}
+.detail-modal .evidence-list>a span{font-size:13.5px;line-height:1.4}
+footer{grid-template-columns:1fr auto}
+@media(max-width:800px){.detail-modal{display:block;width:100%}.detail-modal .overview{font-size:25.5px}.detail-modal .final-score{min-width:135px}.detail-modal .score-row{grid-template-columns:minmax(0,1fr) 68px}.detail-modal .confidence{grid-template-columns:100px 120px minmax(0,1fr);gap:18px}.detail-modal .confidence>strong{width:117px;height:117px;font-size:19.5px}footer{grid-template-columns:1fr}}
+@media(max-width:480px){.detail-modal .final-score strong{font-size:87px}.detail-modal .provider{min-width:100%}.detail-modal .score-row{gap:12px}.detail-modal .metric strong{font-size:18px}.detail-modal .metric span{font-size:12px}.detail-modal .confidence{grid-template-columns:1fr 1fr}.detail-modal .confidence p{grid-column:1/-1}.detail-modal .confidence>strong{justify-self:end}}
